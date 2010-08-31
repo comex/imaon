@@ -139,10 +139,10 @@ def handle_insn(bitsize, id, insn):
         expr = 'insn[%d,%d]' % (hi, lo)
         typ = 'TBinary'
         if re.match('R[a-z][a-z]?$', name):
-            expr = 'Reg(b2int(%s))' % expr
+            expr = 'Reg(int(%s.num))' % expr
             typ = 'TEnt'
         elif name == 'S':
-            expr = 'b2int(%s)' % expr
+            expr = 'int(%s.num)' % expr
             typ = 'int'
         result += '  var %s : %s = %s\n' % (name, typ, expr)
     handler = handlers[id].rstrip()
@@ -223,7 +223,7 @@ def foo(bitsize, insns, known={}):
 _32 = indent(foo(32, allinsns[32], {0: 1, 1: 1, 2: 1}))
 _16 = indent(foo(16, allinsns[16], {}))
 open('disas.nim', 'w').write('''
-import armtypes, armops, armfuncs
+import armtypes, armops, armfuncs, types
 proc processInsn16*(insn : TBinary, t : int) : PInsn =
 %s
 

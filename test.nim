@@ -1,4 +1,4 @@
-import disas, os, parseutils, strutils, armtypes
+import disas, os, parseutils, strutils, armtypes, types
 if false:
     var n : int
     discard parseHex(paramStr(1), n)
@@ -16,5 +16,4 @@ if true:
         else:
             echo($insn)
 
-#echo($(binary(0x102c, 16)[5,3]))
-echo("hi")
+echo(9)

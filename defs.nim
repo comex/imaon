@@ -204,15 +204,15 @@ return z(opISB, 0, option)
 #  avail: firstcond:4 mask:4
 # Yuk.  This will need special care.
 if mask == b"0000": break
-return z(opIT, Cond(firstcond) or (b2int(mask) shl 5))
+return z(opIT, Cond(firstcond) or (mask.num shl 5))
 #: LDC{L}<c> <coproc>,<CRd>,[<Rn>],<option>
 #  avail: P:1 U:1 D:1 W:1 Rn:4 CRd:4 coproc:4 imm8:8
 if P == b"0" and W == b"0": break
-return z(opLDC, 0, coproc, Deref(Rn, @cat(imm8, b"00"), P.bit, W.bit, U.bit))
+return z(opLDC, 0, coproc, Deref(Rn, @cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
 #: LDC2{L}<c> <coproc>,<CRd>,[<Rn>],<option>
 #  avail: P:1 U:1 D:1 W:1 Rn:4 CRd:4 coproc:4 imm8:8
 if P == b"0" and W == b"0": break
-return z(opLDC2, 0, coproc, Deref(Rn, @cat(imm8, b"00"), P.bit, W.bit, U.bit))
+return z(opLDC2, 0, coproc, Deref(Rn, @cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
 #: LDM<c> <Rn>,<registers> <Rn> included in <registers>
 #  avail: Rn:3 register_list:8
 var rl = RegList(cat(b"00000000", register_list))
@@ -231,25 +231,25 @@ return z(if W.bit: opLDMIA else: opLDM, 0, Rn, RegList(cat(P, M, b"0", register_
 return z(opLDMDB, 0, Rn, RegList(cat(P, M, b"0", register_list)))
 #: LDR<c> <Rt>, [<Rn>{,#<imm5>}]
 #  avail: imm5:5 Rn:3 Rt:3
-return z(opLDR, 0, Rt, Deref(Rn, @cat(imm5, b"00")))
+return z(opLDR, 0, Rt, Deref(Rn, @cat(imm5, b"00"), 4))
 #: LDR<c> <Rt>,[SP{,#<imm8>}]
 #  avail: Rt:3 imm8:8
-return z(opLDR, 0, Rt, Deref(SP, @cat(imm8, b"00")))
+return z(opLDR, 0, Rt, Deref(SP, @cat(imm8, b"00"), 4))
 #: LDR<c>.W <Rt>,[<Rn>{,#<imm12>}]
 #  avail: Rn:4 Rt:4 imm12:12
-return z(opLDR, 0, Rt, Deref(Rn, @imm12))
+return z(opLDR, 0, Rt, Deref(Rn, @imm12, 4))
 #: LDR<c> <Rt>,[<Rn>,#+/-<imm8>]!
 #  avail: Rn:4 Rt:4 P:1 U:1 W:1 imm8:8
 if P.bit and U.bit and not W.bit: break
 if Rn == SP and not P.bit and U.bit and W.bit: break
 if not P.bit and not W.bit: break
-return z(opLDR, 0, Rt, Deref(Rn, @imm8, P.bit, W.bit, U.bit))
+return z(opLDR, 0, Rt, Deref(Rn, @imm8, 4, P.bit, W.bit, U.bit))
 #: LDR<c> <Rt>,[<Rn>,<Rm>]
 #  avail: Rm:3 Rn:3 Rt:3
-return z(opLDR, 0, Rt, Deref(Rn, Rm))
+return z(opLDR, 0, Rt, Deref(Rn, Rm, 4))
 #: LDR<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]
 #  avail: Rn:4 Rt:4 imm2:2 Rm:4
-return z(opLDR, 0, Rt, Deref(Rn, Shift(Rm, LSL, @imm2)))
+return z(opLDR, 0, Rt, Deref(Rn, Shift(Rm, LSL, @imm2), 4))
 #: LDRB<c> <Rt>,[<Rn>{,#<imm5>}]
 #  avail: imm5:5 Rn:3 Rt:3
 

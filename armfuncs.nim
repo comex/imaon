@@ -1,4 +1,4 @@
-import armtypes
+import armtypes, types
 proc DIShift*(base : TEnt, typ, imm5 : TBinary) : TEnt =
     case int(typ.num)
     of 0b00:
@@ -28,7 +28,7 @@ proc TEImm_C*(imm12 : TBinary) : tuple[ent : TEnt, setCarry : int] =
         else: nil
     else:
         var unrotated_value = zxt(cat(b"1", imm12[6,0]))
-        var r = do_ror(unrotated_value, b2int(imm12[11,7]))
+        var r = do_ror(unrotated_value, imm12[11,7].num)
         result.ent = @r
         result.setCarry = if r[0].bit: 1 else: 0
 

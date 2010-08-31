@@ -29,6 +29,8 @@ type
         dkPreInc,
         dkPostInc
 
+    TDerefSize* = range[1..8]
+
     TEntBase* {.acyclic, final, pure.} = object
         case kind*: TEntKind
         of ekImm, ekPCRel:
@@ -41,6 +43,7 @@ type
             shiftKind*: TShiftKind
         of ekDeref:
             derefKind*: TDerefKind
+            derefSize*: TDerefSize
         else: nil
 
     TEnt* {.acyclic, final, pure.} = object
@@ -75,8 +78,6 @@ type
 
     PInsn* = ref TInsn
 
-const nullEnt : TEnt
-
 proc do_ror*(b : TBinary, amt : int) : TBinary =
     result.size = b.size
     result.num = (b.num shr amt) or (b.num shl (b.size - amt))
@@ -96,7 +97,7 @@ proc regname(num : int) : string =
 proc regname(num : range[0..15]) : string =
     return regname(int(num))
 
-proc repr*(ent : TEntBase, insn : const PInsn) : string {.nosideeffect.} =
+proc repr*(ent : TEntBase, insn : PInsn) : string {.nosideeffect.} =
     case ent.kind
     of ekImm:
         result = '#' & $ent.imm
@@ -145,15 +146,16 @@ proc repr*(ent : TEnt, insn : PInsn) : string {.nosideeffect.} =
         result = "$#, $#$#" % [repr(ent.arg1, insn), $ent.base.shiftKind, repr(ent.arg2, insn)]
     of ekDeref:
         if ent.arg2.kind == ekImm and ent.arg2.imm == 0:
-            return "[$#]" % [repr(ent.arg1, insn)]
+            result = "[$#]" % [repr(ent.arg1, insn)]
         elif ent.base.derefKind == dkPreInc:
-            return "[$#, $#]!" % [repr(ent.arg1, insn), repr(ent.arg2, insn)]
+            result = "[$#, $#]!" % [repr(ent.arg1, insn), repr(ent.arg2, insn)]
         elif ent.base.derefKind == dkPostInc:
-            return "[$#], $#" % [repr(ent.arg1, insn), repr(ent.arg2, insn)]
+            result = "[$#], $#" % [repr(ent.arg1, insn), repr(ent.arg2, insn)]
         else:
-            return "[$#, $#]" % [repr(ent.arg1, insn), repr(ent.arg2, insn)]
+            result = "[$#, $#]" % [repr(ent.arg1, insn), repr(ent.arg2, insn)]
+        if ent.base.derefSize != 4: result = "$#.$#" % [result, $ent.base.derefSize]
     else:
-        return repr(ent.base, insn)
+        result = repr(ent.base, insn)
 
 proc shift*(r : TEnt) : TEnt =
     result = r
@@ -164,18 +166,11 @@ macro z*(n : expr) : expr =
     result.add(newIdentNode("Insn"))
     result.add(n[1])#newIdentNode($n[1].ident))
     result.add(n[2])
-    if n.len > 3:
-        #var prefix = newNimNode(nnkPrefix)
-        #prefix.add(newIdentNode("@"))
-        var bracket = newNimNode(nnkBracket)
-        for i in 3..n.len - 1:
-            var call = newNimNode(nnkCall)
-            call.add(newIdentNode("@"))
-            call.add(n[i])
-            bracket.add(call)
-        #prefix.add(bracket)
-        result.add(bracket)
-    #debug(result)
+    for i in 3..n.len - 1:
+        var call = newNimNode(nnkCall)
+        call.add(newIdentNode("@"))
+        call.add(n[i])
+        result.add(call)
 
 proc Imm*(i : word) : TEnt {.inline.} =
     result.base.kind = ekImm
@@ -207,8 +202,9 @@ proc Shift*(base : TEnt, kind : TShiftKind, amt : TEnt) : TEnt =
     result.base.shiftKind = kind
     result.arg2 = amt.base
 
-proc Deref*(base : TEnt, offset : TEnt, index : bool, writeback : bool, add : bool) : TEnt =
+proc Deref*(base : TEnt, offset : TEnt, size : TDerefSize, index : bool, writeback : bool, add : bool) : TEnt =
     result.base.kind = ekDeref
+    result.base.derefSize = size
     result.arg1 = base.base
     result.arg2 = offset.base
     if result.arg1.kind == ekReg and result.arg1.regNum == 15 and result.arg2.kind == ekImm:
@@ -227,8 +223,8 @@ proc Deref*(base : TEnt, offset : TEnt, index : bool, writeback : bool, add : bo
         if result.arg2.kind != ekImm or result.arg2.imm != 0:
             raise oops[EInvalidValue]("Since P=0 and W=0, $# should be 0" % [repr(offset, nil)])
 
-proc Deref*(base : TEnt, offset : TEnt) : TEnt =
-    return Deref(base, offset, true, false, true)
+proc Deref*(base : TEnt, offset : TEnt, size : TDerefSize) : TEnt =
+    return Deref(base, offset, size, true, false, true)
 
 proc `@`*(e : TEnt) : TEnt =
     return e
@@ -255,17 +251,14 @@ proc Cond*(input : TBinary) : int =
 proc Cond*(input : TCond) : int =
     return Cond(int(input))
 
-proc Insn*(op : TOp, flags : int, ents : array[0..4, TEnt]) : PInsn =
+proc Insn*(op : TOp, flags : int, ents : openarray[TEnt]) : PInsn =
     new(result)
     result.op = op
     result.S = (flags and 1) != 0
     result.cond = TCond((flags shr 1) and 0b1111)
     result.misc = int8(flags shr 5)
-    result.ents = ents
-
-proc Insn*(op : TOp, flags : int) : PInsn =
-    var a : seq[TEnt] = @[]
-    return Insn(op, flags, a)
+    for i in 0..high(ents):
+        result.ents[i] = ents[i]
 
 # This is way broken.
 proc parseIT(insn : PInsn) : seq[TCond] =
@@ -301,9 +294,12 @@ proc `$`*(insn : PInsn) : string =
     
     var ents = insn.ents
     for i in 0..len(ents) - 1:
-        if i == 0: result.add(" ")
+        if ents[i].base.kind == ekNull: break
+        if i == 0:
+            result.add(" ")
+        else:
+            result.add(", ")
         result.add(repr(ents[i], insn))
-        if i != len(ents) - 1: result.add(", ")
 
 # ugh
 proc `==`*(a : TEntBase, b : TEntBase) : bool =
@@ -318,12 +314,13 @@ proc `==`*(a : TEntBase, b : TEntBase) : bool =
     of ekShift:
         return a.shiftKind == b.shiftKind
     of ekDeref:
-        return a.derefKind == b.derefKind
+        return a.derefKind == b.derefKind and a.derefSize == b.derefSize
     of ekNull:
         return true
 
 proc `==`*(a : TEnt, b : TEnt) : bool =
     return a.base == b.base and a.arg1 == b.arg1 and a.arg2 == b.arg2
+
 
 #echo(z(MOV, 1, Reg(4), Shift(Imm(24), ROR, 2)))
 #var s = b"1010101"
@@ -331,3 +328,4 @@ proc `==`*(a : TEnt, b : TEnt) : bool =
 #echo("it is: $#" % $s)
 #echo(s[2])
 #echo(s[42])
+echo($42)
