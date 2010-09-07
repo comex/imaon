@@ -18,7 +18,7 @@ template orr*(a : expr, b : expr) : stmt =
 type 
     TBinary* = object
         size*: int
-        num*: int32
+        num*: int
 
 proc `==`*(a : TBinary, b : TBinary) : bool {.inline.} =
     return a.num == b.num
@@ -35,7 +35,7 @@ proc `$`*(b : TBinary) : string =
     result.add("\"")
 
 
-proc Binary*(num : int32, size : int) : TBinary {.inline.} =
+proc Binary*(num : int, size : int) : TBinary {.inline.} =
     result.num = num
     result.size = size
 
@@ -66,13 +66,24 @@ proc `[,]`*(b : TBinary, hi_p : int, lo_p : int) : TBinary {.inline.} =
         lo = b.size - lo
     if hi < lo: swap(hi, lo)
     if hi >= b.size or lo < 0:
-       raise oops[EInvalidIndex]()
+         raise oops[EInvalidIndex]()
     result.size = hi - lo + 1
     result.num = (b.num and ((1 shl (hi + 1)) - 1)) shr lo
 
 proc `[]`*(b : TBinary, i : int) : TBinary {.inline.} =
-    return b[i, i]
+    if i >= b.size:
+        raise oops[EInvalidIndex]()
+    result.size = 1
+    result.num = (b.num and (1 shl i)) shr i
 
+proc bclear*(b : TBinary, i : int) : TBinary {.inline.} =
+    result.size = b.size
+    result.num = b.num and (not (1 shl i))
+
+proc bset*(b : TBinary, i : int) : TBinary {.inline.} =
+    result.size = b.size
+    result.num = b.num or (1 shl i)
+    
 proc bit*(b : TBinary, i : int) : bool {.inline.} =
     when endian == BigEndian:
         i = b.size - i

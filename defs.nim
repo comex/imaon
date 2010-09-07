@@ -4,13 +4,13 @@
 
 #: ADC{S}<c> <Rd>,<Rn>,#<const>
 #  avail: i:1 S:1 Rn:4 imm3:3 Rd:4 imm8:8
-return z(opADC, S, @Rd, @Rn, @TEImm(cat(i, imm3, imm8)))
+return z(opADC, S, Rd, Rn, ctx.TEImm(cat(i, imm3, imm8)))
 #: ADC<c> <Rdn>,<Rm>
 #  avail: Rm:3 Rdn:3
 return z(opADC, t, Rdn, Rdn, Rm)
 #: ADC{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
 #  avail: S:1 Rn:4 imm3:3 Rd:4 imm2:2 typ:2 Rm:4
-return z(opADC, S, Rd, DIShift(Rm, typ, cat(imm3, imm2)))
+return z(opADC, S, Rd, ctx.DIShift(@@Rm, typ, cat(imm3, imm2)))
 #: ADD<c> <Rd>,<Rn>,#<imm3>
 #  avail: imm3:3 Rn:3 Rd:3
 return z(opADD, t, Rd, Rn, imm3)
@@ -19,237 +19,238 @@ return z(opADD, t, Rd, Rn, imm3)
 return z(opADD, t, Rdn, Rdn, imm8)
 #: ADD{S}<c>.W <Rd>,<Rn>,#<const>
 #  avail: i:1 S:1 Rn:4 imm3:3 Rd:4 imm8:8
-return z(opADD, S, Rd, Rn, TEImm(cat(i, imm3, imm8)))
+return z(opADD, S, Rd, Rn, ctx.TEImm(cat(i, imm3, imm8)))
 #: ADDW<c> <Rd>,<Rn>,#<imm12>
 #  avail: i:1 Rn:4 imm3:3 Rd:4 imm8:8
-return z(opADD, 0, Rd, Rn, cat(i, imm3, imm8))
+return z(opADD, {}, Rd, Rn, cat(i, imm3, imm8))
 #: ADD<c> <Rd>,<Rn>,<Rm>
 #  avail: Rm:3 Rn:3 Rd:3
 return z(opADD, t, Rd, Rn, Rm)
 #: ADD<c> <Rdn>,<Rm>
 #  avail: DN:1 Rm:4 Rdn:3
-if DN.bit: Rdn = shift(Rdn)
+if DN.bit: Rdn = rshift(Rdn)
 if Rdn == SP or Rm == SP: break
-return z(opADD, 0, Rdn, Rdn, Rm)
+return z(opADD, {}, Rdn, Rdn, Rm)
 #: ADD{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
 #  avail: S:1 Rn:4 imm3:3 Rd:4 imm2:2 typ:2 Rm:4
 if Rd == PC and S.bit: break
 if Rn == SP: break
-return z(opADD, S, Rd, Rn, DIShift(Rm, typ, cat(imm3, imm2)))
+return z(opADD, S, Rd, Rn, ctx.DIShift(@@Rm, typ, cat(imm3, imm2)))
 #: ADD<c> <Rd>,SP,#<imm8>
 #  avail: Rd:3 imm8:8
-return z(opADD, 0, Rd, SP, cat(imm8, b"00"))
+return z(opADD, {}, Rd, SP, cat(imm8, b"00"))
 #: ADD<c> SP,SP,#<imm7>
 #  avail: imm7:7
-return z(opADD, 0, SP, SP, cat(imm7, b"00"))
+return z(opADD, {}, SP, SP, cat(imm7, b"00"))
 #: ADD{S}<c>.W <Rd>,SP,#<const>
 #  avail: i:1 S:1 imm3:3 Rd:4 imm8:8
 if Rd == PC and S.bit: break
-return z(opADD, S, Rd, Sp, TEImm(cat(i, imm3, imm8)))
+return z(opADD, S, Rd, Sp, ctx.TEImm(cat(i, imm3, imm8)))
 #: ADDW<c> <Rd>,SP,#<imm12>
 #  avail: i:1 imm3:3 Rd:4 imm8:8
-return z(opADD, 0, Rd, SP, cat(i, imm3, imm8))
+return z(opADD, {}, Rd, SP, cat(i, imm3, imm8))
 #: ADD<c> <Rdm>, SP, <Rdm>
 #  avail: DM:1 Rdm:3
-if DM.bit: Rdm = shift(Rdm)
-return z(opADD, 0, Rdm, SP, Rdm)
+if DM.bit: Rdm = rshift(Rdm)
+return z(opADD, {}, Rdm, SP, Rdm)
 #: ADD<c> SP,<Rm>
 #  avail: Rm:4
-return z(opADD, 0, SP, SP, Rm)
+return z(opADD, {}, SP, SP, Rm)
 #: ADD{S}<c>.W <Rd>,SP,<Rm>{,<shift>}
 #  avail: S:1 imm3:3 Rd:4 imm2:2 typ:2 Rm:4
-return z(opADD, S, Rd, SP, DIShift(Rm, typ, cat(imm3, imm2)))
+return z(opADD, S, Rd, SP, ctx.DIShift(@@Rm, typ, cat(imm3, imm2)))
 #: ADR<c> <Rd>,<label>
 #  avail: Rd:3 imm8:8
-return z(opADR, 0, Rd, PC, cat(imm8, b"00"))
+return z(opADR, {}, Rd, PC, cat(imm8, b"00"))
 #: SUB <Rd>,PC,#0 Special case for zero offset
 #  avail: i:1 imm3:3 Rd:4 imm8:8
-return z(opADR, 0, Rd, PC, PCRel(-(!cat(i, imm3, imm8))))
+return z(opADR, {}, Rd, PC, ctx.Deref(ctx.Reg(PC), @@cat(b"1000", i, imm3, imm8), 4))
 #: ADR<c>.W <Rd>,<label> <label> after current instruction
 #  avail: i:1 imm3:3 Rd:4 imm8:8
-return z(opADR, 0, Rd, PC, PCRel(!cat(i, imm3, imm8)))
+return z(opADR, {}, Rd, PC, ctx.Deref(ctx.Reg(PC), @@cat(i, imm3, imm8), 4))
 #: AND{S}<c> <Rd>,<Rn>,#<const>
 #  avail: i:1 S:1 Rn:4 imm3:3 Rd:4 imm8:8
 if Rd == PC and S.bit: break
-var r = TEImm_C(cat(i, imm3, imm8))
+var r = ctx.TEImm_C(cat(i, imm3, imm8))
 return z(opAND, S or r.setCarry, Rd, Rn, r.ent)
 #: AND<c> <Rdn>,<Rm>
 #  avail: Rm:3 Rdn:3
 return z(opAND, t, Rdn, Rdn, Rm)
 #: AND{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
 #  avail: S:1 Rn:4 imm3:3 Rd:4 imm2:2 typ:2 Rm:4
-return z(opASR, t, Rd, Rn, DIShift(Rm, b"10", cat(imm3, imm2)))
+#return z(opASR, t, Rd, Rn, ctx.DIShift(42))#@@Rm, b"10", cat(imm3, imm2)))
 #: ASR<c> <Rd>,<Rm>,#<imm5>
 #  avail: imm5:5 Rm:3 Rd:3
-return z(opASR, t, Rd, Rd, DIShift(Rm, b"10", imm5))
+#return z(opASR, t, Rd, Rd, ctx.DIShift(@@Rm, b"10", imm5))
 #: ASR{S}<c>.W <Rd>,<Rm>,#<imm5>
 #  avail: S:1 imm3:3 Rd:4 imm2:2 Rm:4
-return z(opASR, S, Rd, Rm, cat(imm3, imm2))
+#return z(opASR, S, Rd, Rm, cat(imm3, imm2))
 #: ASR<c> <Rdn>,<Rm>
 #  avail: Rm:3 Rdn:3
-return z(opASR, 0, Rdn, Rdn, Rm)
+#return z(opASR, {}, Rdn, Rdn, Rm)
 #: ASR{S}<c>.W <Rd>,<Rn>,<Rm>
 #  avail: S:1 Rn:4 Rd:4 Rm:4
-return z(opASR, S, Rd, Rn, Rm)
+#return z(opASR, S, Rd, Rn, Rm)
 #: B<c> <label>
 #  avail: cond:4 imm8:8
-return z(opB, Cond(cond), PCRel(!sxt(cat(imm8, b"0"))))
+return z(opB, fromCond(cond), ctx.Deref(ctx.Reg(PC), @@sxt(cat(imm8, b"0"))))
 #: B<c> <label>
 #  avail: imm11:11
-return z(opB, 0, PCRel(!sxt(cat(imm11, b"0"))))
+return z(opB, {}, ctx.Deref(ctx.Reg(PC), @@sxt(cat(imm11, b"0"))))
 #: B<c>.W <label>
 #  avail: S:1 cond:4 imm6:6 J1:1 J2:1 imm11:11
-break # why is this not documented@? page a6-40
+break # why is this not documented@@? page a6-40
 #: B<c>.W <label>
 #  avail: S:1 imm10:10 J1:1 J2:1 imm11:11
-return z(opB, S, PCRel(!sxt(cat(Binary(s, 1), J1, J2, imm10, imm11, b"0"))))
+return z(opB, S, ctx.Deref(ctx.Reg(PC), @@sxt(cat(Binary(s, 1), J1, J2, imm10, imm11, b"0"))))
 #: BFC<c> <Rd>,#<lsb>,#<width>
 #  avail: imm3:3 Rd:4 imm2:2 msb:5
 var lsb = cat(imm3, imm2)
-return z(opBFC, 0, Rd, lsb, msb.num - lsb.num + 1)
+return z(opBFC, {}, Rd, lsb, msb.num - lsb.num + 1)
 #: BFI<c> <Rd>,<Rn>,#<lsb>,#<width>
 #  avail: Rn:4 imm3:3 Rd:4 imm2:2 msb:5
 var lsb = cat(imm3, imm2)
-return z(opBFI, 0, Rd, Rn, lsb, msb.num - lsb.num + 1)
+return z(opBFI, {}, Rd, Rn, lsb, msb.num - lsb.num + 1)
 #: BIC{S}<c> <Rd>,<Rn>,#<const>
 #  avail: i:1 S:1 Rn:4 imm3:3 Rd:4 imm8:8
-var r = TEImm_C(cat(i, imm3, imm8))
+var r = ctx.TEImm_C(cat(i, imm3, imm8))
 return z(opBIC, S or r.setCarry, Rd, Rn, r.ent)
 #: BIC<c> <Rdn>,<Rm>
 #  avail: Rm:3 Rdn:3
-return z(opBIC, 0, Rdn, Rdn, Rm)
+return z(opBIC, {}, Rdn, Rdn, Rm)
 #: BIC{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
 #  avail: S:1 Rn:4 imm3:3 Rd:4 imm2:2 typ:2 Rm:4
-return z(opBIC, S, Rd, Rn, DIShift(Rm, typ, cat(imm3, imm2)))
+return z(opBIC, S, Rd, Rn, ctx.DIShift(@@Rm, typ, cat(imm3, imm2)))
 #: BKPT #<imm8>
 #  avail: imm8:8
-return z(opBKPT, 0, imm8)
+return z(opBKPT, {}, imm8)
 #: BL<c> <label>
 #  avail: S:1 imm10:10 J1:1 J2:1 imm11:11
-return z(opBL, 0, PCRel(!sxt(cat(Binary(s, 1), J1, J2, imm10, imm11, b"0"))))
+return z(opBL, {}, ctx.Deref(ctx.Reg(PC), @@sxt(cat(Binary(s, 1), J1, J2, imm10, imm11, b"0"))))
 #: BLX<c> <Rm>
 #  avail: Rm:4
-return z(opBLX, 0, Rm)
+return z(opBLX, {}, Rm)
 #: BX<c> <Rm>
 #  avail: Rm:4
-return z(opBX, 0, Rm)
+return z(opBX, {}, Rm)
 #: CB{N}Z <Rn>,<label>
 #  avail: op:1 i:1 imm5:5 Rn:3
 if op.bit:
-    return z(opCBNZ, 0, PCRel(!cat(i, imm5, b"0")))
+    return z(opCBNZ, {}, ctx.Deref(ctx.Reg(PC), @@cat(i, imm5, b"0"), 4))
 else:
-    return z(opCBZ,  0, PCRel(!cat(i, imm5, b"0")))
+    return z(opCBZ, {}, ctx.Deref(ctx.Reg(PC), @@cat(i, imm5, b"0"), 4))
 #: CDP<c> <coproc>,<opc1>,<CRd>,<CRn>,<CRm>,<opc2>
 #  avail: opc1:4 CRn:4 CRd:4 coproc:4 opc2:3 CRm:4
-return z(opCDP, 0, coproc, opc1, CRd, CRn, CRm, opc2)
+return z(opCDP, {}, coproc, opc1, CRd, CRn, CRm, opc2)
 #: CDP2<c> <coproc>,<opc1>,<CRd>,<CRn>,<CRm>,<opc2>
 #  avail: opc1:4 CRn:4 CRd:4 coproc:4 opc2:3 CRm:4
-return z(opCDP2, 0, coproc, opc1, CRd, CRn, CRm, opc2)
+return z(opCDP2, {}, coproc, opc1, CRd, CRn, CRm, opc2)
 #: CLREX<c>
 #  avail: 
-return z(opCLREX, 0)
+return z(opCLREX, {})
 #: CLZ<c> <Rd>,<Rm>
 #  avail: Rm:4 Rd:4 Rm_P:4
-return z(opCLZ, 0, Rd, Rm)
+return z(opCLZ, {}, Rd, Rm)
 #: CMN<c> <Rn>,#<const>
 #  avail: i:1 Rn:4 imm3:3 imm8:8
-return z(opCMN, 1, Rn, TEImm(cat(i, imm3, imm8)))
+return z(opCMN, {ifS}, Rn, ctx.TEImm(cat(i, imm3, imm8)))
 #: CMN<c> <Rn>,<Rm>
 #  avail: Rm:3 Rn:3
-return z(opCMN, 1, Rn, Rm)
+return z(opCMN, {ifS}, Rn, Rm)
 #: CMN<c>.W <Rn>,<Rm>{,<shift>}
 #  avail: Rn:4 imm3:3 imm2:2 typ:2 Rm:4
-return z(opCMN, 1, Rn, DIShift(Rm, typ, cat(imm3, imm2)))
+return z(opCMN, {ifS}, Rn, ctx.DIShift(@@Rm, typ, cat(imm3, imm2)))
 #: CMP<c> <Rn>,#<imm8>
 #  avail: Rn:3 imm8:8
-return z(opCMP, 1, Rn, imm8)
+return z(opCMP, {ifS}, Rn, imm8)
 #: CMP<c>.W <Rn>,#<const>
 #  avail: i:1 Rn:4 imm3:3 imm8:8
-return z(opCMP, 1, Rn, TEImm(cat(i, imm3, imm8)))
+return z(opCMP, {ifS}, Rn, ctx.TEImm(cat(i, imm3, imm8)))
 #: CMP<c> <Rn>,<Rm>
 #  avail: Rm:3 Rn:3
-return z(opCMP, 1, Rn, Rm)
+return z(opCMP, {ifS}, Rn, Rm)
 #: CMP<c> <Rn>,<Rm>
 #  avail: N:1 Rm:4 Rn:3
-if N.bit: Rn = shift(Rn)
-return z(opCMP, 0, Rn, Rm)
+if N.bit: Rn = rshift(Rn)
+return z(opCMP, {}, Rn, Rm)
 #: CMP<c>.W <Rn>, <Rm> {,<shift>}
 #  avail: Rn:4 imm3:3 imm2:2 typ:2 Rm:4
-return z(opCMP, 0, Rn, DIShift(Rm, typ, cat(imm3, imm2)))
+return z(opCMP, {}, Rn, ctx.DIShift(@@Rm, typ, cat(imm3, imm2)))
 #: CPS<effect> <iflags>
 #  avail: im:1 I:1 F:1
 nil # see B4-2
 #: DBG<c> #<option>
 #  avail: option:4
-return z(opDBG, 0, option)
+return z(opDBG, {}, option)
 #: DMB<c> #<option>
 #  avail: option:4
-return z(opDMB, 0, option)
+return z(opDMB, {}, option)
 #: DSB<c> #<option>
 #  avail: option:4
-return z(opDSB, 0, option)
+return z(opDSB, {}, option)
 #: EOR{S}<c> <Rd>,<Rn>,#<const>
 #  avail: i:1 S:1 Rn:4 imm3:3 Rd:4 imm8:8
-return z(opEOR, S, Rd, Rn, TEImm(cat(i, imm3, imm8)))
+return z(opEOR, S, Rd, Rn, ctx.TEImm(cat(i, imm3, imm8)))
 #: EOR<c> <Rdn>,<Rm>
 #  avail: Rm:3 Rdn:3
 return z(opEOR, t, Rdn, Rdn, Rm)
 #: EOR{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
 #  avail: S:1 Rn:4 imm3:3 Rd:4 imm2:2 typ:2 Rm:4
-return z(opEOR, S, Rd, Rn, DIShift(Rm, typ, cat(imm3, imm2)))
+return z(opEOR, S, Rd, Rn, ctx.DIShift(@@Rm, typ, cat(imm3, imm2)))
 #: ISB<c> #<option>
 #  avail: option:4
-return z(opISB, 0, option)
+return z(opISB, {}, option)
 #: IT{x{y{z}}} <firstcond>
 #  avail: firstcond:4 mask:4
 # Yuk.  This will need special care.
 if mask == b"0000": break
-return z(opIT, Cond(firstcond) or (mask.num shl 5))
+return z(opIT, fromCond(firstcond), mask)
 #: LDC{L}<c> <coproc>,<CRd>,[<Rn>],<option>
 #  avail: P:1 U:1 D:1 W:1 Rn:4 CRd:4 coproc:4 imm8:8
 if P == b"0" and W == b"0": break
-return z(opLDC, 0, coproc, Deref(Rn, @cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
+return z(opLDC, {}, coproc, ctx.Deref(@@Rn, @@cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
 #: LDC2{L}<c> <coproc>,<CRd>,[<Rn>],<option>
 #  avail: P:1 U:1 D:1 W:1 Rn:4 CRd:4 coproc:4 imm8:8
 if P == b"0" and W == b"0": break
-return z(opLDC2, 0, coproc, Deref(Rn, @cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
+return z(opLDC2, {}, coproc, ctx.Deref(@@Rn, @@cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
 #: LDM<c> <Rn>,<registers> <Rn> included in <registers>
 #  avail: Rn:3 register_list:8
-var rl = RegList(cat(b"00000000", register_list))
-var op : TOp
-if Rn.base.regNum in rl.base.rlNums:
-    excl(rl.base.rlNums, Rn.base.regNum)
-    op = opLDM
+var rl = cat(b"00000000", register_list)
+if rl[int(Rn)].bit:
+    rl = rl.bclear(int(rn))
+    return z(opLDM, {}, Rn, ctx.RegList(rl))
 else:
-    op = opLDMIA
-return z(op, 0, Rn, rl)
+    return z(opLDMIA, {}, Rn, ctx.RegList(rl))
 #: LDM<c>.W <Rn>{!},<registers>
 #  avail: W:1 Rn:4 P:1 M:1 register_list:13
-return z(if W.bit: opLDMIA else: opLDM, 0, Rn, RegList(cat(P, M, b"0", register_list)))
+if W.bit:
+    return z(opLDMIA, {}, Rn, ctx.RegList(cat(P, M, b"0", register_list)))
+else:
+    return z(opLDM, {}, Rn, ctx.RegList(cat(P, M, b"0", register_list)))
 #: LDMDB<c> <Rn>{!},<registers>
 #  avail: W:1 Rn:4 P:1 M:1 register_list:13
-return z(opLDMDB, 0, Rn, RegList(cat(P, M, b"0", register_list)))
+return z(opLDMDB, {}, Rn, ctx.RegList(cat(P, M, b"0", register_list)))
 #: LDR<c> <Rt>, [<Rn>{,#<imm5>}]
 #  avail: imm5:5 Rn:3 Rt:3
-return z(opLDR, 0, Rt, Deref(Rn, @cat(imm5, b"00"), 4))
+return z(opLDR, {}, Rt, ctx.Deref(@@Rn, @@cat(imm5, b"00"), 4))
 #: LDR<c> <Rt>,[SP{,#<imm8>}]
 #  avail: Rt:3 imm8:8
-return z(opLDR, 0, Rt, Deref(SP, @cat(imm8, b"00"), 4))
+return z(opLDR, {}, Rt, ctx.Deref(@@SP, @@cat(imm8, b"00"), 4))
 #: LDR<c>.W <Rt>,[<Rn>{,#<imm12>}]
 #  avail: Rn:4 Rt:4 imm12:12
-return z(opLDR, 0, Rt, Deref(Rn, @imm12, 4))
+return z(opLDR, {}, Rt, ctx.Deref(@@Rn, @@imm12, 4))
 #: LDR<c> <Rt>,[<Rn>,#+/-<imm8>]!
 #  avail: Rn:4 Rt:4 P:1 U:1 W:1 imm8:8
 if P.bit and U.bit and not W.bit: break
 if Rn == SP and not P.bit and U.bit and W.bit: break
 if not P.bit and not W.bit: break
-return z(opLDR, 0, Rt, Deref(Rn, @imm8, 4, P.bit, W.bit, U.bit))
+return z(opLDR, {}, Rt, ctx.Deref(@@Rn, @@imm8, 4, P.bit, W.bit, U.bit))
 #: LDR<c> <Rt>,[<Rn>,<Rm>]
 #  avail: Rm:3 Rn:3 Rt:3
-return z(opLDR, 0, Rt, Deref(Rn, Rm, 4))
+return z(opLDR, {}, Rt, ctx.Deref(@@Rn, @@Rm, 4))
 #: LDR<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]
 #  avail: Rn:4 Rt:4 imm2:2 Rm:4
-return z(opLDR, 0, Rt, Deref(Rn, Shift(Rm, LSL, @imm2), 4))
+return z(opLDR, {}, Rt, ctx.Deref(@@Rn, ctx.Shift(@@Rm, LSL, @@imm2), 4))
 #: LDRB<c> <Rt>,[<Rn>{,#<imm5>}]
 #  avail: imm5:5 Rn:3 Rt:3
 
@@ -687,7 +688,7 @@ return z(opLDR, 0, Rt, Deref(Rn, Shift(Rm, LSL, @imm2), 4))
 
 #: SVC<c> #<imm8>
 #  avail: imm8:8
-return z(opSVC, 0, imm8)
+return z(opSVC, {}, @@imm8)
 #: SXTB<c> <Rd>,<Rm>
 #  avail: Rm:3 Rd:3
 
@@ -735,34 +736,34 @@ return z(opSVC, 0, imm8)
 
 #: UXTB<c> <Rd>,<Rm>
 #  avail: Rm:3 Rd:3
-return z(opUXTB, 0, Rd, Rm)
+return z(opUXTB, {}, Rd, Rm)
 #: UXTB<c>.W <Rd>,<Rm>{,<rotation>}
 #  avail: Rd:4 rotate:2 Rm:4
-return z(opUXTB, 0, Rd, Shift(Rm, ROR, @cat(rotate, b"000")))
+return z(opUXTB, {}, Rd, ctx.Shift(@@Rm, ROR, @@cat(rotate, b"000")))
 #: UXTH<c> <Rd>,<Rm>
 #  avail: Rm:3 Rd:3
-return z(opUXTH, 0, Rd, Rm)
+return z(opUXTH, {}, Rd, Rm)
 #: UXTH<c>.W <Rd>,<Rm>{,<rotation>}
 #  avail: Rd:4 rotate:2 Rm:4
-return z(opUXTH, 0, Rd, Shift(Rm, ROR, @cat(rotate, b"000")))
+return z(opUXTH, {}, Rd, ctx.Shift(@@Rm, ROR, @@cat(rotate, b"000")))
 #: WFE<c>
 #  avail: 
-return z(opWFE, 0)
+return z(opWFE, {})
 #: WFE<c>.W
 #  avail: 
-return z(opWFE, 0)
+return z(opWFE, {})
 #: WFI<c>
 #  avail: 
-return z(opWFI, 0)
+return z(opWFI, {})
 #: WFI<c>.W
 #  avail: 
-return z(opWFI, 0)
+return z(opWFI, {})
 #: YIELD<c>
 #  avail: 
-return z(opYIELD, 0)
+return z(opYIELD, {})
 #: YIELD<c>.W
 #  avail: 
-return z(opYIELD, 0)
+return z(opYIELD, {})
 #: CPS<effect> <iflags>
 #  avail: im:1 I:1 F:1
 

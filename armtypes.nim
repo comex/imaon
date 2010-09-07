@@ -1,6 +1,6 @@
 import macros, strutils
-import armops
 import types
+import allAC
 
 type
     word*  = int32
@@ -15,41 +15,12 @@ type
         ROR,
         RRX
 
-    TEntKind* = enum
-        ekNull,
-        ekImm,
-        ekReg,
-        ekRegList,
-        ekShift,
-        ekDeref,
-        ekPCRel,
-
     TDerefKind* = enum
         dkOffset,
         dkPreInc,
         dkPostInc
 
     TDerefSize* = range[1..8]
-
-    TEntBase* {.acyclic, final, pure.} = object
-        case kind*: TEntKind
-        of ekImm, ekPCRel:
-            imm*: word
-        of ekReg:
-            regNum*: range[0..15]
-        of ekRegList:
-            rlNums*: set[range[0..15]]
-        of ekShift:
-            shiftKind*: TShiftKind
-        of ekDeref:
-            derefKind*: TDerefKind
-            derefSize*: TDerefSize
-        else: nil
-
-    TEnt* {.acyclic, final, pure.} = object
-        base*: TEntBase
-        arg1: TEntBase
-        arg2: TEntBase
 
     TCond* = enum
         AL,
@@ -69,263 +40,129 @@ type
         LE,
         BadCond
 
-    TInsn* {.acyclic, final, pure.} = object
-        op: TOp
-        cond : TCond
-        S : bool
-        misc: int8
-        ents : array[0..4, TEnt]
+    TReg* = enum
+        R0,
+        R1,
+        R2,
+        R3,
+        R4,
+        R5,
+        R6,
+        R7,
+        R8,
+        R9,
+        R10,
+        R11,
+        R12,
+        SP,
+        LR,
+        PC
 
-    PInsn* = ref TInsn
+    TInsnFlag* = enum
+        ifS, # update condition flags
+        ifCond1, ifCond2, ifCond3, ifCond4, # actually the cond is stored here
+        ifWriteback, # for things like LDM, writeback the base register?
+    
+    TInsnFlags* = set[TInsnFlag]
 
-proc do_ror*(b : TBinary, amt : int) : TBinary =
-    result.size = b.size
-    result.num = (b.num shr amt) or (b.num shl (b.size - amt))
-    result.num = result.num and ((1 shl b.size) - 1)
+proc rshift*(r : TReg) : TReg =
+    return TReg(int(r) or 8)
 
-# Todo: maybe this should be an enum?
-proc regname(num : int) : string =
-    case num
-    of 13:
-        return "SP"
-    of 14:
-        return "LR"
-    of 15:
-        return "PC"
-    else:
-        return "R" & $num
-proc regname(num : range[0..15]) : string =
-    return regname(int(num))
+proc `-`*(a : TReg, b : int) : TReg =
+    return TReg(int(a) - b)
 
-proc repr*(ent : TEntBase, insn : PInsn) : string {.nosideeffect.} =
-    case ent.kind
-    of ekImm:
-        result = '#' & $ent.imm
-    of ekPCRel:
-        result = "#<" & $ent.imm & ">"
-    of ekReg:
-        result = regname(ent.regNum)
-        if insn != nil and (insn.op == opLDMIA or insn.op == opLDMDB or insn.op == opSTMIA or insn.op == opSTMDB): result.add('!')
-    of ekRegList:
-        result = "{"
-        var ranging = false
-        var rangestart : int
-        for i in 0..13:
-            if i != 13 and i in ent.rlNums:
-                if not ranging:
-                    if len(result) > 1: result.add(", ")
-                    result.add(regname(i))
-                    ranging = true
-                    rangestart = i
-            else:
-                if ranging:
-                    if rangestart == i - 1:
-                        nil
-                    elif rangestart == i - 2:
-                        result.add(", R" & $(i - 1))
-                    else:
-                        result.add("-R" & $(i - 1))
-                    ranging = false
-        if 13 in ent.rlNums:
-            if len(result) > 1: result.add(", ")
-            result.add("SP")
-        if 14 in ent.rlNums:
-            if len(result) > 1: result.add(", ")
-            result.add("LR")
-        if 15 in ent.rlNums:
-            if len(result) > 1: result.add(", ")
-            result.add("PC")
-                    
-        result.add("}")
-    else:
-        result = "???"
+template RegList*(ctx : expr, rs : expr) : expr =
+    ctx.RegListA(cast[set[TReg]](rs.num))
 
-proc repr*(ent : TEnt, insn : PInsn) : string {.nosideeffect.} =
-    case ent.base.kind
-    of ekShift:
-        result = "$#, $#$#" % [repr(ent.arg1, insn), $ent.base.shiftKind, repr(ent.arg2, insn)]
-    of ekDeref:
-        if ent.arg2.kind == ekImm and ent.arg2.imm == 0:
-            result = "[$#]" % [repr(ent.arg1, insn)]
-        elif ent.base.derefKind == dkPreInc:
-            result = "[$#, $#]!" % [repr(ent.arg1, insn), repr(ent.arg2, insn)]
-        elif ent.base.derefKind == dkPostInc:
-            result = "[$#], $#" % [repr(ent.arg1, insn), repr(ent.arg2, insn)]
+template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
+    proc Shift*(ctx : TAsmCtx, base : TRVal, kind : TShiftKind, amt : TRVal) : TRVal {.inline.} =
+        if ctx.IsZero(amt):
+            return base
+        return ctx.ShiftA(base, kind, amt)
+
+    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal, size : TDerefSize, index : bool, writeback : bool, add : bool) : TRVal =
+        var offsetA = offset
+        if not add:
+            offsetA = ctx.Negate(offsetA)
+        var kind : TDerefKind
+        if index and writeback:
+            kind = dkPreInc
+        elif index:
+            kind = dkOffset
+        elif writeback:
+            kind = dkPostInc
         else:
-            result = "[$#, $#]" % [repr(ent.arg1, insn), repr(ent.arg2, insn)]
-        if ent.base.derefSize != 4: result = "$#.$#" % [result, $ent.base.derefSize]
-    else:
-        result = repr(ent.base, insn)
+            if not ctx.IsZero(offset):
+                raise oops[EInvalidValue]("Since P=0 and W=0, offset should be 0")
+            kind = dkOffset
+        return ctx.DerefA(base, offsetA, size, kind)
 
-proc shift*(r : TEnt) : TEnt =
-    result = r
-    result.base.regNum = result.base.regNum or 8
+    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal, size : TDerefSize) : TRVal {.inline.} =
+        return Deref(ctx, base, offset, size, true, false, true)
+
+    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal) : TRVal {.inline.} =
+        return Deref(ctx, base, offset, sizeof(word), true, false, true)
+
+    proc ConvertToVal*(ctx : TAsmCtx, thing : TBinary) : TVal =
+        return ctx.Imm(thing.num)
+
+    proc ConvertToVal*(ctx : TAsmCtx, thing : TReg) : TVal =
+        return ctx.Reg(thing)
+    
+    proc ConvertToVal*(ctx : TAsmCtx, thing : TVal) : TVal =
+        return thing
+
+    proc ConvertToVal*(ctx : TAsmCtx, thing : TVal) : TVal =
+        return thing
+
+    proc ConvertToVal*(ctx : TAsmCtx, thing : int) : TEnt =
+        return cast[TEnt](12345)
+
+foreachAC(ctxspec)
+
+proc fromCond*(input : TCond) : TInsnFlags =
+    return cast[TInsnFlags](int(ifCond1) * int(input))
+
+proc fromCond*(input : TBinary) : TInsnFlags =
+    return fromCond(TCond(input.num))
+
+proc toCond*(input : TInsnFlags) : TCond =
+    return TCond((cast[int](input) div int(ifCond1)) and int(high(TCond)))
+
+
+template `@@`*(a : expr) : expr =
+    ctx.ConvertToVal(a)
+
+template `$$`*(a : expr) : expr =
+    ctx.ConvertToRVal(a)
 
 macro z*(n : expr) : expr =
     result = newNimNode(nnkCall, n)
-    result.add(newIdentNode("Insn"))
-    result.add(n[1])#newIdentNode($n[1].ident))
+    result.add(n[1])
+    result.add(newIdentNode("ctx"))
     result.add(n[2])
     for i in 3..n.len - 1:
         var call = newNimNode(nnkCall)
-        call.add(newIdentNode("@"))
+        call.add(newIdentNode("@@"))
         call.add(n[i])
         result.add(call)
 
-proc Imm*(i : word) : TEnt {.inline.} =
-    result.base.kind = ekImm
-    result.base.imm = i
-
-proc PCRel*(i : word) : TEnt {.inline.} =
-    result.base.kind = ekPCRel
-    result.base.imm = i
-
-proc Reg*(r : range[0..15]) : TEnt {.inline.} =
-    result.base.kind = ekReg
-    result.base.regNum = r
-
-proc RegList*(rs : TBinary) : TEnt {.inline.} =
-    result.base.kind = ekRegList
-    result.base.rlNums = cast[set[range[0..15]]](rs.num)
-
-var SP* : TEnt = Reg(13)
-var LR* : TEnt = Reg(14)
-var PC* : TEnt = Reg(15)
-
-proc rshift*(r : TEnt) : TEnt =
-    return Reg(r.base.regNum + 8)
-
-proc Shift*(base : TEnt, kind : TShiftKind, amt : TEnt) : TEnt =
-    if amt.base.kind == ekImm and amt.base.imm == 0: return base
-    result.base.kind = ekShift
-    result.arg1 = base.base
-    result.base.shiftKind = kind
-    result.arg2 = amt.base
-
-proc Deref*(base : TEnt, offset : TEnt, size : TDerefSize, index : bool, writeback : bool, add : bool) : TEnt =
-    result.base.kind = ekDeref
-    result.base.derefSize = size
-    result.arg1 = base.base
-    result.arg2 = offset.base
-    if result.arg1.kind == ekReg and result.arg1.regNum == 15 and result.arg2.kind == ekImm:
-        result.arg2.kind = ekPCRel
-    if not add:
-        if result.arg2.kind != ekImm:
-            raise oops[EInvalidValue]("I don't know how to negate $#" % [repr(offset, nil)])
-        result.arg2.imm = -result.arg2.imm
-    if index and writeback:
-        result.base.derefKind = dkPreInc
-    elif index:
-        result.base.derefKind = dkOffset
-    elif writeback:
-        result.base.derefKind = dkPostInc
-    else:
-        if result.arg2.kind != ekImm or result.arg2.imm != 0:
-            raise oops[EInvalidValue]("Since P=0 and W=0, $# should be 0" % [repr(offset, nil)])
-
-proc Deref*(base : TEnt, offset : TEnt, size : TDerefSize) : TEnt =
-    return Deref(base, offset, size, true, false, true)
-
-proc `@`*(e : TEnt) : TEnt =
-    return e
-
-proc `@`*(i : word) : TEnt =
-    return Imm(i) 
-
-proc `@`*(i : TBinary) : TEnt =
-    return Imm(i.num)
-
-proc `!`*(i : TBinary) : word =
-    return i.num
-
-# hack!
-proc Cond*(input : int) : int =
-    if input == 14:
-        return 0 shl 1
-    elif input == 15:
-        return 15 shl 1
-    else:
-        return (input + 1) shl 1
-proc Cond*(input : TBinary) : int =
-    return Cond(input.num)
-proc Cond*(input : TCond) : int =
-    return Cond(int(input))
-
-proc Insn*(op : TOp, flags : int, ents : openarray[TEnt]) : PInsn =
-    new(result)
-    result.op = op
-    result.S = (flags and 1) != 0
-    result.cond = TCond((flags shr 1) and 0b1111)
-    result.misc = int8(flags shr 5)
-    for i in 0..high(ents):
-        result.ents[i] = ents[i]
 
 # This is way broken.
-proc parseIT(insn : PInsn) : seq[TCond] =
-    var misc : TBinary
-    misc.size = 4
-    misc.num = int(insn.misc)
+# hi i way broken.
+proc parseIT(itcond : TCond, itarg : TBinary) : seq[TCond] =
     var length : int
-    if misc.bit(0):
+    if itarg.bit(0):
         length = 3
-    elif misc.bit(1):
+    elif itarg.bit(1):
         length = 2
-    elif misc.bit(2):
+    elif itarg.bit(2):
         length = 1
-    elif misc.bit(3):
+    elif itarg.bit(3):
         length = 0
-    var firstcond = int(insn.cond)
-    result = @[insn.cond]
+    var firstcond = int(itcond)
+    result = @[itcond]
     for i in countdown(3, 4 - length):
-        result.add(TCond((firstcond and 0b1110) or misc[i].num))
+        result.add(TCond((firstcond and 0b1110) or itarg[i].num))
     
 
-proc `$`*(insn : PInsn) : string =
-    result = copy($insn.op, 2)
-    if insn.S:
-        result.add("S")
-    if insn.op == opIT:
-        var conds = parseIT(insn)
-        for i in 1..conds.len - 1:
-            result.add(if conds[i] == conds[0]: "T" else: "E")
-        result.add(" ")
-    if insn.cond != AL:
-        result.add($insn.cond)
-    
-    var ents = insn.ents
-    for i in 0..len(ents) - 1:
-        if ents[i].base.kind == ekNull: break
-        if i == 0:
-            result.add(" ")
-        else:
-            result.add(", ")
-        result.add(repr(ents[i], insn))
-
-# ugh
-proc `==`*(a : TEntBase, b : TEntBase) : bool =
-    if a.kind != b.kind: return False
-    case a.kind
-    of ekImm, ekPCRel:
-        return a.imm == b.imm
-    of ekReg:
-        return a.regNum == b.regNum 
-    of ekRegList:
-        return a.rlNums == b.rlNums 
-    of ekShift:
-        return a.shiftKind == b.shiftKind
-    of ekDeref:
-        return a.derefKind == b.derefKind and a.derefSize == b.derefSize
-    of ekNull:
-        return true
-
-proc `==`*(a : TEnt, b : TEnt) : bool =
-    return a.base == b.base and a.arg1 == b.arg1 and a.arg2 == b.arg2
-
-
-#echo(z(MOV, 1, Reg(4), Shift(Imm(24), ROR, 2)))
-#var s = b"1010101"
-#s = cat(b"00", s)
-#echo("it is: $#" % $s)
-#echo(s[2])
-#echo(s[42])
-echo($42)
