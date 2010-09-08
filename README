@@ -1,0 +1,5 @@
+nimrods other than http://github.com/comex/Nimrod will probably work but might not.
+python ddi.py
+python gen_lazyAC.py > lazyAC.py
+nimrod c test.nim
+
