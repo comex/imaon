@@ -142,15 +142,15 @@ def handle_insn(bitsize, id, insn):
             expr = 'TReg(%s.num)' % expr
             typ = 'TReg'
         elif name == 'S':
-            expr = 'int(%s.num)' % expr
-            typ = 'int'
+            expr = 'if %s.bit: {ifS} else: {}' % expr
+            typ = 'TInsnFlags'
         result += '  var %s : %s = %s\n' % (name, typ, expr)
     handler = handlers[id].rstrip()
     del handlers[id]
     result += indent(handler) + '\n  nil\n'
     return result
 
-def foo_(bitsize, insns, known):
+def foo_(bitsize, insns, known, record):
     result = ''
     if len(insns) == 0: return result
     valid = [i for i in xrange(bitsize) if known[i] is None]
@@ -158,26 +158,27 @@ def foo_(bitsize, insns, known):
         # This is a hack due to O(huge) and won't work in all cases.
         # The assumption is that a specific case won't be preempted by an even more specific case.
         known2 = known[:]
-        new = [x for x in insns if x[0][i] == 1]
+        new1 = [x for x in insns if x[0][i] == 1]
         known2[i] = 1
-        results1 = foo_(bitsize, new, known2)
+        results1 = foo_(bitsize, new1, known2, record + [(bitsize - i - 1, 1)])
         
         known2 = known[:]
-        new = [x for x in insns if x[0][i] == 0]
+        new2 = [x for x in insns if x[0][i] == 0]
         known2[i] = 0
-        results2 = foo_(bitsize, new, known2)
+        results2 = foo_(bitsize, new2, known2, record + [(bitsize - i - 1, 0)])
         
         known2 = known[:]
-        new = [x for x in insns if x[0][i] is None]
+        new3 = [x for x in insns if x[0][i] is None]
         known2[i] = 2
-        results3 = foo_(bitsize, new, known2)
+        results3 = foo_(bitsize, new3, known2, record + [(bitsize - i - 1, 2)])
         
+        result += '# %s\n' % record
         if results1:
             result += 'if bit(insn, %d):\n' % (bitsize - i - 1)
             result += indent(results1)
             if results2:
                 assert result[-1] == '\n'
-                result += 'else:\n'
+                result += 'else: #%d\n' % (bitsize - i - 1)
                 result += indent(results2)
         elif results2:
             result += 'if not bit(insn, %d):\n' % (bitsize - i - 1)
@@ -215,20 +216,24 @@ def foo(bitsize, insns, known={}):
         insns_.append((insn[0], insn[1], insn[2], specialcase))
     known_ = [None] * bitsize
     for k, v in known.iteritems(): known_[k] = v
-    return foo_(bitsize, insns_, known_) + 'return nil'
+    return foo_(bitsize, insns_, known_, [])
             
 #for insn in allinsns[16]:
 #    print insn
 #die
-_32 = indent(foo(32, allinsns[32], {0: 1, 1: 1, 2: 1}))
-_16 = indent(foo(16, allinsns[16], {}))
+_32 = indent(indent(foo(32, allinsns[32], {0: 1, 1: 1, 2: 1})))
+_16 = indent(indent(foo(16, allinsns[16], {})))
 open('disas.nim', 'w').write('''
 import armtypes, armfuncs, types
-proc processInsn16*[TAsmCtx](ctx : TAsmCtx, insn : TBinary, t : TInsnFlags) : TEnt =
+import allAC
+template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
+  proc processInsn16*(ctx : TAsmCtx, insn : TBinary, t : TInsnFlags) : TVal =
 %s
 
-proc processInsn32*[TAsmCtx](ctx : TAsmCtx, insn : TBinary, t : TInsnFlags) : TEnt =
-%s
+  proc processInsn32*(ctx : TAsmCtx, insn : TBinary, t : TInsnFlags) : TVal =
+%s 
+
+foreachAC(ctxspec)
 ''' % (_16, _32))
 #handlers['general'] = '42\n'
 #handlers['specific'] = '24\n'

@@ -1,28 +1,22 @@
-import allAC
-import lazyAC
-import types, armtypes
-import strutils
+#INCLUDED#
+
+type TStringAsmCtx* = object
+type PStringAsmCtx* = ref TStringAsmCtx
 
 proc newPStringAsmCtx*() : PStringAsmCtx =
     return nil
 
-proc t(ctx : PStringAsmCtx, a : string) : string=
-    return a
-
-proc u(a : string) : string =
-    return a
-
 proc Negate*(ctx : PStringAsmCtx, input : string) : string =
-    return ctx.t("-" & u(input))
+    return ("-" & input)
 
 proc IsZero*(ctx : PStringAsmCtx, input : string) : bool =
-    return u(input) == "0"
+    return input == "0"
 
 proc Imm*(ctx : PStringAsmCtx, input : word) : string =
-    return ctx.t("#" & $input)
+    return ("#" & $input)
 
 proc Reg*(ctx : PStringAsmCtx, input : TReg) : string =
-    return ctx.t($input)
+    return ($input)
 
 proc RegListA*(ctx : PStringAsmCtx, input : set[TReg]) : string =
     var res = "{"
@@ -55,31 +49,31 @@ proc RegListA*(ctx : PStringAsmCtx, input : set[TReg]) : string =
         res.add("PC")
                 
     res.add("}")
-    return ctx.t(res)
+    return (res)
 
 proc ShiftA*(ctx : PStringAsmCtx, base : string, kind : TShiftKind, amt : string) : string =
-    return ctx.t(u(base) & ", " & $kind & (if u(amt)[0] == '#': "" else: " ") & u(amt ))
+    return (base & ", " & $kind & (if amt[0] == '#': "" else: " ") & amt)
 
 proc DerefA*(ctx : PStringAsmCtx, base : string, offset : string, size : TDerefSize, kind : TDerefKind) : string =
     var sizeA = (if size == 4: "" else: $size)
     var res : string
     case kind
     of dkOffset:
-        res = "[$#, $#]$#" % [u(base), u(offset), sizeA]
+        res = "[$#, $#]$#" % [base, offset, sizeA]
     of dkPreInc:
-        res = "[$#, $#]$#!" % [u(base), u(offset), sizeA]
+        res = "[$#, $#]$#!" % [base, offset, sizeA]
     of dkPostInc:
-        res = "[$#]$#, $#" % [u(base), sizeA, u(offset)]
-    return ctx.t(res)
+        res = "[$#]$#, $#" % [base, sizeA, offset]
+    return (res)
 
 proc GenericOp*(ctx : PStringAsmCtx, name : string, flags : TInsnFlags, ents : openarray[string]) : string =
-    var a = name & "  "
+    var cond : string = $toCond(flags)
+    if cond == "AL": cond = ""
+    var a = name & cond & "  "
     for i in 0..high(ents):
-        add(a, u(ents[i]))
+        add(a, ents[i])
         if i != high(ents): add(a, ", ")
-    result = ctx.t(a)
-    GCref(a)
-    ctx.stringsICareAbout = @[]
+    result = a
 
 beLazy(PStringAsmCtx, string)
 

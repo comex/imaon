@@ -17,12 +17,15 @@ Imm(word) : TRVal
 Reg(TReg) : TRVal
 RegListA(set[TReg]) : TRVal
 ShiftA(base : TRVal, kind : TShiftKind, amt : TRVal) : TVal
-DerefA(base : TVal, offset : TRVal, size : TDerefSize, kind : TDerefKind)
+DerefA(base : TVal, offset : TRVal, size : TDerefSize, kind : TDerefKind) : TVal
 Negate(TRVal)
 IsZero(TRVal)
+
+ConvertToVal(TRVal)
+ConvertToRVal(TVal)
 
 TRVal
     @@ -> TVal
 
 TVal
-    $$ => TRVal
+    !! -> TRVal

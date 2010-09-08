@@ -1,6 +1,5 @@
 import macros, strutils
 import types
-import allAC
 
 type
     word*  = int32
@@ -74,13 +73,30 @@ proc `-`*(a : TReg, b : int) : TReg =
 template RegList*(ctx : expr, rs : expr) : expr =
     ctx.RegListA(cast[set[TReg]](rs.num))
 
+proc fromCond*(input : TCond) : TInsnFlags =
+    return cast[TInsnFlags](int(ifCond1) * int(input))
+
+proc fromCond*(input : TBinary) : TInsnFlags =
+    return fromCond(TCond(input.num))
+
+proc toCond*(input : TInsnFlags) : TCond =
+    return TCond((cast[int](input) div int(ifCond1)) and int(high(TCond)))
+import allAC
+
+template `@@`*(a : expr) : expr =
+    ctx.ConvertToVal(a)
+
+template `!!`*(a : expr) : expr =
+    ctx.ConvertToRVal(a)
+
+
 template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
     proc Shift*(ctx : TAsmCtx, base : TRVal, kind : TShiftKind, amt : TRVal) : TRVal {.inline.} =
         if ctx.IsZero(amt):
             return base
         return ctx.ShiftA(base, kind, amt)
 
-    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal, size : TDerefSize, index : bool, writeback : bool, add : bool) : TRVal =
+    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal, size : TDerefSize, index : bool, writeback : bool, add : bool) : TVal =
         var offsetA = offset
         if not add:
             offsetA = ctx.Negate(offsetA)
@@ -97,44 +113,40 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
             kind = dkOffset
         return ctx.DerefA(base, offsetA, size, kind)
 
-    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal, size : TDerefSize) : TRVal {.inline.} =
+    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal, size : TDerefSize) : TVal {.inline.} =
         return Deref(ctx, base, offset, size, true, false, true)
 
-    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal) : TRVal {.inline.} =
+    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal) : TVal {.inline.} =
         return Deref(ctx, base, offset, sizeof(word), true, false, true)
 
+    proc ConvertToVal*(ctx : TAsmCtx, thing : TVal) : TVal =
+        return thing
+
     proc ConvertToVal*(ctx : TAsmCtx, thing : TBinary) : TVal =
-        return ctx.Imm(thing.num)
+        return @@ctx.Imm(thing.num)
 
     proc ConvertToVal*(ctx : TAsmCtx, thing : TReg) : TVal =
         return ctx.Reg(thing)
     
-    proc ConvertToVal*(ctx : TAsmCtx, thing : TVal) : TVal =
-        return thing
+    proc ConvertToVal*(ctx : TAsmCtx, thing : int) : TVal =
+        return @@ctx.Imm(thing)
 
-    proc ConvertToVal*(ctx : TAsmCtx, thing : TVal) : TVal =
+    # -
+    
+    proc ConvertToRVal*(ctx : TAsmCtx, thing : TRVal) : TRVal =
         return thing
+    
+    proc ConvertToRVal*(ctx : TAsmCtx, thing : TBinary) : TRVal =
+        return ctx.Imm(thing.num)
 
-    proc ConvertToVal*(ctx : TAsmCtx, thing : int) : TEnt =
-        return cast[TEnt](12345)
+    proc ConvertToRVal*(ctx : TAsmCtx, thing : TReg) : TRVal =
+        return !!ctx.Reg(thing)
+    
+    proc ConvertToRVal*(ctx : TAsmCtx, thing : int) : TRVal =
+        return ctx.Imm(thing)
 
 foreachAC(ctxspec)
 
-proc fromCond*(input : TCond) : TInsnFlags =
-    return cast[TInsnFlags](int(ifCond1) * int(input))
-
-proc fromCond*(input : TBinary) : TInsnFlags =
-    return fromCond(TCond(input.num))
-
-proc toCond*(input : TInsnFlags) : TCond =
-    return TCond((cast[int](input) div int(ifCond1)) and int(high(TCond)))
-
-
-template `@@`*(a : expr) : expr =
-    ctx.ConvertToVal(a)
-
-template `$$`*(a : expr) : expr =
-    ctx.ConvertToRVal(a)
 
 macro z*(n : expr) : expr =
     result = newNimNode(nnkCall, n)
