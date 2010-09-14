@@ -1,9 +1,6 @@
-type
-    TEndian* = enum
-        LittleEndian,
-        BigEndian
+import macros
 
-const endian : TEndian = LittleEndian
+const endian : TEndian = littleEndian
 
 proc oops*[T]() : ref T =
     new(result)
@@ -39,16 +36,21 @@ proc Binary*(num : int, size : int) : TBinary {.inline.} =
     result.num = num
     result.size = size
 
-proc b*(b : string) : TBinary {.inline.} =
-    result.size = len(b)
-    result.num = 0
+macro b*(n : expr) : expr =
+    result = newNimNode(nnkCall, n)
+    result.add(newIdentNode("Binary"))
+    var b = n[1].strVal
+    var num = 0
     var a = 1
     for i in countdown(b.len - 1, 0):
         if b[i] == '1':
-            orr(result.num, a)
+            num = num or a
         elif b[i] != '0':
             raise oops[EInvalidValue]("Invalid binary string: " & b)
         a = a shl 1
+    result.add(newIntLitNode(num))
+    result.add(newIntLitNode(b.len))
+
 
 proc cat*(bs : openarray[TBinary]) : TBinary =
     var shift = 0
@@ -61,7 +63,7 @@ proc cat*(bs : openarray[TBinary]) : TBinary =
 proc `[,]`*(b : TBinary, hi_p : int, lo_p : int) : TBinary {.inline.} =
     var hi = hi_p
     var lo = lo_p
-    when endian == BigEndian:
+    when endian == bigEndian:
         hi = b.size - hi
         lo = b.size - lo
     if hi < lo: swap(hi, lo)
@@ -85,7 +87,7 @@ proc bset*(b : TBinary, i : int) : TBinary {.inline.} =
     result.num = b.num or (1 shl i)
     
 proc bit*(b : TBinary, i : int) : bool {.inline.} =
-    when endian == BigEndian:
+    when endian == bigEndian:
         i = b.size - i
     return (b.num and (1 shl i)) != 0
 

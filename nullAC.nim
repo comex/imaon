@@ -24,6 +24,12 @@ proc IsZero*(ctx : PNullAsmCtx, input : TNullRVal) : bool {.inline.} =
 proc Imm*(ctx : PNullAsmCtx, input : word) : TNullRVal {.inline.} =
     nil
 
+proc PCrel*(ctx : PNullAsmCtx, input : word) : TNullRVal {.inline.} =
+    nil
+
+proc ITarg*(ctx : PNullAsmCtx, input : seq[TCond]) : TNullRVal {.inline.} =
+    nil
+
 proc Reg*(ctx : PNullAsmCtx, input : TReg) : TNullVal {.inline.} =
     nil
 

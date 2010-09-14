@@ -1,24 +1,64 @@
 #INCLUDED#
 
-type TStringAsmCtx* = object
-type PStringAsmCtx* = ref TStringAsmCtx
+
+
+type
+    TStringVal* {.final, pure.} = object
+        case isImm: bool
+        of true:  imm: word
+        of false: str: string
+
+    TStringAsmCtx* = object
+    PStringAsmCtx* = ref TStringAsmCtx
+
+proc `$`*(a : TStringVal) : string =
+    if a.isImm:
+        return "#" & $a.imm
+    elif a.str == nil:
+        return "Invalid"
+    else:
+        return a.str
+
+proc PCrel(input : TStringVal) : TStringVal =
+    result.isImm = false
+    result.str ="PC+" & $input.imm
+
+proc SPrel(input : TStringVal) : TStringVal =
+    result.isImm = false
+    result.str = "SP+" & $input.imm
 
 proc newPStringAsmCtx*() : PStringAsmCtx =
     return nil
 
-proc Negate*(ctx : PStringAsmCtx, input : string) : string =
-    return ("-" & input)
+proc Negate*(ctx : PStringAsmCtx, input : TStringVal) : TStringVal =
+    result = input
+    if input.isImm:
+        result.str = "-" & result.str
+    else:
+        result.imm = -result.imm
 
-proc IsZero*(ctx : PStringAsmCtx, input : string) : bool =
-    return input == "0"
+proc IsZero*(ctx : PStringAsmCtx, input : TStringVal) : bool =
+    if input.isImm:
+        return input.str == "0"
+    else:
+        return input.imm == 0
 
-proc Imm*(ctx : PStringAsmCtx, input : word) : string =
-    return ("#" & $input)
+proc Imm*(ctx : PStringAsmCtx, input : word) : TStringVal =
+    result.isImm = true
+    result.imm = input
 
-proc Reg*(ctx : PStringAsmCtx, input : TReg) : string =
-    return ($input)
+proc ITarg*(ctx : PStringAsmCtx, input : seq[TCond]) : TStringVal =
+    result.isImm = false
+    result.str = ""
+    for i in 1..input.len - 1:
+        result.str.add(if input[i] == input[0]: "T" else: "E")
+    
 
-proc RegListA*(ctx : PStringAsmCtx, input : set[TReg]) : string =
+proc Reg*(ctx : PStringAsmCtx, input : TReg) : TStringVal =
+    result.isImm = false
+    result.str = $input
+
+proc RegListA*(ctx : PStringAsmCtx, input : set[TReg]) : TStringVal =
     var res = "{"
     var ranging = false
     var rangestart : TReg
@@ -49,31 +89,41 @@ proc RegListA*(ctx : PStringAsmCtx, input : set[TReg]) : string =
         res.add("PC")
                 
     res.add("}")
-    return (res)
+    result.isImm = false
+    result.str = res
 
-proc ShiftA*(ctx : PStringAsmCtx, base : string, kind : TShiftKind, amt : string) : string =
-    return (base & ", " & $kind & (if amt[0] == '#': "" else: " ") & amt)
+proc ShiftA*(ctx : PStringAsmCtx, base : TStringVal, kind : TShiftKind, amt : TStringVal) : TStringVal =
+    result.isImm = false
+    result.str = $base & ", " & $kind & (if amt.isImm: "" else: " ") & $amt
 
-proc DerefA*(ctx : PStringAsmCtx, base : string, offset : string, size : TDerefSize, kind : TDerefKind) : string =
+proc DerefA*(ctx : PStringAsmCtx, base : TStringVal, offset : TStringVal, size : TDerefSize, kind : TDerefKind) : TStringVal =
     var sizeA = (if size == 4: "" else: $size)
+    var offsetA = offset
+    if base.str == "PC" and offsetA.isImm:
+        offsetA = PCrel(offsetA)
+    elif base.str == "SP" and offsetA.isImm:
+        offsetA = SPrel(offsetA)
     var res : string
     case kind
     of dkOffset:
-        res = "[$#, $#]$#" % [base, offset, sizeA]
+        res = "[$#, $#]$#" % [$base, $offsetA, sizeA]
     of dkPreInc:
-        res = "[$#, $#]$#!" % [base, offset, sizeA]
+        res = "[$#, $#]$#!" % [$base, $offsetA, sizeA]
     of dkPostInc:
-        res = "[$#]$#, $#" % [base, sizeA, offset]
-    return (res)
+        res = "[$#]$#, $#" % [$base, sizeA, $offset]
+    result.isImm = false
+    result.str = res
 
-proc GenericOp*(ctx : PStringAsmCtx, name : string, flags : TInsnFlags, ents : openarray[string]) : string =
+proc GenericOp*(ctx : PStringAsmCtx, name : string, flags : TInsnFlags, ents : openarray[TStringVal]) : TStringVal =
     var cond : string = $toCond(flags)
     if cond == "AL": cond = ""
-    var a = name & cond & "  "
+    var S = if ifS in flags: "S" else: ""
+    var a = name & S & cond & "  "
     for i in 0..high(ents):
-        add(a, ents[i])
+        add(a, $ents[i])
         if i != high(ents): add(a, ", ")
-    result = a
+    result.isImm = false
+    result.str = a
 
-beLazy(PStringAsmCtx, string)
+beLazy(PStringAsmCtx, TStringVal)
 

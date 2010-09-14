@@ -4,5 +4,5 @@ include "stringAC"
 include "nullAC"
 
 template foreachAC*(thetempl : expr) =
-    thetempl(PStringAsmCtx, string, string)
+    thetempl(PStringAsmCtx, TStringVal, TStringVal)
     #thetempl(PNullAsmCtx, TNullVal, TNullRVal)

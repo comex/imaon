@@ -1,5 +1,6 @@
 import macros, strutils
 import types
+include "ltgt"
 
 type
     word*  = int32
@@ -73,21 +74,18 @@ proc `-`*(a : TReg, b : int) : TReg =
 template RegList*(ctx : expr, rs : expr) : expr =
     ctx.RegListA(cast[set[TReg]](rs.num))
 
+var aCond1 : TInsnFlags = {ifCond1}
+var iCond1 = cast[int](aCond1)
+
 proc fromCond*(input : TCond) : TInsnFlags =
-    return cast[TInsnFlags](int(ifCond1) * int(input))
+    return cast[TInsnFlags](iCond1 * int(input))
 
 proc fromCond*(input : TBinary) : TInsnFlags =
     return fromCond(TCond(input.num))
 
 proc toCond*(input : TInsnFlags) : TCond =
-    return TCond((cast[int](input) div int(ifCond1)) and int(high(TCond)))
+    return TCond((cast[int](input) div iCond1) and int(high(TCond)))
 import allAC
-
-template `@@`*(a : expr) : expr =
-    ctx.ConvertToVal(a)
-
-template `!!`*(a : expr) : expr =
-    ctx.ConvertToRVal(a)
 
 
 template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
@@ -112,24 +110,20 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                 raise oops[EInvalidValue]("Since P=0 and W=0, offset should be 0")
             kind = dkOffset
         return ctx.DerefA(base, offsetA, size, kind)
-
-    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal, size : TDerefSize) : TVal {.inline.} =
-        return Deref(ctx, base, offset, size, true, false, true)
-
-    proc Deref*(ctx : TAsmCtx, base : TVal, offset : TRVal) : TVal {.inline.} =
-        return Deref(ctx, base, offset, sizeof(word), true, false, true)
+    
+    #-
 
     proc ConvertToVal*(ctx : TAsmCtx, thing : TVal) : TVal =
         return thing
 
     proc ConvertToVal*(ctx : TAsmCtx, thing : TBinary) : TVal =
-        return @@ctx.Imm(thing.num)
+        return >ctx.Imm(thing.num)
 
     proc ConvertToVal*(ctx : TAsmCtx, thing : TReg) : TVal =
         return ctx.Reg(thing)
     
     proc ConvertToVal*(ctx : TAsmCtx, thing : int) : TVal =
-        return @@ctx.Imm(thing)
+        return >ctx.Imm(thing)
 
     # -
     
@@ -140,29 +134,34 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
         return ctx.Imm(thing.num)
 
     proc ConvertToRVal*(ctx : TAsmCtx, thing : TReg) : TRVal =
-        return !!ctx.Reg(thing)
+        return <ctx.Reg(thing)
     
     proc ConvertToRVal*(ctx : TAsmCtx, thing : int) : TRVal =
         return ctx.Imm(thing)
 
+    #-
+
+    # true, false, true
+
+
 foreachAC(ctxspec)
 
 
-macro z*(n : expr) : expr =
-    result = newNimNode(nnkCall, n)
-    result.add(n[1])
-    result.add(newIdentNode("ctx"))
-    result.add(n[2])
-    for i in 3..n.len - 1:
-        var call = newNimNode(nnkCall)
-        call.add(newIdentNode("@@"))
-        call.add(n[i])
-        result.add(call)
+#macro z*(n : expr) : expr =
+#    result = newNimNode(nnkCall, n)
+#    result.add(n[1])
+#    result.add(newIdentNode("ctx"))
+#    result.add(n[2])
+#    for i in 3..n.len - 1:
+#        var call = newNimNode(nnkCall)
+#        call.add(newIdentNode(">"))
+#        call.add(n[i])
+#        result.add(call)
 
 
 # This is way broken.
 # hi i way broken.
-proc parseIT(itcond : TCond, itarg : TBinary) : seq[TCond] =
+proc parseIT*(itcond : TCond, itarg : TBinary) : seq[TCond] =
     var length : int
     if itarg.bit(0):
         length = 3
