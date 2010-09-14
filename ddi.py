@@ -1,11 +1,26 @@
 import re, copy, sys
+
+def indent(g):
+    return '  ' + re.sub('\n(.)', '\n  \\1', g)
+
+class instruction:
+    def __init__(self, bits, vars, name):
+        self.bits = tuple(bits)
+        self.vars = vars
+        self.name = name
+        self.specialcase = False
+
+    def identifier(self):
+        return '#: ' + self.name + '\n' + \
+        '#  avail: ' + ' '.join('%s:%s' % (name, hi - lo + 1) for (name, hi, lo) in self.vars) + '\n'
+        
+
 it = iter(open('DDI.txt'))
 def readline():
     ret = it.next()
     #print ret
     return ret
 allinsns = {}
-allnames = []
 while True:
     try:
         line = readline()
@@ -83,59 +98,48 @@ while True:
             vars.append((thing, bitsize - 1 - calcsize, bitsize - calcsize - size))
             calcsize += size
             
-        allnames.append((name, vars))
         #print calcsize, repr(name)
         assert calcsize == bitsize
-        allinsns.setdefault(bitsize, []).append((tuple(bits), vars, name, False))
-
-def identifier(name, vars):
-    return '#: ' + name + '\n' + \
-    '#  avail: ' + ' '.join('%s:%s' % (name, hi - lo + 1) for (name, hi, lo) in vars) + '\n'
+        allinsns.setdefault(bitsize, []).append(instruction(bits, vars, name))
+        # tuple(bits), vars, name, False))
 
 if False:
     f = open('defs_.nim', 'w')
-    for name, vars in allnames:
-        f.write(identifier(name, vars))
-        f.write('\n')
+    for cat in allinsns.itervalues():
+        for insn in cat:
+            f.write(insn.identifier() + '\n')
     f.write('#: done\n')
     f.close()
     sys.exit(0)
 
-handlers = {}
-cur = None
-cur_name = None
-xxx = ''
-for line in open('defs.nim'):
-    if line.startswith('#:'):
-        if cur is not None:
-            handlers[cur] = xxx
-        cur = None
-        cur_name = line
-    elif line.startswith('#  avail:'):
-        cur = cur_name + line
-        xxx = ''
-    else:
-        xxx += line
+def get_handlers():
+    handlers = {}
+    cur = None
+    cur_name = None
+    cur_handler = ''
+    for line in open('defs.nim'):
+        if line.startswith('#:'):
+            if cur is not None:
+                handlers[cur] = cur_handler
+            cur = None
+            cur_name = line
+        elif line.startswith('#  avail:'):
+            cur = cur_name + line
+            cur_handler = ''
+        else:
+            cur_handler += line
+    return handlers
 
+handlers = get_handlers()
 
-#    for i in xrange(bitsize):
-#        
-#    valid = [(i, len([x for x in insns if x[0][i] == 1])) for i in xrange(bitsize) if all(x[0][i] is not None for x in insns)]
-#    i, score = min(valid, key=lambda (i, l): abs(l - float(len(insns))/2))
-#    if score == 0 or score == len(insns):
-#        for insn in insns:
-#        return
-
-def indent(g):
-    return '  ' + re.sub('\n(.)', '\n  \\1', g)
 
 def handle_insn(bitsize, id, insn):
     result = ''
-    result += '#' + insn[2] + '\n'
-    result += '#' + str(insn[0]) + '\n'
+    result += '#' + insn.name + '\n'
+    result += '#' + str(insn.bits) + '\n'
 
     result += 'block:\n'
-    for name, hi, lo in insn[1]:
+    for name, hi, lo in insn.vars:
         expr = 'insn[%d,%d]' % (hi, lo)
         typ = 'TBinary'
         if re.match('R[a-z][a-z]?2?$', name):
@@ -158,17 +162,17 @@ def foo_(bitsize, insns, known, record):
         # This is a hack due to O(huge) and won't work in all cases.
         # The assumption is that a specific case won't be preempted by an even more specific case.
         known2 = known[:]
-        new1 = [x for x in insns if x[0][i] == 1]
+        new1 = [x for x in insns if x.bits[i] == 1]
         known2[i] = 1
         results1 = foo_(bitsize, new1, known2, record + [(bitsize - i - 1, 1)])
         
         known2 = known[:]
-        new2 = [x for x in insns if x[0][i] == 0]
+        new2 = [x for x in insns if x.bits[i] == 0]
         known2[i] = 0
         results2 = foo_(bitsize, new2, known2, record + [(bitsize - i - 1, 0)])
         
         known2 = known[:]
-        new3 = [x for x in insns if x[0][i] is None]
+        new3 = [x for x in insns if x.bits[i] is None]
         known2[i] = 2
         results3 = foo_(bitsize, new3, known2, record + [(bitsize - i - 1, 2)])
         
@@ -188,10 +192,9 @@ def foo_(bitsize, insns, known, record):
 
             
     for insn in insns:
-        id = identifier(insn[2], insn[1])
+        id = insn.identifier()
         if not handlers.has_key(id): continue
-        if all((known[i] == insn[0][i]) or (known[i] == 2 and insn[0][i] is None) for i in xrange(bitsize)):
-            #result += '#k: [%s]\n' % known
+        if all((known[i] == insn.bits[i]) or (known[i] == 2 and insn.bits[i] is None) for i in xrange(bitsize)):
             result += '#i: %r\n' % (insn,)
             result += handle_insn(bitsize, id, insn)
     return result
@@ -199,29 +202,22 @@ def foo_(bitsize, insns, known, record):
 
 def foo(bitsize, insns, known={}):
     insns_ = []
-    for insn in sorted(insns, key=lambda insn: len([i for i in insn[0] if i is not None])):
-        id = identifier(insn[2], insn[1])
+    for insn in sorted(insns, key=lambda insn: len([i for i in insn.bits if i is not None])):
+        id = insn.identifier()
         if not handlers.has_key(id):
             raise ValueError('! No handler for: ' + id)
-        my_bits = insn[0]
         for insn2 in insns_:
-            his_bits = insn2[0]
-            if all(my_bits[i] == his_bits[i] or his_bits[i] is None for i in xrange(bitsize)):
-                #print 'Special case:', insn[2], 'of:', insn2[2]
-                #print my_bits, his_bits
-                #print insn2
-                specialcase = True
+            if all(insn.bits[i] == insn2.bits[i] or insn2.bits[i] is None for i in xrange(bitsize)):
+                assert not insn2.specialcase
+                #print 'Special case:', insn.name, 'of:', insn2.name
+                #print insn.bits, insn2.bits
+                insn.specialcase = True
                 break
-        else:
-            specialcase = False
-        insns_.append((insn[0], insn[1], insn[2], specialcase))
+        insns_.append(insn)
     known_ = [None] * bitsize
     for k, v in known.iteritems(): known_[k] = v
     return foo_(bitsize, insns_, known_, [])
             
-#for insn in allinsns[16]:
-#    print insn
-#die
 _32 = indent(indent(foo(32, allinsns[32], {0: 1, 1: 1, 2: 1})))
 _16 = indent(indent(foo(16, allinsns[16], {})))
 for k in handlers:
