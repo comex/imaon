@@ -93,7 +93,7 @@ def identifier(name, vars):
     '#  avail: ' + ' '.join('%s:%s' % (name, hi - lo + 1) for (name, hi, lo) in vars) + '\n'
 
 if False:
-    f = open('defs.nim', 'w')
+    f = open('defs_.nim', 'w')
     for name, vars in allnames:
         f.write(identifier(name, vars))
         f.write('\n')
@@ -138,7 +138,7 @@ def handle_insn(bitsize, id, insn):
     for name, hi, lo in insn[1]:
         expr = 'insn[%d,%d]' % (hi, lo)
         typ = 'TBinary'
-        if re.match('R[a-z][a-z]?$', name):
+        if re.match('R[a-z][a-z]?2?$', name):
             expr = 'TReg(%s.num)' % expr
             typ = 'TReg'
         elif name == 'S':
@@ -201,7 +201,8 @@ def foo(bitsize, insns, known={}):
     insns_ = []
     for insn in sorted(insns, key=lambda insn: len([i for i in insn[0] if i is not None])):
         id = identifier(insn[2], insn[1])
-        if not handlers.has_key(id): continue
+        if not handlers.has_key(id):
+            raise ValueError('! No handler for: ' + id)
         my_bits = insn[0]
         for insn2 in insns_:
             his_bits = insn2[0]
@@ -223,9 +224,12 @@ def foo(bitsize, insns, known={}):
 #die
 _32 = indent(indent(foo(32, allinsns[32], {0: 1, 1: 1, 2: 1})))
 _16 = indent(indent(foo(16, allinsns[16], {})))
+for k in handlers:
+    print '! Bad handler: ' + k
 open('disas.nim', 'w').write('''
 import armtypes, armfuncs, types
 import allAC
+include "ltgt"
 template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
   proc processInsn16*(ctx : TAsmCtx, insn : TBinary, t : TInsnFlags) : TVal =
 %s

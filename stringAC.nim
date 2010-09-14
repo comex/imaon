@@ -74,9 +74,9 @@ proc RegListA*(ctx : PStringAsmCtx, input : set[TReg]) : TStringVal =
                 if rangestart == i - 1:
                     nil
                 elif rangestart == i - 2:
-                    res.add(", R" & $(i - 1))
+                    res.add(", " & $(i - 1))
                 else:
-                    res.add("-R" & $(i - 1))
+                    res.add("-" & $(i - 1))
                 ranging = false
     if SP in input:
         if len(res) > 1: res.add(", ")

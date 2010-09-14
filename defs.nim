@@ -226,7 +226,7 @@ return ctx.opLDC2({}, <coproc, ctx.Deref(>Rn, <cat(imm8, b"00"), 4, P.bit, W.bit
 #  avail: Rn:3 register_list:8
 var rl = cat(b"00000000", register_list)
 if rl[int(Rn)].bit:
-    rl = rl.bclear(int(rn))
+    #rl = rl.bclear(int(rn))
     return ctx.opLDM({}, <Rn, ctx.RegList(rl))
 else:
     return ctx.opLDMIA({}, >Rn, ctx.RegList(rl))
@@ -401,40 +401,44 @@ if Rn == PC: break
 return ctx.opLDRT({}, >Rt, ctx.Deref(<Rn, <imm8, 4, true, false, true))
 #: LSL<c> <Rd>,<Rm>,#<imm5>
 #  avail: imm5:5 Rm:3 Rd:3
-
+# DIShift with b"00" is just a LSL
+return ctx.opLSL(t, >Rd, ctx.Shift(<Rm, LSL, <imm5))
 #: LSL{S}<c>.W <Rd>,<Rm>,#<imm5>
 #  avail: S:1 imm3:3 Rd:4 imm2:2 Rm:4
-
+return ctx.opLSL(S, >Rd, ctx.Shift(<Rm, LSL, <cat(imm3, imm2)))
 #: LSL<c> <Rdn>,<Rm>
 #  avail: Rm:3 Rdn:3
-
+return ctx.opLSL(t, >Rdn, ctx.Shift(<Rdn, LSL, <Rm))
 #: LSL{S}<c>.W <Rd>,<Rn>,<Rm>
 #  avail: S:1 Rn:4 Rd:4 Rm:4
-
+return ctx.opLSL(S, >Rd, ctx.Shift(<Rn, LSL, <Rm))
 #: LSR<c> <Rd>,<Rm>,#<imm5>
 #  avail: imm5:5 Rm:3 Rd:3
-
+return ctx.opLSR(t, >Rd, ctx.Shift(<Rm, LSR, <imm5))
 #: LSR{S}<c>.W <Rd>,<Rm>,#<imm5>
 #  avail: S:1 imm3:3 Rd:4 imm2:2 Rm:4
-
+return ctx.opLSR(S, >Rd, ctx.Shift(<Rm, LSR, <cat(imm3, imm2)))
 #: LSR<c> <Rdn>,<Rm>
 #  avail: Rm:3 Rdn:3
-
+return ctx.opLSR(t, >Rdn, ctx.Shift(<Rdn, LSR, <Rm))
 #: LSR{S}<c>.W <Rd>,<Rn>,<Rm>
 #  avail: S:1 Rn:4 Rd:4 Rm:4
-
+return ctx.opLSR(S, >Rd, ctx.Shift(<Rn, LSR, <Rm))
 #: MCR<c> <coproc>,<opc1>,<Rt>,<CRn>,<CRm>{,<opc2>}
 #  avail: opc1:3 CRn:4 Rt:4 coproc:4 opc2:3 CRm:4
-
+if coproc[3,1] == b"101": break
+return ctx.opMCR({}, <coproc, <opc1, <Rt, <Crn, <Crm, <opc2)
 #: MCR2<c> <coproc>,<opc1>,<Rt>,<CRn>,<CRm>{,<opc2>}
 #  avail: opc1:3 CRn:4 Rt:4 coproc:4 opc2:3 CRm:4
-
+ # no check here!
+return ctx.opMCR2({}, <coproc, <opc1, <Rt, <Crn, <Crm, <opc2)
 #: MCRR<c> <coproc>,<opc1>,<Rt>,<Rt2>,<CRm>
 #  avail: Rt2:4 Rt:4 coproc:4 opc1:4 CRm:4
-
+if coproc[3,1] == b"101": break
+return ctx.opMCRR({}, <coproc, <opc1, <Rt, <Rt2, <CRm)
 #: MCRR2<c> <coproc>,<opc1>,<Rt>,<Rt2>,<CRm>
 #  avail: Rt2:4 Rt:4 coproc:4 opc1:4 CRm:4
-
+return ctx.opMCRR2({}, <coproc, <opc1, <Rt, <Rt2, <CRm)
 #: MLA<c> <Rd>,<Rn>,<Rm>,<Ra>
 #  avail: Rn:4 Ra:4 Rd:4 Rm:4
 
