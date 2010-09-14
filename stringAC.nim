@@ -21,11 +21,11 @@ proc `$`*(a : TStringVal) : string =
 
 proc PCrel(input : TStringVal) : TStringVal =
     result.isImm = false
-    result.str ="PC+" & $input.imm
+    result.str ="PCrel:#" & $input.imm
 
 proc SPrel(input : TStringVal) : TStringVal =
     result.isImm = false
-    result.str = "SP+" & $input.imm
+    result.str = "SPrel:#" & $input.imm
 
 proc newPStringAsmCtx*() : PStringAsmCtx =
     return nil
@@ -97,7 +97,7 @@ proc ShiftA*(ctx : PStringAsmCtx, base : TStringVal, kind : TShiftKind, amt : TS
     result.str = $base & ", " & $kind & (if amt.isImm: "" else: " ") & $amt
 
 proc DerefA*(ctx : PStringAsmCtx, base : TStringVal, offset : TStringVal, size : TDerefSize, kind : TDerefKind) : TStringVal =
-    var sizeA = (if size == 4: "" else: $size)
+    var sizeA = (if size == 4: "" else: "." & $size)
     var offsetA = offset
     if base.str == "PC" and offsetA.isImm:
         offsetA = PCrel(offsetA)
