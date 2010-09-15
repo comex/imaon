@@ -30,6 +30,9 @@ proc PCrel*(ctx : PNullAsmCtx, input : word) : TNullRVal {.inline.} =
 proc ITarg*(ctx : PNullAsmCtx, input : seq[TCond]) : TNullRVal {.inline.} =
     nil
 
+proc CPSarg*(ctx : PNullAsmCtx, I : bool, F : bool) : TNullRVal {.inline.} =
+    nil
+
 proc Reg*(ctx : PNullAsmCtx, input : TReg) : TNullVal {.inline.} =
     nil
 

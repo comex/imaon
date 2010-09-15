@@ -25,7 +25,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 1), (14, 1), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 1), (14, 1), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 1), (14, 1), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None), [('imm11', 10, 0)], 'B<c> <label>', False)
+              #i: <__main__.instruction instance at 0x10048b248>
               #B<c> <label>
               #(1, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -51,7 +51,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(15, 1), (14, 1), (13, 0), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(15, 1), (14, 1), (13, 0), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(15, 1), (14, 1), (13, 0), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 0, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('imm8', 7, 0)], 'SVC<c> #<imm8>', True)
+                    #i: <__main__.instruction instance at 0x1004af4d0>
                     #SVC<c> #<imm8>
                     #(1, 1, 0, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                     block:
@@ -69,7 +69,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
             # [(15, 1), (14, 1), (13, 0), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
             # [(15, 1), (14, 1), (13, 0), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
             # [(15, 1), (14, 1), (13, 0), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-            #i: ((1, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None), [('cond', 11, 8), ('imm8', 7, 0)], 'B<c> <label>', False)
+            #i: <__main__.instruction instance at 0x10048b1b8>
             #B<c> <label>
             #(1, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None)
             block:
@@ -91,7 +91,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 1), (14, 1), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 1), (14, 1), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 1), (14, 1), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 1, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 10, 8), ('register_list', 7, 0)], 'LDM<c> <Rn>,<registers> <Rn> included in <registers>', False)
+              #i: <__main__.instruction instance at 0x1004919e0>
               #LDM<c> <Rn>,<registers> <Rn> included in <registers>
               #(1, 1, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -116,13 +116,17 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 1), (14, 1), (13, 0), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 1), (14, 1), (13, 0), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 1), (14, 1), (13, 0), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 1, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 10, 8), ('register_list', 7, 0)], 'STM<c> <Rn>!,<registers>', False)
+              #i: <__main__.instruction instance at 0x1004a8b00>
               #STM<c> <Rn>!,<registers>
               #(1, 1, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
                 var Rn : TReg = TReg(insn[10,8].num)
                 var register_list : TBinary = insn[7,0]
-                
+                var rl = cat(b"00000000", register_list)
+                if rl[int(Rn)].bit:
+                    return ctx.opSTM({}, <Rn, ctx.RegList(rl))
+                else:
+                    return ctx.opSTMIA({}, >Rn, ctx.RegList(rl))
                 nil
       else: #14
         # [(15, 1), (14, 0)]
@@ -153,11 +157,11 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 if not bit(insn, 1):
                                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 0), (3, 0), (2, 0), (1, 0)]
                                   if not bit(insn, 0):
-                                    #i: ((1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0), [], 'SEV<c>', True)
+                                    #i: <__main__.instruction instance at 0x1004a86c8>
                                     #SEV<c>
                                     #(1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0)
                                     block:
-                                      
+                                      return ctx.opSEV({})
                                       nil
                       else: #6
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 0)]
@@ -172,7 +176,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 if not bit(insn, 1):
                                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 0), (5, 1), (4, 1), (3, 0), (2, 0), (1, 0)]
                                   if not bit(insn, 0):
-                                    #i: ((1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0), [], 'WFI<c>', True)
+                                    #i: <__main__.instruction instance at 0x1004b44d0>
                                     #WFI<c>
                                     #(1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0)
                                     block:
@@ -187,7 +191,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 if not bit(insn, 1):
                                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 0), (5, 1), (4, 0), (3, 0), (2, 0), (1, 0)]
                                   if not bit(insn, 0):
-                                    #i: ((1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0), [], 'WFE<c>', True)
+                                    #i: <__main__.instruction instance at 0x1004b43b0>
                                     #WFE<c>
                                     #(1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0)
                                     block:
@@ -204,7 +208,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 if not bit(insn, 1):
                                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 0), (5, 0), (4, 1), (3, 0), (2, 0), (1, 0)]
                                   if not bit(insn, 0):
-                                    #i: ((1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0), [], 'YIELD<c>', True)
+                                    #i: <__main__.instruction instance at 0x1004b45f0>
                                     #YIELD<c>
                                     #(1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0)
                                     block:
@@ -219,11 +223,11 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 if not bit(insn, 1):
                                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 0), (5, 0), (4, 0), (3, 0), (2, 0), (1, 0)]
                                   if not bit(insn, 0):
-                                    #i: ((1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0), [], 'NOP<c>', True)
+                                    #i: <__main__.instruction instance at 0x10049ddd0>
                                     #NOP<c>
                                     #(1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0)
                                     block:
-                                      
+                                      return ctx.opNOP({})
                                       nil
                     # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2)]
                     # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2)]
@@ -232,7 +236,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 0, 1, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('firstcond', 7, 4), ('mask', 3, 0)], 'IT{x{y{z}}} <firstcond>', False)
+                    #i: <__main__.instruction instance at 0x100491710>
                     #IT{x{y{z}}} <firstcond>
                     #(1, 0, 1, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                     block:
@@ -251,7 +255,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 0, 1, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None), [('imm8', 7, 0)], 'BKPT #<imm8>', False)
+                    #i: <__main__.instruction instance at 0x10048b758>
                     #BKPT #<imm8>
                     #(1, 0, 1, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None)
                     block:
@@ -268,13 +272,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((1, 0, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None), [('P', 8, 8), ('register_list', 7, 0)], 'POP<c> <registers>', False)
+                  #i: <__main__.instruction instance at 0x1004a0830>
                   #POP<c> <registers>
                   #(1, 0, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None)
                   block:
                     var P : TBinary = insn[8,8]
                     var register_list : TBinary = insn[7,0]
-                    
+                    return ctx.opLDMIA({}, >SP, ctx.RegList(cat(P, b"0000000", register_list)))
                     nil
               else: #10
                 # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0)]
@@ -291,13 +295,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 0, 1, 1, 1, 0, 1, 0, 1, 1, None, None, None, None, None, None), [('Rm', 5, 3), ('Rd', 2, 0)], 'REVSH<c> <Rd>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004a0d88>
                         #REVSH<c> <Rd>,<Rm>
                         #(1, 0, 1, 1, 1, 0, 1, 0, 1, 1, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rd : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opREVSH({}, >Rd, <Rm)
                           nil
                     else: #7
                       # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 0)]
@@ -308,13 +312,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 0, 1, 1, 1, 0, 1, 0, 0, 1, None, None, None, None, None, None), [('Rm', 5, 3), ('Rd', 2, 0)], 'REV16<c> <Rd>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004a0c68>
                         #REV16<c> <Rd>,<Rm>
                         #(1, 0, 1, 1, 1, 0, 1, 0, 0, 1, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rd : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opREV16({}, >Rd, <Rm)
                           nil
                       else: #6
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0)]
@@ -323,13 +327,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 1), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 0, 1, 1, 1, 0, 1, 0, 0, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rd', 2, 0)], 'REV<c> <Rd>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004a0b48>
                         #REV<c> <Rd>,<Rm>
                         #(1, 0, 1, 1, 1, 0, 1, 0, 0, 0, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rd : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opREV({}, >Rd, <Rm)
                           nil
             else: #11
               # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0)]
@@ -351,14 +355,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             if not bit(insn, 2):
                               # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 1), (9, 1), (8, 0), (7, 0), (6, 1), (5, 1), (4, 2), (3, 0), (2, 0)]
                               # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 1), (9, 1), (8, 0), (7, 0), (6, 1), (5, 1), (4, 2), (3, 0), (2, 0), (1, 2)]
-                              #i: ((1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, None, 0, 0, None, None), [('im', 4, 4), ('I', 1, 1), ('F', 0, 0)], 'CPS<effect> <iflags>', False)
+                              #i: <__main__.instruction instance at 0x1004911b8>
                               #CPS<effect> <iflags>
                               #(1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, None, 0, 0, None, None)
                               block:
                                 var im : TBinary = insn[4,4]
                                 var I : TBinary = insn[1,1]
                                 var F : TBinary = insn[0,0]
-                                
+                                #nil # see B4-2
+                                return ctx.opCPS(if not im.bit: {ifCPSIE} else: {}, <0, <I, <F)
                                 nil
                 else: #9
                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 1), (9, 0)]
@@ -370,13 +375,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((1, 0, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None), [('M', 8, 8), ('register_list', 7, 0)], 'PUSH<c> <registers>', False)
+                  #i: <__main__.instruction instance at 0x1004a0950>
                   #PUSH<c> <registers>
                   #(1, 0, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None)
                   block:
                     var M : TBinary = insn[8,8]
                     var register_list : TBinary = insn[7,0]
-                    
+                    return ctx.opSTMIA({}, >SP, ctx.RegList(cat(b"0", M, b"0000000", register_list)))
                     nil
               else: #10
                 # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0)]
@@ -393,7 +398,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 0, 1, 1, 0, 0, 1, 0, 1, 1, None, None, None, None, None, None), [('Rm', 5, 3), ('Rd', 2, 0)], 'UXTB<c> <Rd>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004b40e0>
                         #UXTB<c> <Rd>,<Rm>
                         #(1, 0, 1, 1, 0, 0, 1, 0, 1, 1, None, None, None, None, None, None)
                         block:
@@ -408,7 +413,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 0, 1, 1, 0, 0, 1, 0, 1, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rd', 2, 0)], 'UXTH<c> <Rd>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004b4248>
                         #UXTH<c> <Rd>,<Rm>
                         #(1, 0, 1, 1, 0, 0, 1, 0, 1, 0, None, None, None, None, None, None)
                         block:
@@ -425,13 +430,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 0, 1, 1, 0, 0, 1, 0, 0, 1, None, None, None, None, None, None), [('Rm', 5, 3), ('Rd', 2, 0)], 'SXTB<c> <Rd>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004af638>
                         #SXTB<c> <Rd>,<Rm>
                         #(1, 0, 1, 1, 0, 0, 1, 0, 0, 1, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rd : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opSXTB({}, <Rd, <Rm)
                           nil
                       else: #6
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0)]
@@ -440,13 +445,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 0, 1, 1, 0, 0, 1, 0, 0, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rd', 2, 0)], 'SXTH<c> <Rd>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004af7a0>
                         #SXTH<c> <Rd>,<Rm>
                         #(1, 0, 1, 1, 0, 0, 1, 0, 0, 0, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rd : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opSXTH({}, >Rd, <Rm)
                           nil
                 else: #9
                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0)]
@@ -460,12 +465,12 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 0, 1, 1, 0, 0, 0, 0, 1, None, None, None, None, None, None, None), [('imm7', 6, 0)], 'SUB<c> SP,SP,#<imm7>', False)
+                      #i: <__main__.instruction instance at 0x1004af200>
                       #SUB<c> SP,SP,#<imm7>
                       #(1, 0, 1, 1, 0, 0, 0, 0, 1, None, None, None, None, None, None, None)
                       block:
                         var imm7 : TBinary = insn[6,0]
-                        
+                        return ctx.opSUB({}, >SP, <SP, <cat(imm7, b"00"))
                         nil
                     else: #7
                       # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0)]
@@ -475,7 +480,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 0, 1, 1, 0, 0, 0, 0, 0, None, None, None, None, None, None, None), [('imm7', 6, 0)], 'ADD<c> SP,SP,#<imm7>', False)
+                      #i: <__main__.instruction instance at 0x10043c7a0>
                       #ADD<c> SP,SP,#<imm7>
                       #(1, 0, 1, 1, 0, 0, 0, 0, 0, None, None, None, None, None, None, None)
                       block:
@@ -495,7 +500,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                 # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 2), (10, 0), (9, 2), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                 # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 2), (10, 0), (9, 2), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                 # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 2), (10, 0), (9, 2), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                #i: ((1, 0, 1, 1, None, 0, None, 1, None, None, None, None, None, None, None, None), [('op', 11, 11), ('i', 9, 9), ('imm5', 7, 3), ('Rn', 2, 0)], 'CB{N}Z <Rn>,<label>', False)
+                #i: <__main__.instruction instance at 0x10048ba28>
                 #CB{N}Z <Rn>,<label>
                 #(1, 0, 1, 1, None, 0, None, 1, None, None, None, None, None, None, None, None)
                 block:
@@ -523,7 +528,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 1), (14, 0), (13, 1), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 1), (14, 0), (13, 1), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 1), (14, 0), (13, 1), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 0, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rd', 10, 8), ('imm8', 7, 0)], 'ADD<c> <Rd>,SP,#<imm8>', False)
+              #i: <__main__.instruction instance at 0x10043c7e8>
               #ADD<c> <Rd>,SP,#<imm8>
               #(1, 0, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -543,7 +548,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 1), (14, 0), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 1), (14, 0), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 1), (14, 0), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 0, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None), [('Rd', 10, 8), ('imm8', 7, 0)], 'ADR<c> <Rd>,<label>', False)
+              #i: <__main__.instruction instance at 0x10043cab8>
               #ADR<c> <Rd>,<label>
               #(1, 0, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -567,7 +572,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 1), (14, 0), (13, 0), (12, 1), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 1), (14, 0), (13, 0), (12, 1), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 1), (14, 0), (13, 0), (12, 1), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 0, 0, 1, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rt', 10, 8), ('imm8', 7, 0)], 'LDR<c> <Rt>,[SP{,#<imm8>}]', False)
+              #i: <__main__.instruction instance at 0x100491cf8>
               #LDR<c> <Rt>,[SP{,#<imm8>}]
               #(1, 0, 0, 1, 1, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -587,13 +592,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 1), (14, 0), (13, 0), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 1), (14, 0), (13, 0), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 1), (14, 0), (13, 0), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 0, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None), [('Rt', 10, 8), ('imm8', 7, 0)], 'STR<c> <Rt>,[SP,#<imm8>]', False)
+              #i: <__main__.instruction instance at 0x1004a8dd0>
               #STR<c> <Rt>,[SP,#<imm8>]
               #(1, 0, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
                 var Rt : TReg = TReg(insn[10,8].num)
                 var imm8 : TBinary = insn[7,0]
-                
+                return ctx.opSTR({}, <Rt, ctx.Deref(>SP, <cat(imm8, b"00"), 4, true, false, true))
                 nil
           else: #12
             # [(15, 1), (14, 0), (13, 0), (12, 0)]
@@ -609,7 +614,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 0, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None), [('imm5', 10, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'LDRH<c> <Rt>,[<Rn>{,#<imm5>}]', False)
+              #i: <__main__.instruction instance at 0x100495a28>
               #LDRH<c> <Rt>,[<Rn>{,#<imm5>}]
               #(1, 0, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -630,14 +635,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 1), (14, 0), (13, 0), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 1), (14, 0), (13, 0), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 1), (14, 0), (13, 0), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None), [('imm5', 10, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'STRH<c> <Rt>,[<Rn>{,#<imm5>}]', False)
+              #i: <__main__.instruction instance at 0x1004ab908>
               #STRH<c> <Rt>,[<Rn>{,#<imm5>}]
               #(1, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
                 var imm5 : TBinary = insn[10,6]
                 var Rn : TReg = TReg(insn[5,3].num)
                 var Rt : TReg = TReg(insn[2,0].num)
-                
+                return ctx.opSTRH({}, <Rt, ctx.Deref(>Rn, <cat(imm5, b"0"), 2, true, false, true))
                 nil
     else: #15
       # [(15, 0)]
@@ -659,7 +664,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 1), (13, 1), (12, 1), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 1), (13, 1), (12, 1), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 1), (13, 1), (12, 1), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None), [('imm5', 10, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'LDRB<c> <Rt>,[<Rn>{,#<imm5>}]', False)
+              #i: <__main__.instruction instance at 0x100495200>
               #LDRB<c> <Rt>,[<Rn>{,#<imm5>}]
               #(0, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -680,14 +685,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 1), (13, 1), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 1), (13, 1), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 1), (13, 1), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None), [('imm5', 10, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'STRB<c> <Rt>,[<Rn>,#<imm5>]', False)
+              #i: <__main__.instruction instance at 0x1004ab1b8>
               #STRB<c> <Rt>,[<Rn>,#<imm5>]
               #(0, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
                 var imm5 : TBinary = insn[10,6]
                 var Rn : TReg = TReg(insn[5,3].num)
                 var Rt : TReg = TReg(insn[2,0].num)
-                
+                return ctx.opSTRB({}, <Rt, ctx.Deref(>Rn, <imm5, 1, true, false, true))
                 nil
           else: #12
             # [(15, 0), (14, 1), (13, 1), (12, 0)]
@@ -703,7 +708,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 1), (13, 1), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 1), (13, 1), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 1), (13, 1), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None), [('imm5', 10, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'LDR<c> <Rt>, [<Rn>{,#<imm5>}]', False)
+              #i: <__main__.instruction instance at 0x100491b90>
               #LDR<c> <Rt>, [<Rn>{,#<imm5>}]
               #(0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -724,14 +729,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 1), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 1), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 1), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None), [('imm5', 10, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'STR<c> <Rt>, [<Rn>{,#<imm5>}]', False)
+              #i: <__main__.instruction instance at 0x1004a8d40>
               #STR<c> <Rt>, [<Rn>{,#<imm5>}]
               #(0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
                 var imm5 : TBinary = insn[10,6]
                 var Rn : TReg = TReg(insn[5,3].num)
                 var Rt : TReg = TReg(insn[2,0].num)
-                
+                return ctx.opSTR({}, <Rt, ctx.Deref(>Rn, <cat(imm5, b"00"), 4, true, false, true))
                 nil
         else: #13
           # [(15, 0), (14, 1), (13, 0)]
@@ -751,7 +756,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 1), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 1), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 1), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 1, 0, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None), [('Rm', 8, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'LDRSH<c> <Rt>,[<Rn>,<Rm>]', False)
+                  #i: <__main__.instruction instance at 0x100499638>
                   #LDRSH<c> <Rt>,[<Rn>,<Rm>]
                   #(0, 1, 0, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None)
                   block:
@@ -770,7 +775,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 1, 0, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None), [('Rm', 8, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'LDRB<c> <Rt>,[<Rn>,<Rm>]', False)
+                  #i: <__main__.instruction instance at 0x100495488>
                   #LDRB<c> <Rt>,[<Rn>,<Rm>]
                   #(0, 1, 0, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None)
                   block:
@@ -791,7 +796,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 0), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 0), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 0), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 1, 0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, None), [('Rm', 8, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'LDRH<c> <Rt>,[<Rn>,<Rm>]', False)
+                  #i: <__main__.instruction instance at 0x100495cb0>
                   #LDRH<c> <Rt>,[<Rn>,<Rm>]
                   #(0, 1, 0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, None)
                   block:
@@ -810,7 +815,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 0), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 0), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 1), (10, 0), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 1, 0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None), [('Rm', 8, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'LDR<c> <Rt>,[<Rn>,<Rm>]', False)
+                  #i: <__main__.instruction instance at 0x100495050>
                   #LDR<c> <Rt>,[<Rn>,<Rm>]
                   #(0, 1, 0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None)
                   block:
@@ -833,7 +838,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 1), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 1), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 1), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 1, 0, 1, 0, 1, 1, None, None, None, None, None, None, None, None, None), [('Rm', 8, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'LDRSB<c> <Rt>,[<Rn>,<Rm>]', False)
+                  #i: <__main__.instruction instance at 0x1004991b8>
                   #LDRSB<c> <Rt>,[<Rn>,<Rm>]
                   #(0, 1, 0, 1, 0, 1, 1, None, None, None, None, None, None, None, None, None)
                   block:
@@ -852,14 +857,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 1, 0, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None), [('Rm', 8, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'STRB<c> <Rt>,[<Rn>,<Rm>]', False)
+                  #i: <__main__.instruction instance at 0x1004ab3b0>
                   #STRB<c> <Rt>,[<Rn>,<Rm>]
                   #(0, 1, 0, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None)
                   block:
                     var Rm : TReg = TReg(insn[8,6].num)
                     var Rn : TReg = TReg(insn[5,3].num)
                     var Rt : TReg = TReg(insn[2,0].num)
-                    
+                    return ctx.opSTRB({}, <Rt, ctx.Deref(>Rn, <Rm, 1, true, false, true))
                     nil
               else: #10
                 # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 0)]
@@ -873,14 +878,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 0), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 0), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 0), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 1, 0, 1, 0, 0, 1, None, None, None, None, None, None, None, None, None), [('Rm', 8, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'STRH<c> <Rt>,[<Rn>,<Rm>]', False)
+                  #i: <__main__.instruction instance at 0x1004abb00>
                   #STRH<c> <Rt>,[<Rn>,<Rm>]
                   #(0, 1, 0, 1, 0, 0, 1, None, None, None, None, None, None, None, None, None)
                   block:
                     var Rm : TReg = TReg(insn[8,6].num)
                     var Rn : TReg = TReg(insn[5,3].num)
                     var Rt : TReg = TReg(insn[2,0].num)
-                    
+                    if Rt == PC: break
+                    return ctx.opSTRH({}, <Rt, ctx.Deref(<Rn, <Rm, 2, true, false, true))
                     nil
                 else: #9
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 0), (9, 0)]
@@ -892,14 +898,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 0), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 0), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 1), (13, 0), (12, 1), (11, 0), (10, 0), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 1, 0, 1, 0, 0, 0, None, None, None, None, None, None, None, None, None), [('Rm', 8, 6), ('Rn', 5, 3), ('Rt', 2, 0)], 'STR<c> <Rt>,[<Rn>,<Rm>]', False)
+                  #i: <__main__.instruction instance at 0x1004ab050>
                   #STR<c> <Rt>,[<Rn>,<Rm>]
                   #(0, 1, 0, 1, 0, 0, 0, None, None, None, None, None, None, None, None, None)
                   block:
                     var Rm : TReg = TReg(insn[8,6].num)
                     var Rn : TReg = TReg(insn[5,3].num)
                     var Rt : TReg = TReg(insn[2,0].num)
-                    
+                    return ctx.opSTR({}, <Rt, ctx.Deref(>Rn, <Rm, 4, true, false, true))
                     nil
           else: #12
             # [(15, 0), (14, 1), (13, 0), (12, 0)]
@@ -915,7 +921,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 1, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rt', 10, 8), ('imm8', 7, 0)], 'LDR<c> <Rt>,<label>', False)
+              #i: <__main__.instruction instance at 0x100491ef0>
               #LDR<c> <Rt>,<label>
               #(0, 1, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -942,7 +948,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         if not bit(insn, 1):
                           # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 1), (8, 1), (7, 1), (6, 2), (5, 2), (4, 2), (3, 2), (2, 0), (1, 0)]
                           if not bit(insn, 0):
-                            #i: ((0, 1, 0, 0, 0, 1, 1, 1, 1, None, None, None, None, 0, 0, 0), [('Rm', 6, 3)], 'BLX<c> <Rm>', False)
+                            #i: <__main__.instruction instance at 0x10048b878>
                             #BLX<c> <Rm>
                             #(0, 1, 0, 0, 0, 1, 1, 1, 1, None, None, None, None, 0, 0, 0)
                             block:
@@ -960,7 +966,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         if not bit(insn, 1):
                           # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 1), (8, 1), (7, 0), (6, 2), (5, 2), (4, 2), (3, 2), (2, 0), (1, 0)]
                           if not bit(insn, 0):
-                            #i: ((0, 1, 0, 0, 0, 1, 1, 1, 0, None, None, None, None, 0, 0, 0), [('Rm', 6, 3)], 'BX<c> <Rm>', False)
+                            #i: <__main__.instruction instance at 0x10048b908>
                             #BX<c> <Rm>
                             #(0, 1, 0, 0, 0, 1, 1, 1, 0, None, None, None, None, 0, 0, 0)
                             block:
@@ -976,14 +982,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((0, 1, 0, 0, 0, 1, 1, 0, None, None, None, None, None, None, None, None), [('D', 7, 7), ('Rm', 6, 3), ('Rd', 2, 0)], 'MOV<c> <Rd>,<Rm>', False)
+                    #i: <__main__.instruction instance at 0x10049d488>
                     #MOV<c> <Rd>,<Rm>
                     #(0, 1, 0, 0, 0, 1, 1, 0, None, None, None, None, None, None, None, None)
                     block:
                       var D : TBinary = insn[7,7]
                       var Rm : TReg = TReg(insn[6,3].num)
                       var Rd : TReg = TReg(insn[2,0].num)
-                      
+                      return ctx.opMOV(t, >Rd, <Rm)
                       nil
                 else: #9
                   # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0)]
@@ -996,7 +1002,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((0, 1, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None), [('N', 7, 7), ('Rm', 6, 3), ('Rn', 2, 0)], 'CMP<c> <Rn>,<Rm>', False)
+                    #i: <__main__.instruction instance at 0x100491098>
                     #CMP<c> <Rn>,<Rm>
                     #(0, 1, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None)
                     block:
@@ -1019,7 +1025,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         if not bit(insn, 1):
                           # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0), (8, 0), (7, 1), (6, 2), (5, 2), (4, 2), (3, 2), (2, 1), (1, 0)]
                           if bit(insn, 0):
-                            #i: ((0, 1, 0, 0, 0, 1, 0, 0, 1, None, None, None, None, 1, 0, 1), [('Rm', 6, 3)], 'ADD<c> SP,<Rm>', True)
+                            #i: <__main__.instruction instance at 0x10043ca28>
                             #ADD<c> SP,<Rm>
                             #(0, 1, 0, 0, 0, 1, 0, 0, 1, None, None, None, None, 1, 0, 1)
                             block:
@@ -1037,7 +1043,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0), (8, 0), (7, 2), (6, 1), (5, 1), (4, 0), (3, 1)]
                             # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0), (8, 0), (7, 2), (6, 1), (5, 1), (4, 0), (3, 1), (2, 2)]
                             # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0), (8, 0), (7, 2), (6, 1), (5, 1), (4, 0), (3, 1), (2, 2), (1, 2)]
-                            #i: ((0, 1, 0, 0, 0, 1, 0, 0, None, 1, 1, 0, 1, None, None, None), [('DM', 7, 7), ('Rdm', 2, 0)], 'ADD<c> <Rdm>, SP, <Rdm>', True)
+                            #i: <__main__.instruction instance at 0x10043c998>
                             #ADD<c> <Rdm>, SP, <Rdm>
                             #(0, 1, 0, 0, 0, 1, 0, 0, None, 1, 1, 0, 1, None, None, None)
                             block:
@@ -1052,7 +1058,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 1), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((0, 1, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None), [('DN', 7, 7), ('Rm', 6, 3), ('Rdn', 2, 0)], 'ADD<c> <Rdn>,<Rm>', False)
+                    #i: <__main__.instruction instance at 0x10043c758>
                     #ADD<c> <Rdn>,<Rm>
                     #(0, 1, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None)
                     block:
@@ -1078,13 +1084,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 1, 1, 1, 1, None, None, None, None, None, None), [('Rm', 5, 3), ('Rd', 2, 0)], 'MVN<c> <Rd>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x10049dc68>
                         #MVN<c> <Rd>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 1, 1, 1, 1, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rd : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opMVN(t, >Rd, <Rm)
                           nil
                       else: #6
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 1), (6, 0)]
@@ -1093,7 +1099,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 1, 1, 1, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rdn', 2, 0)], 'BIC<c> <Rdn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x10048b6c8>
                         #BIC<c> <Rdn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 1, 1, 1, 0, None, None, None, None, None, None)
                         block:
@@ -1110,13 +1116,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 1, 1, 0, 1, None, None, None, None, None, None), [('Rn', 5, 3), ('Rdm', 2, 0)], 'MUL<c> <Rdm>,<Rn>,<Rdm>', False)
+                        #i: <__main__.instruction instance at 0x10049dab8>
                         #MUL<c> <Rdm>,<Rn>,<Rdm>
                         #(0, 1, 0, 0, 0, 0, 1, 1, 0, 1, None, None, None, None, None, None)
                         block:
                           var Rn : TReg = TReg(insn[5,3].num)
                           var Rdm : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opMUL(t, >Rdm, <Rn, <Rdm)
                           nil
                       else: #6
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 0), (6, 0)]
@@ -1125,13 +1131,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 1), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 1, 1, 0, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rdn', 2, 0)], 'ORR<c> <Rdn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004a0170>
                         #ORR<c> <Rdn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 1, 1, 0, 0, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rdn : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opORR(t, >Rdn, <Rdn, <Rm)
                           nil
                   else: #8
                     # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0)]
@@ -1144,7 +1150,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 1, 0, 1, 1, None, None, None, None, None, None), [('Rm', 5, 3), ('Rn', 2, 0)], 'CMN<c> <Rn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x10048bd88>
                         #CMN<c> <Rn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 1, 0, 1, 1, None, None, None, None, None, None)
                         block:
@@ -1159,7 +1165,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 1, 0, 1, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rn', 2, 0)], 'CMP<c> <Rn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x100491050>
                         #CMP<c> <Rn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 1, 0, 1, 0, None, None, None, None, None, None)
                         block:
@@ -1176,13 +1182,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 1, 0, 0, 1, None, None, None, None, None, None), [('Rn', 5, 3), ('Rd', 2, 0)], 'RSB<c> <Rd>,<Rn>,#0', False)
+                        #i: <__main__.instruction instance at 0x1004a8170>
                         #RSB<c> <Rd>,<Rn>,#0
                         #(0, 1, 0, 0, 0, 0, 1, 0, 0, 1, None, None, None, None, None, None)
                         block:
                           var Rn : TReg = TReg(insn[5,3].num)
                           var Rd : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opRSB(t, >Rd, <Rn, <0)
                           nil
                       else: #6
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0)]
@@ -1191,13 +1197,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 1), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 1, 0, 0, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rn', 2, 0)], 'TST<c> <Rn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004afb90>
                         #TST<c> <Rn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 1, 0, 0, 0, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rn : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opTST({ifS}, <Rn, <Rm)
                           nil
                 else: #9
                   # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0)]
@@ -1212,13 +1218,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 0, 1, 1, 1, None, None, None, None, None, None), [('Rm', 5, 3), ('Rdn', 2, 0)], 'ROR<c> <Rdn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004a0f38>
                         #ROR<c> <Rdn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 0, 1, 1, 1, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rdn : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opROR(t, >Rdn, <Rdn, <Rm)
                           nil
                       else: #6
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 1), (6, 0)]
@@ -1227,13 +1233,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 0, 1, 1, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rdn', 2, 0)], 'SBC<c> <Rdn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x1004a8440>
                         #SBC<c> <Rdn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 0, 1, 1, 0, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rdn : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opSBC(t, >Rdn, <Rdn, <Rm)
                           nil
                     else: #7
                       # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 0)]
@@ -1244,7 +1250,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None), [('Rm', 5, 3), ('Rdn', 2, 0)], 'ADC<c> <Rdn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x10043c320>
                         #ADC<c> <Rdn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None)
                         block:
@@ -1259,7 +1265,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 1), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rdn', 2, 0)], 'ASR<c> <Rdn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x10048b098>
                         #ASR<c> <Rdn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None)
                         block:
@@ -1278,7 +1284,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 0, 0, 1, 1, None, None, None, None, None, None), [('Rm', 5, 3), ('Rdn', 2, 0)], 'LSR<c> <Rdn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x100499d88>
                         #LSR<c> <Rdn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 0, 0, 1, 1, None, None, None, None, None, None)
                         block:
@@ -1293,7 +1299,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 0, 0, 1, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rdn', 2, 0)], 'LSL<c> <Rdn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x100499ab8>
                         #LSL<c> <Rdn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 0, 0, 1, 0, None, None, None, None, None, None)
                         block:
@@ -1310,7 +1316,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 1), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 0, 0, 0, 1, None, None, None, None, None, None), [('Rm', 5, 3), ('Rdn', 2, 0)], 'EOR<c> <Rdn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x100491560>
                         #EOR<c> <Rdn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 0, 0, 0, 1, None, None, None, None, None, None)
                         block:
@@ -1325,7 +1331,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 1), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 1, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rdn', 2, 0)], 'AND<c> <Rdn>,<Rm>', False)
+                        #i: <__main__.instruction instance at 0x10043cdd0>
                         #AND<c> <Rdn>,<Rm>
                         #(0, 1, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                         block:
@@ -1351,13 +1357,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 0), (13, 1), (12, 1), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 0), (13, 1), (12, 1), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 0), (13, 1), (12, 1), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 0, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rdn', 10, 8), ('imm8', 7, 0)], 'SUB<c> <Rdn>,#<imm8>', False)
+              #i: <__main__.instruction instance at 0x1004abea8>
               #SUB<c> <Rdn>,#<imm8>
               #(0, 0, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None)
               block:
                 var Rdn : TReg = TReg(insn[10,8].num)
                 var imm8 : TBinary = insn[7,0]
-                
+                return ctx.opSUB(t, >Rdn, <Rdn, <imm8)
                 nil
             else: #11
               # [(15, 0), (14, 0), (13, 1), (12, 1), (11, 0)]
@@ -1371,7 +1377,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 0), (13, 1), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 0), (13, 1), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 0), (13, 1), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 0, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None), [('Rdn', 10, 8), ('imm8', 7, 0)], 'ADD<c> <Rdn>,#<imm8>', False)
+              #i: <__main__.instruction instance at 0x10043c3f8>
               #ADD<c> <Rdn>,#<imm8>
               #(0, 0, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -1393,7 +1399,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 0), (13, 1), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 0), (13, 1), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 0), (13, 1), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 10, 8), ('imm8', 7, 0)], 'CMP<c> <Rn>,#<imm8>', False)
+              #i: <__main__.instruction instance at 0x10048be60>
               #CMP<c> <Rn>,#<imm8>
               #(0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -1413,13 +1419,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 0), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 0), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 0), (13, 1), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None), [('Rd', 10, 8), ('imm8', 7, 0)], 'MOV<c> <Rd>,#<imm8>', False)
+              #i: <__main__.instruction instance at 0x10049d2d8>
               #MOV<c> <Rd>,#<imm8>
               #(0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
                 var Rd : TReg = TReg(insn[10,8].num)
                 var imm8 : TBinary = insn[7,0]
-                
+                return ctx.opMOV(t, >Rd, <imm8)
                 nil
         else: #13
           # [(15, 0), (14, 0), (13, 0)]
@@ -1439,14 +1445,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 1), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 1), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 1), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 0, 0, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None), [('imm3', 8, 6), ('Rn', 5, 3), ('Rd', 2, 0)], 'SUB<c> <Rd>,<Rn>,#<imm3>', False)
+                  #i: <__main__.instruction instance at 0x1004abe60>
                   #SUB<c> <Rd>,<Rn>,#<imm3>
                   #(0, 0, 0, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None)
                   block:
                     var imm3 : TBinary = insn[8,6]
                     var Rn : TReg = TReg(insn[5,3].num)
                     var Rd : TReg = TReg(insn[2,0].num)
-                    
+                    return ctx.opSUB(t, >Rd, <Rn, <imm3)
                     nil
                 else: #9
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 1), (9, 0)]
@@ -1458,7 +1464,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 1), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 0, 0, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None), [('imm3', 8, 6), ('Rn', 5, 3), ('Rd', 2, 0)], 'ADD<c> <Rd>,<Rn>,#<imm3>', False)
+                  #i: <__main__.instruction instance at 0x10043c248>
                   #ADD<c> <Rd>,<Rn>,#<imm3>
                   #(0, 0, 0, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None)
                   block:
@@ -1479,14 +1485,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 0), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 0), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 0), (9, 1), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 0, 0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, None), [('Rm', 8, 6), ('Rn', 5, 3), ('Rd', 2, 0)], 'SUB<c> <Rd>,<Rn>,<Rm>', False)
+                  #i: <__main__.instruction instance at 0x1004af0e0>
                   #SUB<c> <Rd>,<Rn>,<Rm>
                   #(0, 0, 0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, None)
                   block:
                     var Rm : TReg = TReg(insn[8,6].num)
                     var Rn : TReg = TReg(insn[5,3].num)
                     var Rd : TReg = TReg(insn[2,0].num)
-                    
+                    return ctx.opSUB(t, >Rd, <Rn, <Rm)
                     nil
                 else: #9
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 0), (9, 0)]
@@ -1498,7 +1504,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 0), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 0), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                   # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 1), (10, 0), (9, 0), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                  #i: ((0, 0, 0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None), [('Rm', 8, 6), ('Rn', 5, 3), ('Rd', 2, 0)], 'ADD<c> <Rd>,<Rn>,<Rm>', False)
+                  #i: <__main__.instruction instance at 0x10043c710>
                   #ADD<c> <Rd>,<Rn>,<Rm>
                   #(0, 0, 0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None)
                   block:
@@ -1519,7 +1525,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 0), (13, 0), (12, 1), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 0, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None), [('imm5', 10, 6), ('Rm', 5, 3), ('Rd', 2, 0)], 'ASR<c> <Rd>,<Rm>,#<imm5>', False)
+              #i: <__main__.instruction instance at 0x10043ce60>
               #ASR<c> <Rd>,<Rm>,#<imm5>
               #(0, 0, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -1542,7 +1548,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 0, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None), [('imm5', 10, 6), ('Rm', 5, 3), ('Rd', 2, 0)], 'LSR<c> <Rd>,<Rm>,#<imm5>', False)
+              #i: <__main__.instruction instance at 0x100499bd8>
               #LSR<c> <Rd>,<Rm>,#<imm5>
               #(0, 0, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -1568,13 +1574,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                         # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rm', 5, 3), ('Rd', 2, 0)], 'MOVS <Rd>,<Rm> (formerly LSL <Rd>,<Rm>,#0)', True)
+                        #i: <__main__.instruction instance at 0x10049d5a8>
                         #MOVS <Rd>,<Rm> (formerly LSL <Rd>,<Rm>,#0)
                         #(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                         block:
                           var Rm : TReg = TReg(insn[5,3].num)
                           var Rd : TReg = TReg(insn[2,0].num)
-                          
+                          return ctx.opMOV({}, >Rd, <Rm)
                           nil
               # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 0), (10, 2)]
               # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 0), (10, 2), (9, 2)]
@@ -1586,7 +1592,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(15, 0), (14, 0), (13, 0), (12, 0), (11, 0), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None), [('imm5', 10, 6), ('Rm', 5, 3), ('Rd', 2, 0)], 'LSL<c> <Rd>,<Rm>,#<imm5>', False)
+              #i: <__main__.instruction instance at 0x100499908>
               #LSL<c> <Rd>,<Rm>,#<imm5>
               #(0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -1635,7 +1641,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(28, 1), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2)]
                   # [(28, 1), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2), (2, 2)]
                   # [(28, 1), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2), (2, 2), (1, 2)]
-                  #i: ((1, 1, 1, 1, 1, 1, 1, 0, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1, None, None, None, None), [('opc1', 23, 21), ('CRn', 19, 16), ('Rt', 15, 12), ('coproc', 11, 8), ('opc2', 7, 5), ('CRm', 3, 0)], 'MRC2<c> <coproc>,<opc1>,<Rt>,<CRn>,<CRm>{,<opc2>}', False)
+                  #i: <__main__.instruction instance at 0x10049d7a0>
                   #MRC2<c> <coproc>,<opc1>,<Rt>,<CRn>,<CRm>{,<opc2>}
                   #(1, 1, 1, 1, 1, 1, 1, 0, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1, None, None, None, None)
                   block:
@@ -1645,7 +1651,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     var coproc : TBinary = insn[11,8]
                     var opc2 : TBinary = insn[7,5]
                     var CRm : TBinary = insn[3,0]
-                    
+                    return ctx.opMRC2({}, <coproc, <opc1, >Rt, <Crn, <Crm, <opc2)
                     nil
               else: #20
                 # [(28, 1), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 0)]
@@ -1669,7 +1675,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(28, 1), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2)]
                   # [(28, 1), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2), (2, 2)]
                   # [(28, 1), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2), (2, 2), (1, 2)]
-                  #i: ((1, 1, 1, 1, 1, 1, 1, 0, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1, None, None, None, None), [('opc1', 23, 21), ('CRn', 19, 16), ('Rt', 15, 12), ('coproc', 11, 8), ('opc2', 7, 5), ('CRm', 3, 0)], 'MCR2<c> <coproc>,<opc1>,<Rt>,<CRn>,<CRm>{,<opc2>}', False)
+                  #i: <__main__.instruction instance at 0x100499f38>
                   #MCR2<c> <coproc>,<opc1>,<Rt>,<CRn>,<CRm>{,<opc2>}
                   #(1, 1, 1, 1, 1, 1, 1, 0, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1, None, None, None, None)
                   block:
@@ -1703,7 +1709,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                 # [(28, 1), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 0), (3, 2)]
                 # [(28, 1), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 0), (3, 2), (2, 2)]
                 # [(28, 1), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 0), (3, 2), (2, 2), (1, 2)]
-                #i: ((1, 1, 1, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 0, None, None, None, None), [('opc1', 23, 20), ('CRn', 19, 16), ('CRd', 15, 12), ('coproc', 11, 8), ('opc2', 7, 5), ('CRm', 3, 0)], 'CDP2<c> <coproc>,<opc1>,<CRd>,<CRn>,<CRm>,<opc2>', False)
+                #i: <__main__.instruction instance at 0x10048bb00>
                 #CDP2<c> <coproc>,<opc1>,<CRd>,<CRn>,<CRm>,<opc2>
                 #(1, 1, 1, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 0, None, None, None, None)
                 block:
@@ -1746,7 +1752,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rt2', 19, 16), ('Rt', 15, 12), ('coproc', 11, 8), ('opc1', 7, 4), ('CRm', 3, 0)], 'MRRC2<c> <coproc>,<opc>,<Rt>,<Rt2>,<CRm>', True)
+                      #i: <__main__.instruction instance at 0x10049d8c0>
                       #MRRC2<c> <coproc>,<opc>,<Rt>,<Rt2>,<CRm>
                       #(1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -1755,7 +1761,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var coproc : TBinary = insn[11,8]
                         var opc1 : TBinary = insn[7,4]
                         var CRm : TBinary = insn[3,0]
-                        
+                        return ctx.opMRRC2({}, <coproc, <opc1, >Rt, >Rt2, <Crm)
                         nil
                     else: #20
                       # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0)]
@@ -1778,7 +1784,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rt2', 19, 16), ('Rt', 15, 12), ('coproc', 11, 8), ('opc1', 7, 4), ('CRm', 3, 0)], 'MCRR2<c> <coproc>,<opc1>,<Rt>,<Rt2>,<CRm>', True)
+                      #i: <__main__.instruction instance at 0x10049d098>
                       #MCRR2<c> <coproc>,<opc1>,<Rt>,<Rt2>,<CRm>
                       #(1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -1818,7 +1824,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 1, 0, None, None, None, None, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('P', 24, 24), ('U', 23, 23), ('D', 22, 22), ('W', 21, 21), ('CRd', 15, 12), ('coproc', 11, 8), ('imm8', 7, 0)], 'LDC2{L}<c> <coproc>,<CRd>,[PC,#-0] Special case LDC{L}<c> <coproc>,<CRd>,[PC],<option>', True)
+                      #i: <__main__.instruction instance at 0x1004918c0>
                       #LDC2{L}<c> <coproc>,<CRd>,[PC,#-0] Special case LDC{L}<c> <coproc>,<CRd>,[PC],<option>
                       #(1, 1, 1, 1, 1, 1, 0, None, None, None, None, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -1850,7 +1856,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 1, 1, 1, 1, 1, 0, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('P', 24, 24), ('U', 23, 23), ('D', 22, 22), ('W', 21, 21), ('Rn', 19, 16), ('CRd', 15, 12), ('coproc', 11, 8), ('imm8', 7, 0)], 'LDC2{L}<c> <coproc>,<CRd>,[<Rn>],<option>', False)
+              #i: <__main__.instruction instance at 0x1004917e8>
               #LDC2{L}<c> <coproc>,<CRd>,[<Rn>],<option>
               #(1, 1, 1, 1, 1, 1, 0, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -1863,7 +1869,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                 var coproc : TBinary = insn[11,8]
                 var imm8 : TBinary = insn[7,0]
                 if P == b"0" and W == b"0": break
-                return ctx.opLDC2({}, <coproc, ctx.Deref(>Rn, <cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
+                return ctx.opLDC2({}, <coproc, <CRd, ctx.Deref(>Rn, <cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
                 nil
             else: #20
               # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 0)]
@@ -1886,7 +1892,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(28, 1), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 1, 1, 1, 1, 1, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('P', 24, 24), ('U', 23, 23), ('N', 22, 22), ('W', 21, 21), ('Rn', 19, 16), ('CRd', 15, 12), ('coproc', 11, 8), ('imm8', 7, 0)], 'STC2{L}<c> <coproc>,<CRd>,[<Rn>],<option>', False)
+              #i: <__main__.instruction instance at 0x1004a8a28>
               #STC2{L}<c> <coproc>,<CRd>,[<Rn>],<option>
               #(1, 1, 1, 1, 1, 1, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -1898,7 +1904,9 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                 var CRd : TBinary = insn[15,12]
                 var coproc : TBinary = insn[11,8]
                 var imm8 : TBinary = insn[7,0]
-                
+                var D = N
+                if not P.bit and not U.bit and D.bit and not W.bit: break
+                return ctx.opSTC(if D.bit: {ifSTCL} else: {}, <coproc, <CRd, ctx.Deref(>Rn, <cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
                 nil
         else: #26
           # [(28, 1), (27, 1), (26, 0)]
@@ -1937,7 +1945,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('Rn', 19, 16), ('RdLo', 15, 12), ('RdHi', 11, 8), ('Rm', 3, 0)], 'UMLAL<c> <RdLo>,<RdHi>,<Rn>,<Rm>', False)
+                              #i: <__main__.instruction instance at 0x1004afe18>
                               #UMLAL<c> <RdLo>,<RdHi>,<Rn>,<Rm>
                               #(1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                               block:
@@ -1945,7 +1953,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var RdLo : TBinary = insn[15,12]
                                 var RdHi : TBinary = insn[11,8]
                                 var Rm : TReg = TReg(insn[3,0].num)
-                                
+                                return ctx.opUMLAL({}, >RdLo, >RdHi, <Rn, <Rm)
                                 nil
                   else: #21
                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0)]
@@ -1974,7 +1982,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('Rn', 19, 16), ('RdLo', 15, 12), ('RdHi', 11, 8), ('Rm', 3, 0)], 'SMLAL<c> <RdLo>,<RdHi>,<Rn>,<Rm>', False)
+                              #i: <__main__.instruction instance at 0x1004a87a0>
                               #SMLAL<c> <RdLo>,<RdHi>,<Rn>,<Rm>
                               #(1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                               block:
@@ -1982,7 +1990,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var RdLo : TBinary = insn[15,12]
                                 var RdHi : TBinary = insn[11,8]
                                 var Rm : TReg = TReg(insn[3,0].num)
-                                
+                                return ctx.opSMLAL({}, >RdLo, >RdHi, <Rn, <Rm)
                                 nil
                 else: #22
                   # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0)]
@@ -2017,14 +2025,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 1), (5, 1), (4, 1), (3, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 1), (5, 1), (4, 1), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 1), (5, 1), (4, 1), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None), [('Rn', 19, 16), ('Rd', 11, 8), ('Rm', 3, 0)], 'UDIV<c> <Rd>,<Rn>,<Rm>', False)
+                                      #i: <__main__.instruction instance at 0x1004afcf8>
                                       #UDIV<c> <Rd>,<Rn>,<Rm>
                                       #(1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None)
                                       block:
                                         var Rn : TReg = TReg(insn[19,16].num)
                                         var Rd : TReg = TReg(insn[11,8].num)
                                         var Rm : TReg = TReg(insn[3,0].num)
-                                        
+                                        return ctx.opUDIV({}, >Rd, <Rn, <Rm)
                                         nil
                     else: #20
                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0)]
@@ -2051,7 +2059,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('Rn', 19, 16), ('RdLo', 15, 12), ('RdHi', 11, 8), ('Rm', 3, 0)], 'UMULL<c> <RdLo>,<RdHi>,<Rn>,<Rm>', False)
+                              #i: <__main__.instruction instance at 0x1004afef0>
                               #UMULL<c> <RdLo>,<RdHi>,<Rn>,<Rm>
                               #(1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                               block:
@@ -2059,7 +2067,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var RdLo : TBinary = insn[15,12]
                                 var RdHi : TBinary = insn[11,8]
                                 var Rm : TReg = TReg(insn[3,0].num)
-                                
+                                return ctx.opUMULL({}, >RdLo, >RdHi, <Rn, <Rm)
                                 nil
                   else: #21
                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0)]
@@ -2092,14 +2100,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 1), (5, 1), (4, 1), (3, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 1), (5, 1), (4, 1), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 1), (5, 1), (4, 1), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None), [('Rn', 19, 16), ('Rd', 11, 8), ('Rm', 3, 0)], 'SDIV<c> <Rd>,<Rn>,<Rm>', False)
+                                      #i: <__main__.instruction instance at 0x1004a85a8>
                                       #SDIV<c> <Rd>,<Rn>,<Rm>
                                       #(1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None)
                                       block:
                                         var Rn : TReg = TReg(insn[19,16].num)
                                         var Rd : TReg = TReg(insn[11,8].num)
                                         var Rm : TReg = TReg(insn[3,0].num)
-                                        
+                                        # XXX note about 0x80000000/0xffffffff
+                                        return ctx.opSDIV({}, >Rd, <Rn, <Rm)
                                         nil
                     else: #20
                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0), (20, 0)]
@@ -2126,7 +2135,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('Rn', 19, 16), ('RdLo', 15, 12), ('RdHi', 11, 8), ('Rm', 3, 0)], 'SMULL<c> <RdLo>,<RdHi>,<Rn>,<Rm>', False)
+                              #i: <__main__.instruction instance at 0x1004a8878>
                               #SMULL<c> <RdLo>,<RdHi>,<Rn>,<Rm>
                               #(1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                               block:
@@ -2134,7 +2143,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var RdLo : TBinary = insn[15,12]
                                 var RdHi : TBinary = insn[11,8]
                                 var Rm : TReg = TReg(insn[3,0].num)
-                                
+                                return ctx.opSMULL({}, >RdLo, >RdHi, <Rn, <Rm)
                                 nil
               else: #23
                 # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0)]
@@ -2171,14 +2180,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('Rn', 19, 16), ('Rd', 11, 8), ('Rm', 3, 0)], 'MUL<c> <Rd>,<Rn>,<Rm>', True)
+                                      #i: <__main__.instruction instance at 0x10049db00>
                                       #MUL<c> <Rd>,<Rn>,<Rm>
                                       #(1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                                       block:
                                         var Rn : TReg = TReg(insn[19,16].num)
                                         var Rd : TReg = TReg(insn[11,8].num)
                                         var Rm : TReg = TReg(insn[3,0].num)
-                                        
+                                        return ctx.opMUL({}, >Rd, <Rn, <Rm)
                                         nil
                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2)]
@@ -2199,7 +2208,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 1), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 1), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 1), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 1, None, None, None, None), [('Rn', 19, 16), ('Ra', 15, 12), ('Rd', 11, 8), ('Rm', 3, 0)], 'MLS<c> <Rd>,<Rn>,<Rm>,<Ra>', False)
+                              #i: <__main__.instruction instance at 0x10049d248>
                               #MLS<c> <Rd>,<Rn>,<Rm>,<Ra>
                               #(1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 1, None, None, None, None)
                               block:
@@ -2207,14 +2216,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var Ra : TReg = TReg(insn[15,12].num)
                                 var Rd : TReg = TReg(insn[11,8].num)
                                 var Rm : TReg = TReg(insn[3,0].num)
-                                
+                                # This does not affect /any/ flags.
+                                return ctx.opMLA({}, >Rd, <Rn, <Rm, <Ra)
                                 nil
                             else: #4
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('Rn', 19, 16), ('Ra', 15, 12), ('Rd', 11, 8), ('Rm', 3, 0)], 'MLA<c> <Rd>,<Rn>,<Rm>,<Ra>', False)
+                              #i: <__main__.instruction instance at 0x10049d170>
                               #MLA<c> <Rd>,<Rn>,<Rm>,<Ra>
                               #(1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                               block:
@@ -2222,7 +2232,9 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var Ra : TReg = TReg(insn[15,12].num)
                                 var Rd : TReg = TReg(insn[11,8].num)
                                 var Rm : TReg = TReg(insn[3,0].num)
-                                
+                                if Ra == PC: break
+                                # TODO: This affects N and Z flags but not C, V
+                                return ctx.opMLA({}, >Rd, <Rn, <Rm, <Ra)
                                 nil
             else: #24
               # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0)]
@@ -2261,7 +2273,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0), (4, 0), (3, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 0, 0, 0, None, None, None, None), [('Rm', 19, 16), ('Rd', 11, 8), ('Rm_P', 3, 0)], 'CLZ<c> <Rd>,<Rm>', False)
+                                      #i: <__main__.instruction instance at 0x10048bbd8>
                                       #CLZ<c> <Rd>,<Rm>
                                       #(1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 0, 0, 0, None, None, None, None)
                                       block:
@@ -2301,28 +2313,28 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 1), (4, 1), (3, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 1), (4, 1), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 1), (4, 1), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 0, 1, 1, None, None, None, None), [('Rm', 19, 16), ('Rd', 11, 8), ('Rm_P', 3, 0)], 'REVSH<c>.W <Rd>,<Rm>', False)
+                                      #i: <__main__.instruction instance at 0x1004a0cf8>
                                       #REVSH<c>.W <Rd>,<Rm>
                                       #(1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 0, 1, 1, None, None, None, None)
                                       block:
                                         var Rm : TReg = TReg(insn[19,16].num)
                                         var Rd : TReg = TReg(insn[11,8].num)
                                         var Rm_P : TBinary = insn[3,0]
-                                        
+                                        return ctx.opREVSH({}, >Rd, <Rm)
                                         nil
                                     else: #4
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 1), (4, 0)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 1), (4, 0), (3, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 1), (4, 0), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 1), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 0, 1, 0, None, None, None, None), [('Rm', 19, 16), ('Rd', 11, 8), ('Rm_P', 3, 0)], 'RBIT<c> <Rd>,<Rm>', False)
+                                      #i: <__main__.instruction instance at 0x1004a0a70>
                                       #RBIT<c> <Rd>,<Rm>
                                       #(1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 0, 1, 0, None, None, None, None)
                                       block:
                                         var Rm : TReg = TReg(insn[19,16].num)
                                         var Rd : TReg = TReg(insn[11,8].num)
                                         var Rm_P : TBinary = insn[3,0]
-                                        
+                                        return ctx.opRBIT({}, >Rd, <Rm)
                                         nil
                                   else: #5
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0)]
@@ -2331,28 +2343,28 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0), (4, 1), (3, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0), (4, 1), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0), (4, 1), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 0, 0, 1, None, None, None, None), [('Rm', 19, 16), ('Rd', 11, 8), ('Rm_P', 3, 0)], 'REV16<c>.W <Rd>,<Rm>', False)
+                                      #i: <__main__.instruction instance at 0x1004a0b90>
                                       #REV16<c>.W <Rd>,<Rm>
                                       #(1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 0, 0, 1, None, None, None, None)
                                       block:
                                         var Rm : TReg = TReg(insn[19,16].num)
                                         var Rd : TReg = TReg(insn[11,8].num)
                                         var Rm_P : TBinary = insn[3,0]
-                                        
+                                        return ctx.opREV16({}, >Rd, <Rm)
                                         nil
                                     else: #4
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0), (4, 0)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0), (4, 0), (3, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 0, 0, 0, None, None, None, None), [('Rm', 19, 16), ('Rd', 11, 8), ('Rm_P', 3, 0)], 'REV<c>.W <Rd>,<Rm>', False)
+                                      #i: <__main__.instruction instance at 0x1004a09e0>
                                       #REV<c>.W <Rd>,<Rm>
                                       #(1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 1, 0, 0, 0, None, None, None, None)
                                       block:
                                         var Rm : TReg = TReg(insn[19,16].num)
                                         var Rd : TReg = TReg(insn[11,8].num)
                                         var Rm_P : TBinary = insn[3,0]
-                                        
+                                        return ctx.opREV({}, >Rd, <Rm)
                                         nil
               else: #23
                 # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0)]
@@ -2388,7 +2400,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                    #i: ((1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, None, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('Rd', 11, 8), ('Rm', 3, 0)], 'ROR{S}<c>.W <Rd>,<Rn>,<Rm>', False)
+                                    #i: <__main__.instruction instance at 0x1004a0fc8>
                                     #ROR{S}<c>.W <Rd>,<Rn>,<Rm>
                                     #(1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, None, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                                     block:
@@ -2396,7 +2408,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       var Rn : TReg = TReg(insn[19,16].num)
                                       var Rd : TReg = TReg(insn[11,8].num)
                                       var Rm : TReg = TReg(insn[3,0].num)
-                                      
+                                      return ctx.opROR(S, >Rd, ctx.Shift(<Rn, ROR, <Rm))
                                       nil
                   else: #21
                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0)]
@@ -2431,7 +2443,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                          #i: ((1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, 1, 0, None, None, None, None, None, None), [('Rd', 11, 8), ('rotate', 5, 4), ('Rm', 3, 0)], 'UXTB<c>.W <Rd>,<Rm>{,<rotation>}', False)
+                                          #i: <__main__.instruction instance at 0x1004b4128>
                                           #UXTB<c>.W <Rd>,<Rm>{,<rotation>}
                                           #(1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, 1, 0, None, None, None, None, None, None)
                                           block:
@@ -2471,14 +2483,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                          #i: ((1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, 1, 0, None, None, None, None, None, None), [('Rd', 11, 8), ('rotate', 5, 4), ('Rm', 3, 0)], 'SXTB<c>.W <Rd>,<Rm>{,<rotation>}', False)
+                                          #i: <__main__.instruction instance at 0x1004af680>
                                           #SXTB<c>.W <Rd>,<Rm>{,<rotation>}
                                           #(1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, 1, 0, None, None, None, None, None, None)
                                           block:
                                             var Rd : TReg = TReg(insn[11,8].num)
                                             var rotate : TBinary = insn[5,4]
                                             var Rm : TReg = TReg(insn[3,0].num)
-                                            
+                                            return ctx.opSXTB({}, >Rd, ctx.Shift(<Rm, ROR, <cat(rotate, b"000")))
                                             nil
                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2)]
                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2)]
@@ -2508,7 +2520,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                    #i: ((1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, None, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('Rd', 11, 8), ('Rm', 3, 0)], 'ASR{S}<c>.W <Rd>,<Rn>,<Rm>', False)
+                                    #i: <__main__.instruction instance at 0x10048b128>
                                     #ASR{S}<c>.W <Rd>,<Rn>,<Rm>
                                     #(1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, None, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                                     block:
@@ -2550,7 +2562,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                    #i: ((1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, None, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('Rd', 11, 8), ('Rm', 3, 0)], 'LSR{S}<c>.W <Rd>,<Rn>,<Rm>', False)
+                                    #i: <__main__.instruction instance at 0x100499e18>
                                     #LSR{S}<c>.W <Rd>,<Rn>,<Rm>
                                     #(1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, None, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                                     block:
@@ -2593,7 +2605,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                          #i: ((1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, 1, 0, None, None, None, None, None, None), [('Rd', 11, 8), ('rotate', 5, 4), ('Rm', 3, 0)], 'UXTH<c>.W <Rd>,<Rm>{,<rotation>}', False)
+                                          #i: <__main__.instruction instance at 0x1004b4290>
                                           #UXTH<c>.W <Rd>,<Rm>{,<rotation>}
                                           #(1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, 1, 0, None, None, None, None, None, None)
                                           block:
@@ -2633,14 +2645,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 1), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                          #i: ((1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, 1, 0, None, None, None, None, None, None), [('Rd', 11, 8), ('rotate', 5, 4), ('Rm', 3, 0)], 'SXTH<c>.W <Rd>,<Rm>{,<rotation>}', False)
+                                          #i: <__main__.instruction instance at 0x1004af7e8>
                                           #SXTH<c>.W <Rd>,<Rm>{,<rotation>}
                                           #(1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, 1, 0, None, None, None, None, None, None)
                                           block:
                                             var Rd : TReg = TReg(insn[11,8].num)
                                             var rotate : TBinary = insn[5,4]
                                             var Rm : TReg = TReg(insn[3,0].num)
-                                            
+                                            return ctx.opSXTH({}, >Rd, ctx.Shift(<Rm, ROR, <cat(rotate, b"000")))
                                             nil
                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2)]
                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2)]
@@ -2670,7 +2682,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                    #i: ((1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, None, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('Rd', 11, 8), ('Rm', 3, 0)], 'LSL{S}<c>.W <Rd>,<Rn>,<Rm>', False)
+                                    #i: <__main__.instruction instance at 0x100499b48>
                                     #LSL{S}<c>.W <Rd>,<Rn>,<Rm>
                                     #(1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, None, None, None, None, None, 1, 1, 1, 1, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                                     block:
@@ -2711,7 +2723,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm12', 11, 0)], 'LDRSH<c> <Rt>,[<Rn>,#<imm12>]', False)
+                      #i: <__main__.instruction instance at 0x1004993f8>
                       #LDRSH<c> <Rt>,[<Rn>,#<imm12>]
                       #(1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -2748,13 +2760,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('imm12', 11, 0)], 'PLI<c> [<Rn>,#<imm12>]', True)
+                              #i: <__main__.instruction instance at 0x1004a0518>
                               #PLI<c> [<Rn>,#<imm12>]
                               #(1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None)
                               block:
                                 var Rn : TReg = TReg(insn[19,16].num)
                                 var imm12 : TBinary = insn[11,0]
-                                
+                                return ctx.opPLI({}, ctx.Deref(>PC, <imm12, 4, true, false, true))
                                 nil
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2)]
@@ -2771,7 +2783,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm12', 11, 0)], 'LDRSB<c> <Rt>,[<Rn>,#<imm12>]', False)
+                      #i: <__main__.instruction instance at 0x100495f38>
                       #LDRSB<c> <Rt>,[<Rn>,#<imm12>]
                       #(1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -2812,7 +2824,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm8', 7, 0)], 'LDRSHT<c> <Rt>,[<Rn>,#<imm8>]', True)
+                              #i: <__main__.instruction instance at 0x1004997a0>
                               #LDRSHT<c> <Rt>,[<Rn>,#<imm8>]
                               #(1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None)
                               block:
@@ -2832,7 +2844,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('P', 10, 10), ('U', 9, 9), ('W', 8, 8), ('imm8', 7, 0)], 'LDRSH<c> <Rt>,[<Rn>,#+/-<imm8>]!', False)
+                        #i: <__main__.instruction instance at 0x100499440>
                         #LDRSH<c> <Rt>,[<Rn>,#+/-<imm8>]!
                         #(1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None)
                         block:
@@ -2864,7 +2876,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm2', 5, 4), ('Rm', 3, 0)], 'LDRSH<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]', False)
+                                  #i: <__main__.instruction instance at 0x1004996c8>
                                   #LDRSH<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]
                                   #(1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                                   block:
@@ -2906,13 +2918,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 1), (10, 1), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 1), (10, 1), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 1), (10, 1), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, 1, 1, 0, 0, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('imm8', 7, 0)], 'PLI<c> [<Rn>,#-<imm8>]', True)
+                                      #i: <__main__.instruction instance at 0x1004a05f0>
                                       #PLI<c> [<Rn>,#-<imm8>]
                                       #(1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, 1, 1, 0, 0, None, None, None, None, None, None, None, None)
                                       block:
                                         var Rn : TReg = TReg(insn[19,16].num)
                                         var imm8 : TBinary = insn[7,0]
-                                        
+                                        return ctx.opPLI({}, ctx.Deref(>PC, <imm8, 4, true, false, false))
                                         nil
                               else: #11
                                 # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 0)]
@@ -2931,14 +2943,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                           # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                          #i: ((1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rn', 19, 16), ('shift', 5, 4), ('Rm', 3, 0)], 'PLI<c> [<Rn>,<Rm>{,LSL #<imm2>}]', True)
+                                          #i: <__main__.instruction instance at 0x1004a0758>
                                           #PLI<c> [<Rn>,<Rm>{,LSL #<imm2>}]
                                           #(1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                                           block:
                                             var Rn : TReg = TReg(insn[19,16].num)
                                             var shift : TBinary = insn[5,4]
                                             var Rm : TReg = TReg(insn[3,0].num)
-                                            
+                                            # XXX newer version has a W bit
+                                            return ctx.opPLI({}, ctx.Deref(<Rn, ctx.Shift(<Rm, LSL, <shift), 4, true, false, true))
                                             nil
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2)]
@@ -2959,7 +2972,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm8', 7, 0)], 'LDRSBT<c> <Rt>,[<Rn>,#<imm8>]', True)
+                              #i: <__main__.instruction instance at 0x100499320>
                               #LDRSBT<c> <Rt>,[<Rn>,#<imm8>]
                               #(1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None)
                               block:
@@ -2979,7 +2992,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('P', 10, 10), ('U', 9, 9), ('W', 8, 8), ('imm8', 7, 0)], 'LDRSB<c> <Rt>,[<Rn>,#+/-<imm8>]!', False)
+                        #i: <__main__.instruction instance at 0x100499050>
                         #LDRSB<c> <Rt>,[<Rn>,#+/-<imm8>]!
                         #(1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None)
                         block:
@@ -3012,7 +3025,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm2', 5, 4), ('Rm', 3, 0)], 'LDRSB<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]', False)
+                                  #i: <__main__.instruction instance at 0x100499248>
                                   #LDRSB<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]
                                   #(1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                                   block:
@@ -3053,7 +3066,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                            #i: ((1, 1, 1, 1, 1, 0, 0, 1, None, 0, 1, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('U', 23, 23), ('Rt', 15, 12), ('imm12', 11, 0)], 'LDRSH<c> <Rt>,[PC,#-0] Special case', False)
+                            #i: <__main__.instruction instance at 0x100499560>
                             #LDRSH<c> <Rt>,[PC,#-0] Special case
                             #(1, 1, 1, 1, 1, 0, 0, 1, None, 0, 1, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                             block:
@@ -3094,13 +3107,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                    #i: ((1, 1, 1, 1, 1, 0, 0, 1, None, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None), [('U', 23, 23), ('imm12', 11, 0)], 'PLI<c> <label>', True)
+                                    #i: <__main__.instruction instance at 0x1004a0680>
                                     #PLI<c> <label>
                                     #(1, 1, 1, 1, 1, 0, 0, 1, None, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None)
                                     block:
                                       var U : TBinary = insn[23,23]
                                       var imm12 : TBinary = insn[11,0]
-                                      
+                                      return ctx.opPLI({}, ctx.Deref(>PC, <imm12, 4, true, false, U.bit))
                                       nil
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2)]
@@ -3117,7 +3130,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 1), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                            #i: ((1, 1, 1, 1, 1, 0, 0, 1, None, 0, 0, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('U', 23, 23), ('Rt', 15, 12), ('imm12', 11, 0)], 'LDRSB<c> <Rt>,[PC,#-0] Special case', False)
+                            #i: <__main__.instruction instance at 0x100499098>
                             #LDRSB<c> <Rt>,[PC,#-0] Special case
                             #(1, 1, 1, 1, 1, 0, 0, 1, None, 0, 0, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                             block:
@@ -3156,7 +3169,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm12', 11, 0)], 'LDR<c>.W <Rt>,[<Rn>{,#<imm12>}]', False)
+                      #i: <__main__.instruction instance at 0x100491dd0>
                       #LDR<c>.W <Rt>,[<Rn>{,#<imm12>}]
                       #(1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -3187,14 +3200,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm12', 11, 0)], 'STR<c>.W <Rt>,[<Rn>,#<imm12>]', False)
+                      #i: <__main__.instruction instance at 0x1004a8ea8>
                       #STR<c>.W <Rt>,[<Rn>,#<imm12>]
                       #(1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
                         var Rn : TReg = TReg(insn[19,16].num)
                         var Rt : TReg = TReg(insn[15,12].num)
                         var imm12 : TBinary = insn[11,0]
-                        
+                        if Rn == PC: break
+                        return ctx.opSTR({}, <Rt, ctx.Deref(>Rn, <imm12, 4, true, false, true))
                         nil
                 else: #22
                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0)]
@@ -3221,7 +3235,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm12', 11, 0)], 'LDRH<c>.W <Rt>,[<Rn>{,#<imm12>}]', False)
+                      #i: <__main__.instruction instance at 0x100495b00>
                       #LDRH<c>.W <Rt>,[<Rn>{,#<imm12>}]
                       #(1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -3252,14 +3266,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm12', 11, 0)], 'STRH<c>.W <Rt>,[<Rn>{,#<imm12>}]', False)
+                      #i: <__main__.instruction instance at 0x1004ab9e0>
                       #STRH<c>.W <Rt>,[<Rn>{,#<imm12>}]
                       #(1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
                         var Rn : TReg = TReg(insn[19,16].num)
                         var Rt : TReg = TReg(insn[15,12].num)
                         var imm12 : TBinary = insn[11,0]
-                        
+                        if Rt == PC or Rn == PC: break
+                        return ctx.opSTRH({}, <Rt, ctx.Deref(>Rn, <imm12, 2, true, false, true))
                         nil
                   else: #21
                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0)]
@@ -3284,7 +3299,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm12', 11, 0)], 'LDRB<c>.W <Rt>,[<Rn>{,#<imm12>}]', False)
+                      #i: <__main__.instruction instance at 0x1004952d8>
                       #LDRB<c>.W <Rt>,[<Rn>{,#<imm12>}]
                       #(1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -3315,14 +3330,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm12', 11, 0)], 'STRB<c>.W <Rt>,[<Rn>,#<imm12>]', False)
+                      #i: <__main__.instruction instance at 0x1004ab290>
                       #STRB<c>.W <Rt>,[<Rn>,#<imm12>]
                       #(1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
                         var Rn : TReg = TReg(insn[19,16].num)
                         var Rt : TReg = TReg(insn[15,12].num)
                         var imm12 : TBinary = insn[11,0]
-                        
+                        if Rt == PC or Rn == PC: break
+                        return ctx.opSTRB({}, <Rt, ctx.Deref(>Rn, <imm12, 1, true, false, true))
                         nil
                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2)]
                   if bit(insn, 20):
@@ -3350,14 +3366,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                            #i: ((1, 1, 1, 1, 1, 0, 0, 0, 1, 0, None, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None), [('W', 21, 21), ('Rn', 19, 16), ('imm12', 11, 0)], 'PLD{W}<c> [<Rn>,#<imm12>]', False)
+                            #i: <__main__.instruction instance at 0x1004a0290>
                             #PLD{W}<c> [<Rn>,#<imm12>]
                             #(1, 1, 1, 1, 1, 0, 0, 0, 1, 0, None, 1, None, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None)
                             block:
                               var W : TBinary = insn[21,21]
                               var Rn : TReg = TReg(insn[19,16].num)
                               var imm12 : TBinary = insn[11,0]
-                              
+                              if Rn == PC: break
+                              return ctx.opPLD(if W.bit: {ifPLDW} else: {}, ctx.Deref(>Rn, <imm12, 4, true, false, true))
                               nil
               else: #23
                 # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0)]
@@ -3390,7 +3407,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm8', 7, 0)], 'LDRT<c> <Rt>,[<Rn>,#<imm8>]', True)
+                              #i: <__main__.instruction instance at 0x100499878>
                               #LDRT<c> <Rt>,[<Rn>,#<imm8>]
                               #(1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None)
                               block:
@@ -3410,7 +3427,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('P', 10, 10), ('U', 9, 9), ('W', 8, 8), ('imm8', 7, 0)], 'LDR<c> <Rt>,[<Rn>,#+/-<imm8>]!', False)
+                        #i: <__main__.instruction instance at 0x100491e60>
                         #LDR<c> <Rt>,[<Rn>,#+/-<imm8>]!
                         #(1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None)
                         block:
@@ -3444,7 +3461,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm2', 5, 4), ('Rm', 3, 0)], 'LDR<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]', False)
+                                  #i: <__main__.instruction instance at 0x100495128>
                                   #LDR<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]
                                   #(1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                                   block:
@@ -3480,14 +3497,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm8', 7, 0)], 'STRT<c> <Rt>,[<Rn>,#<imm8>]', True)
+                              #i: <__main__.instruction instance at 0x1004abd88>
                               #STRT<c> <Rt>,[<Rn>,#<imm8>]
                               #(1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None)
                               block:
                                 var Rn : TReg = TReg(insn[19,16].num)
                                 var Rt : TReg = TReg(insn[15,12].num)
                                 var imm8 : TBinary = insn[7,0]
-                                
+                                if Rn == PC: break
+                                return ctx.opSTRT({}, <Rt, ctx.Deref(<Rn, <imm8, 4, true, false, true))
                                 nil
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2)]
@@ -3499,7 +3517,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('P', 10, 10), ('U', 9, 9), ('W', 8, 8), ('imm8', 7, 0)], 'STR<c> <Rt>,[<Rn>,#+/-<imm8>]!', False)
+                        #i: <__main__.instruction instance at 0x1004a8f38>
                         #STR<c> <Rt>,[<Rn>,#+/-<imm8>]!
                         #(1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None)
                         block:
@@ -3509,7 +3527,11 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           var U : TBinary = insn[9,9]
                           var W : TBinary = insn[8,8]
                           var imm8 : TBinary = insn[7,0]
-                          
+                          if Rn == PC: break
+                          if P.bit and U.bit and not W.bit: break
+                          if Rn == SP and not P.bit and U.bit and W.bit and imm8 == b"00000100": break
+                          if not P.bit and not W.bit: break
+                          return ctx.opSTR({}, <Rt, ctx.Deref(>PC, <imm8, 4, P.bit, W.bit, U.bit))
                           nil
                       else: #11
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0)]
@@ -3528,7 +3550,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm2', 5, 4), ('Rm', 3, 0)], 'STR<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]', False)
+                                  #i: <__main__.instruction instance at 0x1004ab0e0>
                                   #STR<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]
                                   #(1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                                   block:
@@ -3536,7 +3558,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     var Rt : TReg = TReg(insn[15,12].num)
                                     var imm2 : TBinary = insn[5,4]
                                     var Rm : TReg = TReg(insn[3,0].num)
-                                    
+                                    if Rn == PC: break
+                                    return ctx.opSTR({}, <Rt, ctx.Deref(>Rn, ctx.Shift(<Rm, LSL, <imm2), 4, true, false, true))
                                     nil
                 else: #22
                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0)]
@@ -3567,7 +3590,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm8', 7, 0)], 'LDRHT<c> <Rt>,[<Rn>,#<imm8>]', True)
+                              #i: <__main__.instruction instance at 0x100495e60>
                               #LDRHT<c> <Rt>,[<Rn>,#<imm8>]
                               #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None)
                               block:
@@ -3587,7 +3610,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('P', 10, 10), ('U', 9, 9), ('W', 8, 8), ('imm8', 7, 0)], 'LDRH<c> <Rt>,[<Rn>,#+/-<imm8>]!', False)
+                        #i: <__main__.instruction instance at 0x100495b90>
                         #LDRH<c> <Rt>,[<Rn>,#+/-<imm8>]!
                         #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None)
                         block:
@@ -3619,7 +3642,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm2', 5, 4), ('Rm', 3, 0)], 'LDRH<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]', False)
+                                  #i: <__main__.instruction instance at 0x100495d88>
                                   #LDRH<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]
                                   #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                                   block:
@@ -3655,14 +3678,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm8', 7, 0)], 'STRHT<c> <Rt>,[<Rn>,#<imm8>]', True)
+                              #i: <__main__.instruction instance at 0x1004abcb0>
                               #STRHT<c> <Rt>,[<Rn>,#<imm8>]
                               #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None)
                               block:
                                 var Rn : TReg = TReg(insn[19,16].num)
                                 var Rt : TReg = TReg(insn[15,12].num)
                                 var imm8 : TBinary = insn[7,0]
-                                
+                                if Rn == PC: break
+                                return ctx.opSTRHT({}, <Rt, ctx.Deref(<Rn, <imm8, 2, true, false, true))
                                 nil
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2)]
@@ -3674,7 +3698,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('P', 10, 10), ('U', 9, 9), ('W', 8, 8), ('imm8', 7, 0)], 'STRH<c> <Rt>,[<Rn>,#+/-<imm8>]!', False)
+                        #i: <__main__.instruction instance at 0x1004aba70>
                         #STRH<c> <Rt>,[<Rn>,#+/-<imm8>]!
                         #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None)
                         block:
@@ -3684,7 +3708,10 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           var U : TBinary = insn[9,9]
                           var W : TBinary = insn[8,8]
                           var imm8 : TBinary = insn[7,0]
-                          
+                          if Rn == PC: break
+                          if Rt == PC and (P.bit and not U.bit and not W.bit): break
+                          if P.bit and U.bit and not W.bit: break
+                          return ctx.opSTRH({}, <Rt, ctx.Deref(>Rn, <imm8, 2, P.bit, W.bit, U.bit))
                           nil
                       else: #11
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0)]
@@ -3703,7 +3730,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm2', 5, 4), ('Rm', 3, 0)], 'STRH<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]', False)
+                                  #i: <__main__.instruction instance at 0x1004abbd8>
                                   #STRH<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]
                                   #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                                   block:
@@ -3711,7 +3738,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     var Rt : TReg = TReg(insn[15,12].num)
                                     var imm2 : TBinary = insn[5,4]
                                     var Rm : TReg = TReg(insn[3,0].num)
-                                    
+                                    if Rn == PC or Rt == PC: break
+                                    return ctx.opSTRH({}, <Rt, ctx.Deref(<Rn, ctx.Shift(<Rm, LSL, <imm2), 2, true, false, true))
                                     nil
                   else: #21
                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0)]
@@ -3746,14 +3774,16 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                           # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                           # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                          #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rn', 19, 16), ('shift', 5, 4), ('Rm', 3, 0)], 'PLD<c> [<Rn>,<Rm>{,LSL #<imm2>}]', True)
+                                          #i: <__main__.instruction instance at 0x1004a04d0>
                                           #PLD<c> [<Rn>,<Rm>{,LSL #<imm2>}]
                                           #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, None, None, None, None, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                                           block:
                                             var Rn : TReg = TReg(insn[19,16].num)
                                             var shift : TBinary = insn[5,4]
                                             var Rm : TReg = TReg(insn[3,0].num)
-                                            
+                                            if Rn == PC: break
+                                            # XXX newer version has a W bit
+                                            return ctx.opPLD({}, ctx.Deref(<Rn, ctx.Shift(<Rm, LSL, <shift), 4, true, false, true))
                                             nil
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2)]
                       # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2)]
@@ -3774,7 +3804,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm8', 7, 0)], 'LDRBT<c> <Rt>,[<Rn>,#<imm8>]', True)
+                              #i: <__main__.instruction instance at 0x100495638>
                               #LDRBT<c> <Rt>,[<Rn>,#<imm8>]
                               #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None)
                               block:
@@ -3794,7 +3824,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('P', 10, 10), ('U', 9, 9), ('W', 8, 8), ('imm8', 7, 0)], 'LDRB<c> <Rt>,[<Rn>,#+/-<imm8>]!', False)
+                        #i: <__main__.instruction instance at 0x100495368>
                         #LDRB<c> <Rt>,[<Rn>,#+/-<imm8>]!
                         #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None)
                         block:
@@ -3827,7 +3857,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm2', 5, 4), ('Rm', 3, 0)], 'LDRB<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]', False)
+                                  #i: <__main__.instruction instance at 0x100495560>
                                   #LDRB<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]
                                   #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                                   block:
@@ -3863,14 +3893,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm8', 7, 0)], 'STRBT<c> <Rt>,[<Rn>,#<imm8>]', True)
+                              #i: <__main__.instruction instance at 0x1004ab560>
                               #STRBT<c> <Rt>,[<Rn>,#<imm8>]
                               #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, 1, 1, 1, 0, None, None, None, None, None, None, None, None)
                               block:
                                 var Rn : TReg = TReg(insn[19,16].num)
                                 var Rt : TReg = TReg(insn[15,12].num)
                                 var imm8 : TBinary = insn[7,0]
-                                
+                                if Rn == PC: break
+                                return ctx.opSTRBT({}, <Rt, ctx.Deref(>Rn, <imm8, 1, true, false, true))
                                 nil
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2)]
@@ -3882,7 +3913,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('P', 10, 10), ('U', 9, 9), ('W', 8, 8), ('imm8', 7, 0)], 'STRB<c> <Rt>,[<Rn>,#+/-<imm8>]!', False)
+                        #i: <__main__.instruction instance at 0x1004ab320>
                         #STRB<c> <Rt>,[<Rn>,#+/-<imm8>]!
                         #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None)
                         block:
@@ -3892,7 +3923,11 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           var U : TBinary = insn[9,9]
                           var W : TBinary = insn[8,8]
                           var imm8 : TBinary = insn[7,0]
-                          
+                          if Rt == PC and (P.bit and not U.bit and not W.bit): break
+                          if Rn == PC: break
+                          if P.bit and U.bit and not W.bit: break
+                          if not P.bit and not W.bit: break
+                          return ctx.opSTRB({}, <Rt, ctx.Deref(>Rn, <imm8, 1, P.bit, W.bit, U.bit))
                           nil
                       else: #11
                         # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0)]
@@ -3911,7 +3946,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2)]
                                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm2', 5, 4), ('Rm', 3, 0)], 'STRB<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]', False)
+                                  #i: <__main__.instruction instance at 0x1004ab488>
                                   #STRB<c>.W <Rt>,[<Rn>,<Rm>{,LSL #<imm2>}]
                                   #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None, None, None, 0, 0, 0, 0, 0, 0, None, None, None, None, None, None)
                                   block:
@@ -3919,7 +3954,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     var Rt : TReg = TReg(insn[15,12].num)
                                     var imm2 : TBinary = insn[5,4]
                                     var Rm : TReg = TReg(insn[3,0].num)
-                                    
+                                    if Rt == PC or Rn == PC: break
+                                    return ctx.opSTRB({}, >Rt, ctx.Deref(>Rn, ctx.Shift(<Rm, LSL, <imm2), 1, true, false, true))
                                     nil
                   # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 2)]
                   if bit(insn, 20):
@@ -3951,14 +3987,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 1), (10, 1), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 1), (10, 1), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 1), (10, 1), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                    #i: ((1, 1, 1, 1, 1, 0, 0, 0, 0, 0, None, 1, None, None, None, None, 1, 1, 1, 1, 1, 1, 0, 0, None, None, None, None, None, None, None, None), [('W', 21, 21), ('Rn', 19, 16), ('imm8', 7, 0)], 'PLD{W}<c> [<Rn>,#-<imm8>]', False)
+                                    #i: <__main__.instruction instance at 0x1004a0368>
                                     #PLD{W}<c> [<Rn>,#-<imm8>]
                                     #(1, 1, 1, 1, 1, 0, 0, 0, 0, 0, None, 1, None, None, None, None, 1, 1, 1, 1, 1, 1, 0, 0, None, None, None, None, None, None, None, None)
                                     block:
                                       var W : TBinary = insn[21,21]
                                       var Rn : TReg = TReg(insn[19,16].num)
                                       var imm8 : TBinary = insn[7,0]
-                                      
+                                      if Rn == PC: break
+                                      return ctx.opPLD(if W.bit: {ifPLDW} else: {}, ctx.Deref(>Rn, <imm8, 4, true, false, false))
                                       nil
               # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2)]
               if bit(insn, 22):
@@ -3990,7 +4027,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 1), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 1), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 1), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                            #i: ((1, 1, 1, 1, 1, 0, 0, 0, None, 1, 0, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('U', 23, 23), ('Rt', 15, 12), ('imm12', 11, 0)], 'LDR<c>.W <Rt>,[PC,#-0] Special case', False)
+                            #i: <__main__.instruction instance at 0x100491fc8>
                             #LDR<c>.W <Rt>,[PC,#-0] Special case
                             #(1, 1, 1, 1, 1, 0, 0, 0, None, 1, 0, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                             block:
@@ -4028,7 +4065,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                            #i: ((1, 1, 1, 1, 1, 0, 0, 0, None, 0, 1, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('U', 23, 23), ('Rt', 15, 12), ('imm12', 11, 0)], 'LDRH<c> <Rt>,[PC,#-0] Special case', False)
+                            #i: <__main__.instruction instance at 0x100495c20>
                             #LDRH<c> <Rt>,[PC,#-0] Special case
                             #(1, 1, 1, 1, 1, 0, 0, 0, None, 0, 1, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                             block:
@@ -4069,13 +4106,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                     # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 1), (13, 1), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                    #i: ((1, 1, 1, 1, 1, 0, 0, 0, None, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None), [('U', 23, 23), ('imm12', 11, 0)], 'PLD<c> <label>', True)
+                                    #i: <__main__.instruction instance at 0x1004a03f8>
                                     #PLD<c> <label>
                                     #(1, 1, 1, 1, 1, 0, 0, 0, None, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None)
                                     block:
                                       var U : TBinary = insn[23,23]
                                       var imm12 : TBinary = insn[11,0]
-                                      
+                                      return ctx.opPLD({}, ctx.Deref(>PC, <imm12, 4, true, false, U.bit))
                                       nil
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2)]
@@ -4092,7 +4129,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                             # [(28, 1), (27, 1), (26, 0), (25, 0), (24, 0), (23, 2), (22, 0), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                            #i: ((1, 1, 1, 1, 1, 0, 0, 0, None, 0, 0, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('U', 23, 23), ('Rt', 15, 12), ('imm12', 11, 0)], 'LDRB<c> <Rt>,[PC,#-0] Special case', False)
+                            #i: <__main__.instruction instance at 0x1004953f8>
                             #LDRB<c> <Rt>,[PC,#-0] Special case
                             #(1, 1, 1, 1, 1, 0, 0, 0, None, 0, 0, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                             block:
@@ -4145,13 +4182,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None), [('Rd', 11, 8), ('SYSm', 7, 0)], 'MRS<c> <Rd>,<spec_reg>', True)
+                                      #i: <__main__.instruction instance at 0x10049d908>
                                       #MRS<c> <Rd>,<spec_reg>
                                       #(1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None)
                                       block:
                                         var Rd : TReg = TReg(insn[11,8].num)
                                         var SYSm : TBinary = insn[7,0]
-                                        
+                                        return ctx.opMRS({}, >Rd, <SYSm)
                                         nil
                   else: #21
                     # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0)]
@@ -4178,7 +4215,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2)]
                           # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2)]
                           # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2), (1, 2)]
-                          #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None), [('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('widthm1', 4, 0)], 'UBFX<c> <Rd>,<Rn>,#<lsb>,#<width>', False)
+                          #i: <__main__.instruction instance at 0x1004afc68>
                           #UBFX<c> <Rd>,<Rn>,#<lsb>,#<width>
                           #(1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None)
                           block:
@@ -4187,7 +4224,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             var Rd : TReg = TReg(insn[11,8].num)
                             var imm2 : TBinary = insn[7,6]
                             var widthm1 : TBinary = insn[4,0]
-                            
+                            return ctx.opUBFX({}, >Rd, <Rn, <cat(imm3, imm2), <(widthm1.num + 1))
                             nil
                 else: #22
                   # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0)]
@@ -4230,7 +4267,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 1), (4, 0), (3, 2)]
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 1), (4, 0), (3, 2), (2, 2)]
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 1), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                                      #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, None, None, None, None), [('option', 3, 0)], 'ISB<c> #<option>', True)
+                                                      #i: <__main__.instruction instance at 0x100491680>
                                                       #ISB<c> #<option>
                                                       #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, None, None, None, None)
                                                       block:
@@ -4244,7 +4281,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 1), (3, 2)]
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 1), (3, 2), (2, 2)]
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 1), (3, 2), (2, 2), (1, 2)]
-                                                      #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, None, None, None, None), [('option', 3, 0)], 'DMB<c> #<option>', True)
+                                                      #i: <__main__.instruction instance at 0x100491368>
                                                       #DMB<c> #<option>
                                                       #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, None, None, None, None)
                                                       block:
@@ -4256,7 +4293,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 0), (3, 2)]
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 0), (3, 2), (2, 2)]
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                                      #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, None, None, None, None), [('option', 3, 0)], 'DSB<c> #<option>', True)
+                                                      #i: <__main__.instruction instance at 0x1004913f8>
                                                       #DSB<c> #<option>
                                                       #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, None, None, None, None)
                                                       block:
@@ -4276,7 +4313,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                                           if bit(insn, 1):
                                                             # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 0), (5, 1), (4, 0), (3, 1), (2, 1), (1, 1)]
                                                             if bit(insn, 0):
-                                                              #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1), [], 'CLREX<c>', True)
+                                                              #i: <__main__.instruction instance at 0x10048bb90>
                                                               #CLREX<c>
                                                               #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1)
                                                               block:
@@ -4319,7 +4356,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 1), (5, 1), (4, 1), (3, 2)]
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 1), (5, 1), (4, 1), (3, 2), (2, 2)]
                                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 1), (6, 1), (5, 1), (4, 1), (3, 2), (2, 2), (1, 2)]
-                                                      #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, None, None, None, None), [('option', 3, 0)], 'DBG<c> #<option>', True)
+                                                      #i: <__main__.instruction instance at 0x100491248>
                                                       #DBG<c> #<option>
                                                       #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, None, None, None, None)
                                                       block:
@@ -4341,25 +4378,25 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                                           if not bit(insn, 1):
                                                             # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 0), (4, 0), (3, 0), (2, 1), (1, 0)]
                                                             if not bit(insn, 0):
-                                                              #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0), [], 'SEV<c>.W', True)
+                                                              #i: <__main__.instruction instance at 0x1004a85f0>
                                                               #SEV<c>.W
                                                               #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0)
                                                               block:
-                                                                
+                                                                return ctx.opSEV({})
                                                                 nil
                                                         else: #2
                                                           # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 0), (4, 0), (3, 0), (2, 0)]
                                                           if bit(insn, 1):
                                                             # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 0), (4, 0), (3, 0), (2, 0), (1, 1)]
                                                             if bit(insn, 0):
-                                                              #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1), [], 'WFI<c>.W', True)
+                                                              #i: <__main__.instruction instance at 0x1004b4440>
                                                               #WFI<c>.W
                                                               #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1)
                                                               block:
                                                                 return ctx.opWFI({})
                                                                 nil
                                                             else: #0
-                                                              #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0), [], 'WFE<c>.W', True)
+                                                              #i: <__main__.instruction instance at 0x1004b42d8>
                                                               #WFE<c>.W
                                                               #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
                                                               block:
@@ -4368,18 +4405,18 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                                           else: #1
                                                             # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (14, 0), (13, 0), (12, 0), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 0), (4, 0), (3, 0), (2, 0), (1, 0)]
                                                             if bit(insn, 0):
-                                                              #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1), [], 'YIELD<c>.W', True)
+                                                              #i: <__main__.instruction instance at 0x1004b4560>
                                                               #YIELD<c>.W
                                                               #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)
                                                               block:
                                                                 return ctx.opYIELD({})
                                                                 nil
                                                             else: #0
-                                                              #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), [], 'NOP<c>.W', True)
+                                                              #i: <__main__.instruction instance at 0x10049de18>
                                                               #NOP<c>.W
                                                               #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
                                                               block:
-                                                                
+                                                                return ctx.opNOP({})
                                                                 nil
                   else: #21
                     # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0)]
@@ -4412,13 +4449,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 0), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 0), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                       # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 0), (13, 0), (12, 0), (11, 1), (10, 0), (9, 0), (8, 0), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, None, None, None, None, 1, 0, 0, 0, 1, 0, 0, 0, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('SYSm', 7, 0)], 'MSR<c> <spec_reg>,<Rn>', True)
+                                      #i: <__main__.instruction instance at 0x10049d9e0>
                                       #MSR<c> <spec_reg>,<Rn>
                                       #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, None, None, None, None, 1, 0, 0, 0, 1, 0, 0, 0, None, None, None, None, None, None, None, None)
                                       block:
                                         var Rn : TReg = TReg(insn[19,16].num)
                                         var SYSm : TBinary = insn[7,0]
-                                        
+                                        return ctx.opMSR({}, <SYSm, <Rn)
                                         nil
                   # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 2)]
                   if not bit(insn, 20):
@@ -4444,7 +4481,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2)]
                         # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2)]
                         # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 1, 0, 0, 1, 1, 1, 0, None, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None), [('sh', 21, 21), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('sat_imm', 4, 0)], 'USAT<c> <Rd>,#<imm5>,<Rn>{,<shift>}', False)
+                        #i: <__main__.instruction instance at 0x1004aff80>
                         #USAT<c> <Rd>,#<imm5>,<Rn>{,<shift>}
                         #(1, 1, 1, 1, 0, 0, 1, 1, 1, 0, None, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None)
                         block:
@@ -4454,7 +4491,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           var Rd : TReg = TReg(insn[11,8].num)
                           var imm2 : TBinary = insn[7,6]
                           var sat_imm : TBinary = insn[4,0]
-                          
+                          if sh.bit and imm3 == b"000" and imm2 == b"00": break
+                          return ctx.opUSAT({}, >Rd, <sat_imm, ctx.DIShift(<Rn, cat(sh, b"0"), cat(imm3, imm2)))
                           nil
               else: #23
                 # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0)]
@@ -4489,7 +4527,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2)]
                                   # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2)]
                                   # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None), [('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('msb', 4, 0)], 'BFC<c> <Rd>,#<lsb>,#<width>', True)
+                                  #i: <__main__.instruction instance at 0x10048b440>
                                   #BFC<c> <Rd>,#<lsb>,#<width>
                                   #(1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None)
                                   block:
@@ -4521,7 +4559,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2)]
                           # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2)]
                           # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2), (1, 2)]
-                          #i: ((1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None), [('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('msb', 4, 0)], 'BFI<c> <Rd>,<Rn>,#<lsb>,#<width>', False)
+                          #i: <__main__.instruction instance at 0x10048b518>
                           #BFI<c> <Rd>,<Rn>,#<lsb>,#<width>
                           #(1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None)
                           block:
@@ -4558,7 +4596,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2)]
                           # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2)]
                           # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2), (1, 2)]
-                          #i: ((1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None), [('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('widthm1', 4, 0)], 'SBFX<c> <Rd>,<Rn>,#<lsb>,#<width>', False)
+                          #i: <__main__.instruction instance at 0x1004a84d0>
                           #SBFX<c> <Rd>,<Rn>,#<lsb>,#<width>
                           #(1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None)
                           block:
@@ -4567,7 +4605,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             var Rd : TReg = TReg(insn[11,8].num)
                             var imm2 : TBinary = insn[7,6]
                             var widthm1 : TBinary = insn[4,0]
-                            
+                            return ctx.opSBFX({}, >Rd, <Rn, <cat(imm3, imm2), <(widthm1.num + 1))
                             nil
                 else: #22
                   # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0)]
@@ -4595,7 +4633,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2)]
                         # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2)]
                         # [(28, 1), (27, 0), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 1, 0, 0, 1, 1, 0, 0, None, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None), [('sh', 21, 21), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('sat_imm', 4, 0)], 'SSAT<c> <Rd>,#<imm5>,<Rn>{,<shift>}', False)
+                        #i: <__main__.instruction instance at 0x1004a88c0>
                         #SSAT<c> <Rd>,#<imm5>,<Rn>{,<shift>}
                         #(1, 1, 1, 1, 0, 0, 1, 1, 0, 0, None, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, 0, None, None, None, None, None)
                         block:
@@ -4605,7 +4643,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           var Rd : TReg = TReg(insn[11,8].num)
                           var imm2 : TBinary = insn[7,6]
                           var sat_imm : TBinary = insn[4,0]
-                          
+                          if sh.bit and imm3 == b"000" and imm2 == b"00": break
+                          return ctx.opSSAT({}, >Rd, <sat_imm, ctx.DIShift(<Rn, cat(sh, b"0"), cat(imm3, imm2)))
                           nil
         # [(28, 1), (27, 0), (26, 2)]
         if bit(insn, 25):
@@ -4640,7 +4679,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 0, None, 1, 0, 1, 1, 0, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('imm4', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'MOVT<c> <Rd>,#<imm16>', False)
+                      #i: <__main__.instruction instance at 0x10049d638>
                       #MOVT<c> <Rd>,#<imm16>
                       #(1, 1, 1, 1, 0, None, 1, 0, 1, 1, 0, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -4649,7 +4688,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var imm3 : TBinary = insn[14,12]
                         var Rd : TReg = TReg(insn[11,8].num)
                         var imm8 : TBinary = insn[7,0]
-                        
+                        return ctx.opMOVT({}, >Rd, <cat(imm4, i, imm3, imm8))
                         nil
               else: #22
                 # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0)]
@@ -4681,7 +4720,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 0, None, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'SUB <Rd>,PC,#0 Special case for zero offset', True)
+                              #i: <__main__.instruction instance at 0x10043cb90>
                               #SUB <Rd>,PC,#0 Special case for zero offset
                               #(1, 1, 1, 1, 0, None, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                               block:
@@ -4711,7 +4750,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 0, None, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'SUBW<c> <Rd>,SP,#<imm12>', True)
+                              #i: <__main__.instruction instance at 0x1004af3b0>
                               #SUBW<c> <Rd>,SP,#<imm12>
                               #(1, 1, 1, 1, 0, None, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                               block:
@@ -4719,7 +4758,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var imm3 : TBinary = insn[14,12]
                                 var Rd : TReg = TReg(insn[11,8].num)
                                 var imm8 : TBinary = insn[7,0]
-                                
+                                return ctx.opSUB({}, >Rd, <SP, <cat(i, imm3, imm8))
                                 nil
                     # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2)]
@@ -4741,7 +4780,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 1), (22, 0), (21, 1), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 0, None, 1, 0, 1, 0, 1, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'SUBW<c> <Rd>,<Rn>,#<imm12>', False)
+                      #i: <__main__.instruction instance at 0x1004af098>
                       #SUBW<c> <Rd>,<Rn>,#<imm12>
                       #(1, 1, 1, 1, 0, None, 1, 0, 1, 0, 1, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -4750,7 +4789,9 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var imm3 : TBinary = insn[14,12]
                         var Rd : TReg = TReg(insn[11,8].num)
                         var imm8 : TBinary = insn[7,0]
-                        
+                        if Rn == PC: break
+                        if Rn == SP: break
+                        return ctx.opSUB({}, >Rd, <Rn, <cat(i, imm3, imm8))
                         nil
             else: #23
               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0)]
@@ -4780,7 +4821,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 0, None, 1, 0, 0, 1, 0, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('imm4', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'MOVW<c> <Rd>,#<imm16>', False)
+                      #i: <__main__.instruction instance at 0x10049d440>
                       #MOVW<c> <Rd>,#<imm16>
                       #(1, 1, 1, 1, 0, None, 1, 0, 0, 1, 0, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -4789,7 +4830,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var imm3 : TBinary = insn[14,12]
                         var Rd : TReg = TReg(insn[11,8].num)
                         var imm8 : TBinary = insn[7,0]
-                        
+                        return ctx.opMOV({}, >Rd, <cat(imm4, i, imm3, imm8))
                         nil
               else: #22
                 # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 0)]
@@ -4821,7 +4862,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 0, None, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'ADR<c>.W <Rd>,<label> <label> after current instruction', True)
+                              #i: <__main__.instruction instance at 0x10043cc20>
                               #ADR<c>.W <Rd>,<label> <label> after current instruction
                               #(1, 1, 1, 1, 0, None, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                               block:
@@ -4851,7 +4892,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 0, None, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'ADDW<c> <Rd>,SP,#<imm12>', True)
+                              #i: <__main__.instruction instance at 0x10043c8c0>
                               #ADDW<c> <Rd>,SP,#<imm12>
                               #(1, 1, 1, 1, 0, None, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                               block:
@@ -4881,7 +4922,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 1), (27, 0), (26, 2), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 1, 0, None, 1, 0, 0, 0, 0, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'ADDW<c> <Rd>,<Rn>,#<imm12>', False)
+                      #i: <__main__.instruction instance at 0x10043c5a8>
                       #ADDW<c> <Rd>,<Rn>,#<imm12>
                       #(1, 1, 1, 1, 0, None, 1, 0, 0, 0, 0, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -4923,7 +4964,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 1, 1, 0, None, 0, 1, 1, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'RSB{S}<c>.W <Rd>,<Rn>,#<const>', False)
+                    #i: <__main__.instruction instance at 0x1004a8200>
                     #RSB{S}<c>.W <Rd>,<Rn>,#<const>
                     #(1, 1, 1, 1, 0, None, 0, 1, 1, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                     block:
@@ -4933,7 +4974,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       var imm3 : TBinary = insn[14,12]
                       var Rd : TReg = TReg(insn[11,8].num)
                       var imm8 : TBinary = insn[7,0]
-                      
+                      return ctx.opRSB(S, >Rd, <Rn, ctx.TEImm(cat(i, imm3, imm8)))
                       nil
               else: #22
                 # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0)]
@@ -4965,7 +5006,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 0, None, 0, 1, 1, 0, 1, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('i', 26, 26), ('Rn', 19, 16), ('imm3', 14, 12), ('imm8', 7, 0)], 'CMP<c>.W <Rn>,#<const>', True)
+                              #i: <__main__.instruction instance at 0x10048bf38>
                               #CMP<c>.W <Rn>,#<const>
                               #(1, 1, 1, 1, 0, None, 0, 1, 1, 0, 1, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                               block:
@@ -5000,7 +5041,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                            #i: ((1, 1, 1, 1, 0, None, 0, 1, 1, 0, 1, None, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'SUB{S}<c>.W <Rd>,SP,#<const>', True)
+                            #i: <__main__.instruction instance at 0x1004af320>
                             #SUB{S}<c>.W <Rd>,SP,#<const>
                             #(1, 1, 1, 1, 0, None, 0, 1, 1, 0, 1, None, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                             block:
@@ -5009,7 +5050,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               var imm3 : TBinary = insn[14,12]
                               var Rd : TReg = TReg(insn[11,8].num)
                               var imm8 : TBinary = insn[7,0]
-                              
+                              return ctx.opSUB(S, >Rd, <SP, <cat(i, imm3, imm8))
                               nil
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 2)]
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2)]
@@ -5031,7 +5072,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 1, 1, 0, None, 0, 1, 1, 0, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'SUB{S}<c>.W <Rd>,<Rn>,#<const>', False)
+                    #i: <__main__.instruction instance at 0x1004abf80>
                     #SUB{S}<c>.W <Rd>,<Rn>,#<const>
                     #(1, 1, 1, 1, 0, None, 0, 1, 1, 0, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                     block:
@@ -5041,7 +5082,9 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       var imm3 : TBinary = insn[14,12]
                       var Rd : TReg = TReg(insn[11,8].num)
                       var imm8 : TBinary = insn[7,0]
-                      
+                      if Rd == PC and S == {ifS}: break
+                      if Rn == SP: break
+                      return ctx.opSUB(S, >Rd, <Rn, ctx.TEImm(cat(i, imm3, imm8)))
                       nil
             else: #23
               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0)]
@@ -5070,7 +5113,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 1, 1, 0, None, 0, 1, 0, 1, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'SBC{S}<c> <Rd>,<Rn>,#<const>', False)
+                    #i: <__main__.instruction instance at 0x1004a8368>
                     #SBC{S}<c> <Rd>,<Rn>,#<const>
                     #(1, 1, 1, 1, 0, None, 0, 1, 0, 1, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                     block:
@@ -5080,7 +5123,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       var imm3 : TBinary = insn[14,12]
                       var Rd : TReg = TReg(insn[11,8].num)
                       var imm8 : TBinary = insn[7,0]
-                      
+                      return ctx.opSBC(S, >Rd, <Rn, ctx.TEImm(cat(i, imm3, imm8)))
                       nil
                 else: #21
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 1), (21, 0)]
@@ -5105,7 +5148,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 1, 1, 0, None, 0, 1, 0, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'ADC{S}<c> <Rd>,<Rn>,#<const>', False)
+                    #i: <__main__.instruction instance at 0x10043c3b0>
                     #ADC{S}<c> <Rd>,<Rn>,#<const>
                     #(1, 1, 1, 1, 0, None, 0, 1, 0, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                     block:
@@ -5147,7 +5190,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 0, None, 0, 1, 0, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('i', 26, 26), ('Rn', 19, 16), ('imm3', 14, 12), ('imm8', 7, 0)], 'CMN<c> <Rn>,#<const>', True)
+                              #i: <__main__.instruction instance at 0x10048bcb0>
                               #CMN<c> <Rn>,#<const>
                               #(1, 1, 1, 1, 0, None, 0, 1, 0, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                               block:
@@ -5182,7 +5225,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                            #i: ((1, 1, 1, 1, 0, None, 0, 1, 0, 0, 0, None, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'ADD{S}<c>.W <Rd>,SP,#<const>', True)
+                            #i: <__main__.instruction instance at 0x10043c830>
                             #ADD{S}<c>.W <Rd>,SP,#<const>
                             #(1, 1, 1, 1, 0, None, 0, 1, 0, 0, 0, None, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                             block:
@@ -5214,7 +5257,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 1, 1, 0, None, 0, 1, 0, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'ADD{S}<c>.W <Rd>,<Rn>,#<const>', False)
+                    #i: <__main__.instruction instance at 0x10043c488>
                     #ADD{S}<c>.W <Rd>,<Rn>,#<const>
                     #(1, 1, 1, 1, 0, None, 0, 1, 0, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                     block:
@@ -5260,7 +5303,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 0, None, 0, 0, 1, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('i', 26, 26), ('Rn', 19, 16), ('imm3', 14, 12), ('imm8', 7, 0)], 'TEQ<c> <Rn>,#<const>', True)
+                              #i: <__main__.instruction instance at 0x1004af908>
                               #TEQ<c> <Rn>,#<const>
                               #(1, 1, 1, 1, 0, None, 0, 0, 1, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                               block:
@@ -5268,7 +5311,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var Rn : TReg = TReg(insn[19,16].num)
                                 var imm3 : TBinary = insn[14,12]
                                 var imm8 : TBinary = insn[7,0]
-                                
+                                var r = ctx.TEImm_C(cat(i, imm3, imm8))
+                                return ctx.opTEQ({ifS} + r.setCarry, <Rn, <r.ent)
                                 nil
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 2)]
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 2), (19, 2)]
@@ -5291,7 +5335,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 1), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 1, 1, 0, None, 0, 0, 1, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'EOR{S}<c> <Rd>,<Rn>,#<const>', False)
+                    #i: <__main__.instruction instance at 0x100491488>
                     #EOR{S}<c> <Rd>,<Rn>,#<const>
                     #(1, 1, 1, 1, 0, None, 0, 0, 1, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                     block:
@@ -5334,7 +5378,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                            #i: ((1, 1, 1, 1, 0, None, 0, 0, 0, 1, 1, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'MVN{S}<c> <Rd>,#<const>', True)
+                            #i: <__main__.instruction instance at 0x10049db48>
                             #MVN{S}<c> <Rd>,#<const>
                             #(1, 1, 1, 1, 0, None, 0, 0, 0, 1, 1, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                             block:
@@ -5343,7 +5387,9 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               var imm3 : TBinary = insn[14,12]
                               var Rd : TReg = TReg(insn[11,8].num)
                               var imm8 : TBinary = insn[7,0]
-                              
+                              var r = ctx.TEImm_C(cat(i, imm3, imm8))
+                              ##return ctx.opMOV(S + r.setCarry, >Rd, <(not r.ent))
+                              return ctx.opMVN(S + r.setCarry, >Rd, <r.ent)
                               nil
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2)]
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2)]
@@ -5365,7 +5411,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 1, 1, 0, None, 0, 0, 0, 1, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'ORN{S}<c> <Rd>,<Rn>,#<const>', False)
+                    #i: <__main__.instruction instance at 0x10049def0>
                     #ORN{S}<c> <Rd>,<Rn>,#<const>
                     #(1, 1, 1, 1, 0, None, 0, 0, 0, 1, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                     block:
@@ -5375,7 +5421,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       var imm3 : TBinary = insn[14,12]
                       var Rd : TReg = TReg(insn[11,8].num)
                       var imm8 : TBinary = insn[7,0]
-                      
+                      var r = ctx.TEImm_C(cat(i, imm3, imm8))
+                      return ctx.opORN(S + r.setCarry, >Rd, <Rn, <r.ent)
                       nil
                 else: #21
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0)]
@@ -5404,7 +5451,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                             # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                            #i: ((1, 1, 1, 1, 0, None, 0, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'MOV{S}<c>.W <Rd>,#<const>', True)
+                            #i: <__main__.instruction instance at 0x10049d3b0>
                             #MOV{S}<c>.W <Rd>,#<const>
                             #(1, 1, 1, 1, 0, None, 0, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                             block:
@@ -5413,7 +5460,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               var imm3 : TBinary = insn[14,12]
                               var Rd : TReg = TReg(insn[11,8].num)
                               var imm8 : TBinary = insn[7,0]
-                              
+                              var r = ctx.TEImm_C(cat(i, imm3, imm8))
+                              return ctx.opMOV(S + r.setCarry, >Rd, <r.ent)
                               nil
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2)]
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2)]
@@ -5435,7 +5483,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 1, 1, 0, None, 0, 0, 0, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'ORR{S}<c> <Rd>,<Rn>,#<const>', False)
+                    #i: <__main__.instruction instance at 0x1004a0098>
                     #ORR{S}<c> <Rd>,<Rn>,#<const>
                     #(1, 1, 1, 1, 0, None, 0, 0, 0, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                     block:
@@ -5445,7 +5493,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       var imm3 : TBinary = insn[14,12]
                       var Rd : TReg = TReg(insn[11,8].num)
                       var imm8 : TBinary = insn[7,0]
-                      
+                      var r = ctx.TEImm_C(cat(i, imm3, imm8))
+                      return ctx.opORR(S + r.setCarry, >Rd, <Rn, <r.ent)
                       nil
               else: #22
                 # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0)]
@@ -5472,7 +5521,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 1, 1, 0, None, 0, 0, 0, 0, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'BIC{S}<c> <Rd>,<Rn>,#<const>', False)
+                    #i: <__main__.instruction instance at 0x10048b5f0>
                     #BIC{S}<c> <Rd>,<Rn>,#<const>
                     #(1, 1, 1, 1, 0, None, 0, 0, 0, 0, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                     block:
@@ -5513,7 +5562,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 1, 0, None, 0, 0, 0, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('i', 26, 26), ('Rn', 19, 16), ('imm3', 14, 12), ('imm8', 7, 0)], 'TST<c> <Rn>,#<const>', True)
+                              #i: <__main__.instruction instance at 0x1004afab8>
                               #TST<c> <Rn>,#<const>
                               #(1, 1, 1, 1, 0, None, 0, 0, 0, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                               block:
@@ -5521,7 +5570,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var Rn : TReg = TReg(insn[19,16].num)
                                 var imm3 : TBinary = insn[14,12]
                                 var imm8 : TBinary = insn[7,0]
-                                
+                                var r = ctx.TEImm_C(cat(i, imm3, imm8))
+                                return ctx.opTST({ifS} + r.setCarry, <Rn, <r.ent)
                                 nil
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2)]
                   # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2)]
@@ -5544,7 +5594,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                     # [(28, 1), (27, 0), (26, 2), (25, 0), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                    #i: ((1, 1, 1, 1, 0, None, 0, 0, 0, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('i', 26, 26), ('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'AND{S}<c> <Rd>,<Rn>,#<const>', False)
+                    #i: <__main__.instruction instance at 0x10043ccf8>
                     #AND{S}<c> <Rd>,<Rn>,#<const>
                     #(1, 1, 1, 1, 0, None, 0, 0, 0, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                     block:
@@ -5586,7 +5636,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(28, 1), (27, 0), (26, 2), (25, 2), (24, 2), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 2), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(28, 1), (27, 0), (26, 2), (25, 2), (24, 2), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 2), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(28, 1), (27, 0), (26, 2), (25, 2), (24, 2), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 2), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, 1, 1, None, 1, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 26, 26), ('imm10', 25, 16), ('J1', 13, 13), ('J2', 11, 11), ('imm11', 10, 0)], 'BL<c> <label>', False)
+              #i: <__main__.instruction instance at 0x10048b7e8>
               #BL<c> <label>
               #(1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, 1, 1, None, 1, None, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -5613,7 +5663,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(28, 1), (27, 0), (26, 2), (25, 2), (24, 2), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 0), (13, 2), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(28, 1), (27, 0), (26, 2), (25, 2), (24, 2), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 0), (13, 2), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(28, 1), (27, 0), (26, 2), (25, 2), (24, 2), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 0), (13, 2), (12, 1), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, 1, 0, None, 1, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 26, 26), ('imm10', 25, 16), ('J1', 13, 13), ('J2', 11, 11), ('imm11', 10, 0)], 'B<c>.W <label>', False)
+              #i: <__main__.instruction instance at 0x10048b368>
               #B<c>.W <label>
               #(1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, 1, 0, None, 1, None, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -5638,7 +5688,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(28, 1), (27, 0), (26, 2), (25, 2), (24, 2), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 0), (13, 2), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(28, 1), (27, 0), (26, 2), (25, 2), (24, 2), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 0), (13, 2), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(28, 1), (27, 0), (26, 2), (25, 2), (24, 2), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 0), (13, 2), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, 1, 0, None, 0, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 26, 26), ('cond', 25, 22), ('imm6', 21, 16), ('J1', 13, 13), ('J2', 11, 11), ('imm11', 10, 0)], 'B<c>.W <label>', False)
+              #i: <__main__.instruction instance at 0x10048b2d8>
               #B<c>.W <label>
               #(1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, 1, 0, None, 0, None, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -5686,7 +5736,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(28, 0), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2)]
                   # [(28, 0), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2), (2, 2)]
                   # [(28, 0), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2), (2, 2), (1, 2)]
-                  #i: ((1, 1, 1, 0, 1, 1, 1, 0, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1, None, None, None, None), [('opc1', 23, 21), ('CRn', 19, 16), ('Rt', 15, 12), ('coproc', 11, 8), ('opc2', 7, 5), ('CRm', 3, 0)], 'MRC<c> <coproc>,<opc1>,<Rt>,<CRn>,<CRm>{,<opc2>}', False)
+                  #i: <__main__.instruction instance at 0x10049d710>
                   #MRC<c> <coproc>,<opc1>,<Rt>,<CRn>,<CRm>{,<opc2>}
                   #(1, 1, 1, 0, 1, 1, 1, 0, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1, None, None, None, None)
                   block:
@@ -5696,7 +5746,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                     var coproc : TBinary = insn[11,8]
                     var opc2 : TBinary = insn[7,5]
                     var CRm : TBinary = insn[3,0]
-                    
+                    if coproc[3,1] == b"101": break
+                    return ctx.opMRC({}, <coproc, <opc1, >Rt, <Crn, <Crm, <opc2)
                     nil
               else: #20
                 # [(28, 0), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 0)]
@@ -5720,7 +5771,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   # [(28, 0), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2)]
                   # [(28, 0), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2), (2, 2)]
                   # [(28, 0), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 1), (3, 2), (2, 2), (1, 2)]
-                  #i: ((1, 1, 1, 0, 1, 1, 1, 0, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1, None, None, None, None), [('opc1', 23, 21), ('CRn', 19, 16), ('Rt', 15, 12), ('coproc', 11, 8), ('opc2', 7, 5), ('CRm', 3, 0)], 'MCR<c> <coproc>,<opc1>,<Rt>,<CRn>,<CRm>{,<opc2>}', False)
+                  #i: <__main__.instruction instance at 0x100499ea8>
                   #MCR<c> <coproc>,<opc1>,<Rt>,<CRn>,<CRm>{,<opc2>}
                   #(1, 1, 1, 0, 1, 1, 1, 0, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 1, None, None, None, None)
                   block:
@@ -5754,7 +5805,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                 # [(28, 0), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 0), (3, 2)]
                 # [(28, 0), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 0), (3, 2), (2, 2)]
                 # [(28, 0), (27, 1), (26, 1), (25, 1), (24, 0), (23, 2), (22, 2), (21, 2), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 0), (3, 2), (2, 2), (1, 2)]
-                #i: ((1, 1, 1, 0, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 0, None, None, None, None), [('opc1', 23, 20), ('CRn', 19, 16), ('CRd', 15, 12), ('coproc', 11, 8), ('opc2', 7, 5), ('CRm', 3, 0)], 'CDP<c> <coproc>,<opc1>,<CRd>,<CRn>,<CRm>,<opc2>', False)
+                #i: <__main__.instruction instance at 0x10048ba70>
                 #CDP<c> <coproc>,<opc1>,<CRd>,<CRn>,<CRm>,<opc2>
                 #(1, 1, 1, 0, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, 0, None, None, None, None)
                 block:
@@ -5797,7 +5848,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rt2', 19, 16), ('Rt', 15, 12), ('coproc', 11, 8), ('opc1', 7, 4), ('CRm', 3, 0)], 'MRRC<c> <coproc>,<opc>,<Rt>,<Rt2>,<CRm>', True)
+                      #i: <__main__.instruction instance at 0x10049d7e8>
                       #MRRC<c> <coproc>,<opc>,<Rt>,<Rt2>,<CRm>
                       #(1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -5806,7 +5857,8 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var coproc : TBinary = insn[11,8]
                         var opc1 : TBinary = insn[7,4]
                         var CRm : TBinary = insn[3,0]
-                        
+                        if coproc[3,1] == b"101": break
+                        return ctx.opMRRC({}, <coproc, <opc1, >Rt, >Rt2, <Crm)
                         nil
                     else: #20
                       # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0)]
@@ -5829,7 +5881,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rt2', 19, 16), ('Rt', 15, 12), ('coproc', 11, 8), ('opc1', 7, 4), ('CRm', 3, 0)], 'MCRR<c> <coproc>,<opc1>,<Rt>,<Rt2>,<CRm>', True)
+                      #i: <__main__.instruction instance at 0x100499f80>
                       #MCRR<c> <coproc>,<opc1>,<Rt>,<Rt2>,<CRm>
                       #(1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -5870,7 +5922,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 1, 0, None, None, None, None, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('P', 24, 24), ('U', 23, 23), ('D', 22, 22), ('W', 21, 21), ('CRd', 15, 12), ('coproc', 11, 8), ('imm8', 7, 0)], 'LDC{L}<c> <coproc>,<CRd>,[PC,#-0] Special case LDC{L}<c> <coproc>,<CRd>,[PC],<option>', True)
+                      #i: <__main__.instruction instance at 0x100491878>
                       #LDC{L}<c> <coproc>,<CRd>,[PC,#-0] Special case LDC{L}<c> <coproc>,<CRd>,[PC],<option>
                       #(1, 1, 1, 0, 1, 1, 0, None, None, None, None, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -5902,7 +5954,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 1, 1, 0, 1, 1, 0, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('P', 24, 24), ('U', 23, 23), ('D', 22, 22), ('W', 21, 21), ('Rn', 19, 16), ('CRd', 15, 12), ('coproc', 11, 8), ('imm8', 7, 0)], 'LDC{L}<c> <coproc>,<CRd>,[<Rn>],<option>', False)
+              #i: <__main__.instruction instance at 0x100491758>
               #LDC{L}<c> <coproc>,<CRd>,[<Rn>],<option>
               #(1, 1, 1, 0, 1, 1, 0, None, None, None, None, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -5915,7 +5967,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                 var coproc : TBinary = insn[11,8]
                 var imm8 : TBinary = insn[7,0]
                 if P == b"0" and W == b"0": break
-                return ctx.opLDC({}, <coproc, ctx.Deref(>Rn, <cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
+                return ctx.opLDC({}, <coproc, <CRd, ctx.Deref(>Rn, <cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
                 nil
             else: #20
               # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 0)]
@@ -5938,7 +5990,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
               # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
               # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
               # [(28, 0), (27, 1), (26, 1), (25, 0), (24, 2), (23, 2), (22, 2), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-              #i: ((1, 1, 1, 0, 1, 1, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('P', 24, 24), ('U', 23, 23), ('N', 22, 22), ('W', 21, 21), ('Rn', 19, 16), ('CRd', 15, 12), ('coproc', 11, 8), ('imm8', 7, 0)], 'STC{L}<c> <coproc>,<CRd>,[<Rn>],<option>', False)
+              #i: <__main__.instruction instance at 0x1004a8998>
               #STC{L}<c> <coproc>,<CRd>,[<Rn>],<option>
               #(1, 1, 1, 0, 1, 1, 0, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
               block:
@@ -5950,7 +6002,10 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                 var CRd : TBinary = insn[15,12]
                 var coproc : TBinary = insn[11,8]
                 var imm8 : TBinary = insn[7,0]
-                
+                var D = N
+                if not P.bit and not U.bit and D.bit and not W.bit: break
+                if coproc[3,1] == b"101": break
+                return ctx.opSTC({}, <coproc, <CRd, ctx.Deref(>Rn, <cat(imm8, b"00"), 4, P.bit, W.bit, U.bit))
                 nil
         else: #26
           # [(28, 0), (27, 1), (26, 0)]
@@ -5985,7 +6040,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'RSB{S}<c> <Rd>,<Rn>,<Rm>{,<shift>}', False)
+                      #i: <__main__.instruction instance at 0x1004a8248>
                       #RSB{S}<c> <Rd>,<Rn>,<Rm>{,<shift>}
                       #(1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -5996,7 +6051,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var imm2 : TBinary = insn[7,6]
                         var typ : TBinary = insn[5,4]
                         var Rm : TReg = TReg(insn[3,0].num)
-                        
+                        return ctx.opRSB(S, >Rd, <Rn, ctx.DIShift(<Rm, typ, cat(imm3, imm2)))
                         nil
                 else: #22
                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0)]
@@ -6028,7 +6083,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                #i: ((1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('imm3', 14, 12), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'CMP<c>.W <Rn>, <Rm> {,<shift>}', True)
+                                #i: <__main__.instruction instance at 0x100491170>
                                 #CMP<c>.W <Rn>, <Rm> {,<shift>}
                                 #(1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                                 block:
@@ -6064,7 +6119,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, None, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'SUB{S}<c> <Rd>,SP,<Rm>{,<shift>}', True)
+                              #i: <__main__.instruction instance at 0x1004af488>
                               #SUB{S}<c> <Rd>,SP,<Rm>{,<shift>}
                               #(1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, None, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                               block:
@@ -6074,7 +6129,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var imm2 : TBinary = insn[7,6]
                                 var typ : TBinary = insn[5,4]
                                 var Rm : TReg = TReg(insn[3,0].num)
-                                
+                                return ctx.opSUB(S, >Rd, <SP, ctx.DIShift(<Rm, typ, cat(imm3, imm2)))
                                 nil
                     # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 2)]
                     # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2)]
@@ -6096,7 +6151,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 1), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'SUB{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}', False)
+                      #i: <__main__.instruction instance at 0x1004af1b8>
                       #SUB{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
                       #(1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -6107,7 +6162,9 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var imm2 : TBinary = insn[7,6]
                         var typ : TBinary = insn[5,4]
                         var Rm : TReg = TReg(insn[3,0].num)
-                        
+                        if Rd == PC and S == {ifS}: break
+                        if Rn == SP: break
+                        return ctx.opSUB(S, >Rd, <Rn, ctx.DIShift(<Rm, typ, cat(imm3, imm2)))
                         nil
               else: #23
                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0)]
@@ -6136,7 +6193,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'SBC{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}', False)
+                      #i: <__main__.instruction instance at 0x1004a8488>
                       #SBC{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
                       #(1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -6147,7 +6204,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var imm2 : TBinary = insn[7,6]
                         var typ : TBinary = insn[5,4]
                         var Rm : TReg = TReg(insn[3,0].num)
-                        
+                        return ctx.opSBC(S, >Rd, <Rn, ctx.DIShift(<Rm, typ, cat(imm3, imm2)))
                         nil
                   else: #21
                     # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 0)]
@@ -6172,7 +6229,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'ADC{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}', False)
+                      #i: <__main__.instruction instance at 0x10043c638>
                       #ADC{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
                       #(1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -6215,7 +6272,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                #i: ((1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('imm3', 14, 12), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'CMN<c>.W <Rn>,<Rm>{,<shift>}', True)
+                                #i: <__main__.instruction instance at 0x10048be18>
                                 #CMN<c>.W <Rn>,<Rm>{,<shift>}
                                 #(1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                                 block:
@@ -6251,7 +6308,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, None, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'ADD{S}<c>.W <Rd>,SP,<Rm>{,<shift>}', True)
+                              #i: <__main__.instruction instance at 0x10043ca70>
                               #ADD{S}<c>.W <Rd>,SP,<Rm>{,<shift>}
                               #(1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, None, 1, 1, 0, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                               block:
@@ -6283,7 +6340,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 1), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'ADD{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}', False)
+                      #i: <__main__.instruction instance at 0x10043c680>
                       #ADD{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
                       #(1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -6332,7 +6389,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                #i: ((1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('imm3', 14, 12), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'TEQ<c> <Rn>,<Rm>{,<shift>}', True)
+                                #i: <__main__.instruction instance at 0x1004afa28>
                                 #TEQ<c> <Rn>,<Rm>{,<shift>}
                                 #(1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                                 block:
@@ -6341,7 +6398,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   var imm2 : TBinary = insn[7,6]
                                   var typ : TBinary = insn[5,4]
                                   var Rm : TReg = TReg(insn[3,0].num)
-                                  
+                                  return ctx.opTEQ({ifS}, <Rn, ctx.DIShift(<Rm, typ, cat(imm3, imm2)))
                                   nil
                     # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 2)]
                     # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 2), (19, 2)]
@@ -6364,7 +6421,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 1), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'EOR{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}', False)
+                      #i: <__main__.instruction instance at 0x1004915a8>
                       #EOR{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
                       #(1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -6408,7 +6465,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'MVN{S}<c>.W <Rd>,<Rm>{,shift>}', True)
+                              #i: <__main__.instruction instance at 0x10049dcf8>
                               #MVN{S}<c>.W <Rd>,<Rm>{,shift>}
                               #(1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                               block:
@@ -6418,7 +6475,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var imm2 : TBinary = insn[7,6]
                                 var typ : TBinary = insn[5,4]
                                 var Rm : TReg = TReg(insn[3,0].num)
-                                
+                                return ctx.opMVN(S, >Rd, ctx.DIShift(<Rm, typ, cat(imm3, imm2)))
                                 nil
                     # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2)]
                     # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2)]
@@ -6440,7 +6497,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'ORN{S}<c> <Rd>,<Rn>,<Rm>{,<shift>}', False)
+                      #i: <__main__.instruction instance at 0x10049df80>
                       #ORN{S}<c> <Rd>,<Rn>,<Rm>{,<shift>}
                       #(1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -6451,7 +6508,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var imm2 : TBinary = insn[7,6]
                         var typ : TBinary = insn[5,4]
                         var Rm : TReg = TReg(insn[3,0].num)
-                        
+                        return ctx.opORN(S, >Rd, <Rn, ctx.DIShift(<Rm, typ, cat(imm3, imm2)))
                         nil
                   else: #21
                     # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0)]
@@ -6487,14 +6544,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                             # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 0), (13, 0), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 1), (4, 1), (3, 2)]
                                             # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 0), (13, 0), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 1), (4, 1), (3, 2), (2, 2)]
                                             # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 0), (13, 0), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 1), (4, 1), (3, 2), (2, 2), (1, 2)]
-                                            #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, 0, 0, 0, None, None, None, None, 0, 0, 1, 1, None, None, None, None), [('S', 20, 20), ('Rd', 11, 8), ('Rm', 3, 0)], 'RRX{S}<c> <Rd>,<Rm>', True)
+                                            #i: <__main__.instruction instance at 0x1004a8098>
                                             #RRX{S}<c> <Rd>,<Rm>
                                             #(1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, 0, 0, 0, None, None, None, None, 0, 0, 1, 1, None, None, None, None)
                                             block:
                                               var S : TInsnFlags = if insn[20,20].bit: {ifS} else: {}
                                               var Rd : TReg = TReg(insn[11,8].num)
                                               var Rm : TReg = TReg(insn[3,0].num)
-                                              
+                                              return ctx.opRRX(S, >Rd, ctx.Shift(<Rm, RRX, <1))
                                               nil
                                         else: #5
                                           # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 0), (13, 0), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0)]
@@ -6503,14 +6560,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                             # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 0), (13, 0), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2)]
                                             # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 0), (13, 0), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2)]
                                             # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 0), (13, 0), (12, 0), (11, 2), (10, 2), (9, 2), (8, 2), (7, 0), (6, 0), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                            #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, 0, 0, 0, None, None, None, None, 0, 0, 0, 0, None, None, None, None), [('S', 20, 20), ('Rd', 11, 8), ('Rm', 3, 0)], 'MOV{S}<c>.W <Rd>,<Rm>', True)
+                                            #i: <__main__.instruction instance at 0x10049d5f0>
                                             #MOV{S}<c>.W <Rd>,<Rm>
                                             #(1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, 0, 0, 0, None, None, None, None, 0, 0, 0, 0, None, None, None, None)
                                             block:
                                               var S : TInsnFlags = if insn[20,20].bit: {ifS} else: {}
                                               var Rd : TReg = TReg(insn[11,8].num)
                                               var Rm : TReg = TReg(insn[3,0].num)
-                                              
+                                              return ctx.opMOV(S, >Rd, <Rm)
                                               nil
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2)]
                               # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2)]
@@ -6528,7 +6585,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 1), (4, 1), (3, 2)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 1), (4, 1), (3, 2), (2, 2)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 1), (4, 1), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, 1, 1, None, None, None, None), [('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('Rm', 3, 0)], 'ROR{S}<c> <Rd>,<Rm>,#<imm5>', True)
+                                  #i: <__main__.instruction instance at 0x1004a0e60>
                                   #ROR{S}<c> <Rd>,<Rm>,#<imm5>
                                   #(1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, 1, 1, None, None, None, None)
                                   block:
@@ -6537,14 +6594,15 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                     var Rd : TReg = TReg(insn[11,8].num)
                                     var imm2 : TBinary = insn[7,6]
                                     var Rm : TReg = TReg(insn[3,0].num)
-                                    
+                                    if imm3 == b"000" and imm2 == b"00": break
+                                    return ctx.opROR(S, >Rd, ctx.Shift(<Rm, ROR, <cat(imm3, imm2)))
                                     nil
                                 else: #4
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 1), (4, 0)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 1), (4, 0), (3, 2)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 1), (4, 0), (3, 2), (2, 2)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 1), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, 1, 0, None, None, None, None), [('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('Rm', 3, 0)], 'ASR{S}<c>.W <Rd>,<Rm>,#<imm5>', True)
+                                  #i: <__main__.instruction instance at 0x10043cf80>
                                   #ASR{S}<c>.W <Rd>,<Rm>,#<imm5>
                                   #(1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, 1, 0, None, None, None, None)
                                   block:
@@ -6562,7 +6620,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 1), (3, 2)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 1), (3, 2), (2, 2)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 1), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, 0, 1, None, None, None, None), [('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('Rm', 3, 0)], 'LSR{S}<c>.W <Rd>,<Rm>,#<imm5>', True)
+                                  #i: <__main__.instruction instance at 0x100499cb0>
                                   #LSR{S}<c>.W <Rd>,<Rm>,#<imm5>
                                   #(1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, 0, 1, None, None, None, None)
                                   block:
@@ -6578,7 +6636,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 0), (3, 2)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 0), (3, 2), (2, 2)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 1), (18, 1), (17, 1), (16, 1), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, 0, 0, None, None, None, None), [('S', 20, 20), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('Rm', 3, 0)], 'LSL{S}<c>.W <Rd>,<Rm>,#<imm5>', True)
+                                  #i: <__main__.instruction instance at 0x1004999e0>
                                   #LSL{S}<c>.W <Rd>,<Rm>,#<imm5>
                                   #(1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, 1, 1, 1, 1, 0, None, None, None, None, None, None, None, None, None, 0, 0, None, None, None, None)
                                   block:
@@ -6609,7 +6667,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 1), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'ORR{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}', False)
+                      #i: <__main__.instruction instance at 0x1004a01b8>
                       #ORR{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
                       #(1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -6620,7 +6678,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var imm2 : TBinary = insn[7,6]
                         var typ : TBinary = insn[5,4]
                         var Rm : TReg = TReg(insn[3,0].num)
-                        
+                        return ctx.opORR(S, >Rd, <Rn, ctx.DIShift(<Rm, typ, cat(imm3, imm2)))
                         nil
                 else: #22
                   # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0)]
@@ -6647,7 +6705,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 1), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'BIC{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}', False)
+                      #i: <__main__.instruction instance at 0x10048b710>
                       #BIC{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
                       #(1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -6688,7 +6746,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                 # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('imm3', 14, 12), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'TST<c>.W <Rn>,<Rm>{,<shift>}', True)
+                                #i: <__main__.instruction instance at 0x1004afc20>
                                 #TST<c>.W <Rn>,<Rm>{,<shift>}
                                 #(1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, None, None, None, None, 0, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                                 block:
@@ -6697,7 +6755,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   var imm2 : TBinary = insn[7,6]
                                   var typ : TBinary = insn[5,4]
                                   var Rm : TReg = TReg(insn[3,0].num)
-                                  
+                                  return ctx.opTST({ifS}, <Rn, ctx.DIShift(<Rm, typ, cat(imm3, imm2)))
                                   nil
                     # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2)]
                     # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2)]
@@ -6720,7 +6778,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 1), (24, 0), (23, 0), (22, 0), (21, 0), (20, 2), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('S', 20, 20), ('Rn', 19, 16), ('imm3', 14, 12), ('Rd', 11, 8), ('imm2', 7, 6), ('typ', 5, 4), ('Rm', 3, 0)], 'AND{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}', False)
+                      #i: <__main__.instruction instance at 0x10043ce18>
                       #AND{S}<c>.W <Rd>,<Rn>,<Rm>{,<shift>}
                       #(1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -6770,13 +6828,13 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                   # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                   # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 1), (20, 0), (19, 1), (18, 1), (17, 0), (16, 1), (15, 0), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                  #i: ((1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None), [('M', 14, 14), ('register_list', 12, 0)], 'PUSH<c>.W <registers>', True)
+                                  #i: <__main__.instruction instance at 0x1004a0998>
                                   #PUSH<c>.W <registers>
                                   #(1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None)
                                   block:
                                     var M : TBinary = insn[14,14]
                                     var register_list : TBinary = insn[12,0]
-                                    
+                                    return ctx.opSTMIA({}, >SP, ctx.RegList(cat(b"0", M, b"0", register_list)))
                                     nil
                   # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 2)]
                   if bit(insn, 20):
@@ -6801,7 +6859,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 0, 1, 0, 0, None, 1, None, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None), [('W', 21, 21), ('Rn', 19, 16), ('P', 15, 15), ('M', 14, 14), ('register_list', 12, 0)], 'LDMDB<c> <Rn>{!},<registers>', False)
+                      #i: <__main__.instruction instance at 0x100491ab8>
                       #LDMDB<c> <Rn>{!},<registers>
                       #(1, 1, 1, 0, 1, 0, 0, 1, 0, 0, None, 1, None, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -6835,7 +6893,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                         # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 1), (23, 0), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 0, 1, 0, 0, 1, 0, 0, None, 0, None, None, None, None, 0, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None), [('W', 21, 21), ('Rn', 19, 16), ('M', 14, 14), ('register_list', 12, 0)], 'STMDB<c> <Rn>{!},<registers>', False)
+                        #i: <__main__.instruction instance at 0x1004a8c68>
                         #STMDB<c> <Rn>{!},<registers>
                         #(1, 1, 1, 0, 1, 0, 0, 1, 0, 0, None, 0, None, None, None, None, 0, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None)
                         block:
@@ -6843,7 +6901,9 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           var Rn : TReg = TReg(insn[19,16].num)
                           var M : TBinary = insn[14,14]
                           var register_list : TBinary = insn[12,0]
-                          
+                          return ctx.opSTMDB({}, >Rn, ctx.RegList(cat(b"0", M, b"0", register_list)))
+                          # XXX XXX 
+                          # These are directly copied from LDR without checking the docs...
                           nil
             else: #24
               # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0)]
@@ -6885,14 +6945,17 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                             # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 0), (4, 2), (3, 2)]
                                             # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 0), (4, 2), (3, 2), (2, 2)]
                                             # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 1), (14, 1), (13, 1), (12, 1), (11, 0), (10, 0), (9, 0), (8, 0), (7, 0), (6, 0), (5, 0), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                            #i: ((1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, None, None, None, None, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None), [('Rn', 19, 16), ('H', 4, 4), ('Rm', 3, 0)], 'TBH<c> [<Rn>,<Rm>,LSL #1]', True)
+                                            #i: <__main__.instruction instance at 0x1004af8c0>
                                             #TBH<c> [<Rn>,<Rm>,LSL #1]
                                             #(1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, None, None, None, None, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, None, None, None, None, None)
                                             block:
                                               var Rn : TReg = TReg(insn[19,16].num)
                                               var H : TBinary = insn[4,4]
                                               var Rm : TReg = TReg(insn[3,0].num)
-                                              
+                                              if H.bit:
+                                                  return ctx.opTBH({}, ctx.Deref(<Rn, ctx.Shift(<Rm, LSL, <1), 2, true, false, true))
+                                              else:
+                                                  return ctx.opTBB({}, ctx.Deref(<Rn, <Rm, 1, true, false, true))
                                               nil
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2)]
@@ -6921,7 +6984,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                           if bit(insn, 1):
                                             # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 1), (3, 1), (2, 1), (1, 1)]
                                             if bit(insn, 0):
-                                              #i: ((1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1), [('Rn', 19, 16), ('Rt', 15, 12)], 'LDREXH<c> <Rt>, [<Rn>]', True)
+                                              #i: <__main__.instruction instance at 0x100495950>
                                               #LDREXH<c> <Rt>, [<Rn>]
                                               #(1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1)
                                               block:
@@ -6938,7 +7001,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                           if bit(insn, 1):
                                             # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 0), (3, 1), (2, 1), (1, 1)]
                                             if bit(insn, 0):
-                                              #i: ((1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1), [('Rn', 19, 16), ('Rt', 15, 12)], 'LDREXB<c> <Rt>, [<Rn>]', True)
+                                              #i: <__main__.instruction instance at 0x100495878>
                                               #LDREXB<c> <Rt>, [<Rn>]
                                               #(1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1)
                                               block:
@@ -6975,28 +7038,28 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 1), (3, 2)]
                                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 1), (3, 2), (2, 2)]
                                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 1), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, 1, 1, 1, 1, 0, 1, 0, 1, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('Rd', 3, 0)], 'STREXH<c> <Rd>,<Rt>,[<Rn>]', True)
+                                      #i: <__main__.instruction instance at 0x1004ab830>
                                       #STREXH<c> <Rd>,<Rt>,[<Rn>]
                                       #(1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, 1, 1, 1, 1, 0, 1, 0, 1, None, None, None, None)
                                       block:
                                         var Rn : TReg = TReg(insn[19,16].num)
                                         var Rt : TReg = TReg(insn[15,12].num)
                                         var Rd : TReg = TReg(insn[3,0].num)
-                                        
+                                        return ctx.opSTREXH({}, <Rt, ctx.Deref(>Rn, <0, 2, true, false, true))
                                         nil
                                     else: #4
                                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 0)]
                                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 0), (3, 2)]
                                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 0), (3, 2), (2, 2)]
                                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 0), (6, 1), (5, 0), (4, 0), (3, 2), (2, 2), (1, 2)]
-                                      #i: ((1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, 1, 1, 1, 1, 0, 1, 0, 0, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('Rd', 3, 0)], 'STREXB<c> <Rd>,<Rt>,[<Rn>]', True)
+                                      #i: <__main__.instruction instance at 0x1004ab758>
                                       #STREXB<c> <Rd>,<Rt>,[<Rn>]
                                       #(1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, None, None, None, None, None, None, None, None, 1, 1, 1, 1, 0, 1, 0, 0, None, None, None, None)
                                       block:
                                         var Rn : TReg = TReg(insn[19,16].num)
                                         var Rt : TReg = TReg(insn[15,12].num)
                                         var Rd : TReg = TReg(insn[3,0].num)
-                                        
+                                        return ctx.opSTREXB({}, <Rt, ctx.Deref(>Rn, <0, 1, true, false, true))
                                         nil
                 else: #22
                   # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0)]
@@ -7028,14 +7091,14 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 0), (16, 1), (15, 2), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                                 # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 0), (16, 1), (15, 2), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                                 # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 1), (20, 1), (19, 1), (18, 1), (17, 0), (16, 1), (15, 2), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                                #i: ((1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None), [('P', 15, 15), ('M', 14, 14), ('register_list', 12, 0)], 'POP<c>.W <registers>', True)
+                                #i: <__main__.instruction instance at 0x1004a0878>
                                 #POP<c>.W <registers>
                                 #(1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None)
                                 block:
                                   var P : TBinary = insn[15,15]
                                   var M : TBinary = insn[14,14]
                                   var register_list : TBinary = insn[12,0]
-                                  
+                                  return ctx.opLDMIA({}, >SP, ctx.RegList(cat(P, M, b"0", register_list)))
                                   nil
                   # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2)]
                   if bit(insn, 20):
@@ -7060,7 +7123,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 0, 0, 1, 0, None, 1, None, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None), [('W', 21, 21), ('Rn', 19, 16), ('P', 15, 15), ('M', 14, 14), ('register_list', 12, 0)], 'LDM<c>.W <Rn>{!},<registers>', False)
+                      #i: <__main__.instruction instance at 0x100491a70>
                       #LDM<c>.W <Rn>{!},<registers>
                       #(1, 1, 1, 0, 1, 0, 0, 0, 1, 0, None, 1, None, None, None, None, None, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -7097,7 +7160,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                         # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                         # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 1), (22, 0), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 0), (14, 2), (13, 0), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                        #i: ((1, 1, 1, 0, 1, 0, 0, 0, 1, 0, None, 0, None, None, None, None, 0, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None), [('W', 21, 21), ('Rn', 19, 16), ('M', 14, 14), ('register_list', 12, 0)], 'STM<c>.W <Rn>{!},<registers>', False)
+                        #i: <__main__.instruction instance at 0x1004a8b90>
                         #STM<c>.W <Rn>{!},<registers>
                         #(1, 1, 1, 0, 1, 0, 0, 0, 1, 0, None, 0, None, None, None, None, 0, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None)
                         block:
@@ -7105,7 +7168,10 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           var Rn : TReg = TReg(insn[19,16].num)
                           var M : TBinary = insn[14,14]
                           var register_list : TBinary = insn[12,0]
-                          
+                          if W.bit:
+                              return ctx.opSTMIA({}, >Rn, ctx.RegList(cat(b"0", M, b"0", register_list)))
+                          else:
+                              return ctx.opSTM({}, <Rn, ctx.RegList(cat(b"0", M, b"0", register_list)))
                           nil
               else: #23
                 # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0)]
@@ -7138,7 +7204,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                               # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                               # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                               # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 1), (10, 1), (9, 1), (8, 1), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                              #i: ((1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('imm8', 7, 0)], 'LDREX<c> <Rt>,[<Rn>{,#<imm8>}]', True)
+                              #i: <__main__.instruction instance at 0x100495830>
                               #LDREX<c> <Rt>,[<Rn>{,#<imm8>}]
                               #(1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, None, None, None, None, None, None, None, None, 1, 1, 1, 1, None, None, None, None, None, None, None, None)
                               block:
@@ -7168,7 +7234,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                       # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 0), (23, 0), (22, 1), (21, 0), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                      #i: ((1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('Rn', 19, 16), ('Rt', 15, 12), ('Rd', 11, 8), ('imm8', 7, 0)], 'STREX<c> <Rd>,<Rt>,[<Rn>{,#<imm8>}]', True)
+                      #i: <__main__.instruction instance at 0x1004ab680>
                       #STREX<c> <Rd>,<Rt>,[<Rn>{,#<imm8>}]
                       #(1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                       block:
@@ -7176,7 +7242,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                         var Rt : TReg = TReg(insn[15,12].num)
                         var Rd : TReg = TReg(insn[11,8].num)
                         var imm8 : TBinary = insn[7,0]
-                        
+                        return ctx.opSTREX({}, <Rt, ctx.Deref(>Rn, <cat(imm8, b"00"), 4, true, false, true))
                         nil
             # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2)]
             # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2), (23, 2)]
@@ -7209,7 +7275,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                           # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2), (23, 2), (22, 1), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                           # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2), (23, 2), (22, 1), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                           # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2), (23, 2), (22, 1), (21, 0), (20, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                          #i: ((1, 1, 1, 0, 1, 0, 0, None, None, 1, 0, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('P', 24, 24), ('U', 23, 23), ('Rt', 15, 12), ('Rt2', 11, 8), ('imm8', 7, 0)], 'LDRD<c> <Rt>,<Rt2>,[PC,#-0] Special case', True)
+                          #i: <__main__.instruction instance at 0x100495758>
                           #LDRD<c> <Rt>,<Rt2>,[PC,#-0] Special case
                           #(1, 1, 1, 0, 1, 0, 0, None, None, 1, 0, 1, 1, 1, 1, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                           block:
@@ -7242,7 +7308,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                 # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2), (23, 2), (22, 1), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                 # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2), (23, 2), (22, 1), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                 # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2), (23, 2), (22, 1), (21, 2), (20, 1), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                #i: ((1, 1, 1, 0, 1, 0, 0, None, None, 1, None, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('P', 24, 24), ('U', 23, 23), ('W', 21, 21), ('Rn', 19, 16), ('Rt', 15, 12), ('Rt2', 11, 8), ('imm8', 7, 0)], 'LDRD<c> <Rt>,<Rt2>,[<Rn>,#+/-<imm8>]!', False)
+                #i: <__main__.instruction instance at 0x100495680>
                 #LDRD<c> <Rt>,<Rt2>,[<Rn>,#+/-<imm8>]!
                 #(1, 1, 1, 0, 1, 0, 0, None, None, 1, None, 1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                 block:
@@ -7278,7 +7344,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                 # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2), (23, 2), (22, 1), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2)]
                 # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2), (23, 2), (22, 1), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2)]
                 # [(28, 0), (27, 1), (26, 0), (25, 0), (24, 2), (23, 2), (22, 1), (21, 2), (20, 0), (19, 2), (18, 2), (17, 2), (16, 2), (15, 2), (14, 2), (13, 2), (12, 2), (11, 2), (10, 2), (9, 2), (8, 2), (7, 2), (6, 2), (5, 2), (4, 2), (3, 2), (2, 2), (1, 2)]
-                #i: ((1, 1, 1, 0, 1, 0, 0, None, None, 1, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None), [('P', 24, 24), ('U', 23, 23), ('W', 21, 21), ('Rn', 19, 16), ('Rt', 15, 12), ('Rt2', 11, 8), ('imm8', 7, 0)], 'STRD<c> <Rt>,<Rt2>,[<Rn>,#+/-<imm8>]!', False)
+                #i: <__main__.instruction instance at 0x1004ab5a8>
                 #STRD<c> <Rt>,<Rt2>,[<Rn>,#+/-<imm8>]!
                 #(1, 1, 1, 0, 1, 0, 0, None, None, 1, None, 0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None)
                 block:
@@ -7289,7 +7355,9 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                   var Rt : TReg = TReg(insn[15,12].num)
                   var Rt2 : TReg = TReg(insn[11,8].num)
                   var imm8 : TBinary = insn[7,0]
-                  
+                  if not P.bit and not W.bit: break
+                  if Rn == PC: break
+                  return ctx.opSTRD({}, <Rt, <Rt2, ctx.Deref(>Rn, <cat(imm8, b"00"), 8, P.bit, W.bit, U.bit))
                   nil
  
 

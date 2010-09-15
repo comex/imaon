@@ -33,9 +33,9 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
             var unrotated_value = zxt(cat(b"1", imm12[6,0]))
             var r = bROR(unrotated_value, imm12[11,7].num)
             result.ent = <r
-            result.setCarry = if r[0].bit: {ifS} else: {}
+            result.setCarry = if r[0].bit: {ifSetC} else: {}
 
-    proc TEImm*[TAsmCtx](ctx : TAsmCtx, imm12 : TBinary) : TRVal =
+    proc TEImm*(ctx : TAsmCtx, imm12 : TBinary) : TRVal =
         return ctx.TEImm_C(imm12).ent
 
 foreachAC(ctxspec)

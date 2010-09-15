@@ -61,9 +61,14 @@ type
     TInsnFlag* = enum
         ifS, # update condition flags
         ifCond1, ifCond2, ifCond3, ifCond4, # actually the cond is stored here
-        ifWriteback, # for things like LDM, writeback the base register?
+        ifMagic,
     
     TInsnFlags* = set[TInsnFlag]
+
+var ifSetC* = ifMagic # for things that take TEImm_C, set just carry (ifS may also be set)
+var ifSTCL* = ifMagic # for STC and STC2, it's actually a STCL
+var ifPLDW* = ifMagic # ditto
+var ifCPSIE* = ifMagic # for CPS, enable as opposed to disable
 
 proc rshift*(r : TReg) : TReg =
     return TReg(int(r) or 8)

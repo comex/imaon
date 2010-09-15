@@ -33,15 +33,15 @@ proc newPStringAsmCtx*() : PStringAsmCtx =
 proc Negate*(ctx : PStringAsmCtx, input : TStringVal) : TStringVal =
     result = input
     if input.isImm:
-        result.str = "-" & result.str
-    else:
         result.imm = -result.imm
+    else:
+        result.str = "-" & result.str
 
 proc IsZero*(ctx : PStringAsmCtx, input : TStringVal) : bool =
     if input.isImm:
-        return input.str == "0"
-    else:
         return input.imm == 0
+    else:
+        return input.str == "0"
 
 proc Imm*(ctx : PStringAsmCtx, input : word) : TStringVal =
     result.isImm = true
@@ -52,6 +52,16 @@ proc ITarg*(ctx : PStringAsmCtx, input : seq[TCond]) : TStringVal =
     result.str = ""
     for i in 1..input.len - 1:
         result.str.add(if input[i] == input[0]: "T" else: "E")
+
+proc CPSarg*(ctx : PStringAsmCtx, I : bool, F : bool) : string =
+    if I and F:
+        return "if"
+    elif I:
+        return "i"
+    elif F:
+        return "f"
+    else:
+        return "<0>"
     
 
 proc Reg*(ctx : PStringAsmCtx, input : TReg) : TStringVal =

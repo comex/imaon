@@ -217,6 +217,8 @@ template beLazy*(TAsmCtx : typedesc, TVal : typedesc) =
         return ctx.GenericOp("SXTB", flags, ents)
     proc opSXTH*(ctx : TAsmCtx, flags : TInsnFlags, ents : openarray[TVal]) : TVal =
         return ctx.GenericOp("SXTH", flags, ents)
+    proc opTBB*(ctx : TAsmCtx, flags : TInsnFlags, ents : openarray[TVal]) : TVal =
+        return ctx.GenericOp("TBB", flags, ents)
     proc opTBH*(ctx : TAsmCtx, flags : TInsnFlags, ents : openarray[TVal]) : TVal =
         return ctx.GenericOp("TBH", flags, ents)
     proc opTEQ*(ctx : TAsmCtx, flags : TInsnFlags, ents : openarray[TVal]) : TVal =
