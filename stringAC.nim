@@ -53,15 +53,16 @@ proc ITarg*(ctx : PStringAsmCtx, input : seq[TCond]) : TStringVal =
     for i in 1..input.len - 1:
         result.str.add(if input[i] == input[0]: "T" else: "E")
 
-proc CPSarg*(ctx : PStringAsmCtx, I : bool, F : bool) : string =
+proc CPSarg*(ctx : PStringAsmCtx, I : bool, F : bool) : TStringVal =
+    result.isImm = false
     if I and F:
-        return "if"
+        result.str = "if"
     elif I:
-        return "i"
+        result.str = "i"
     elif F:
-        return "f"
+        result.str = "f"
     else:
-        return "<0>"
+        result.str = "<0>"
     
 
 proc Reg*(ctx : PStringAsmCtx, input : TReg) : TStringVal =
@@ -125,10 +126,18 @@ proc DerefA*(ctx : PStringAsmCtx, base : TStringVal, offset : TStringVal, size :
     result.str = res
 
 proc GenericOp*(ctx : PStringAsmCtx, name : string, flags : TInsnFlags, ents : openarray[TStringVal]) : TStringVal =
+    var a = name
+    if ifS in flags:
+        add(a, "S")
+    if ifMagic in flags:
+        case name
+        of "STCL": add(a, "L")
+        of "PLDW": add(a, "W")
+        of "CPS": add(a, "IE")
     var cond : string = $toCond(flags)
     if cond == "AL": cond = ""
-    var S = if ifS in flags: "S" else: ""
-    var a = name & S & cond & "  "
+    add(a, cond)
+    add(a, " ")
     for i in 0..high(ents):
         add(a, $ents[i])
         if i != high(ents): add(a, ", ")

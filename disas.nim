@@ -363,7 +363,7 @@ template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =
                                 var I : TBinary = insn[1,1]
                                 var F : TBinary = insn[0,0]
                                 #nil # see B4-2
-                                return ctx.opCPS(if not im.bit: {ifCPSIE} else: {}, <0, <I, <F)
+                                return ctx.opCPS(if not im.bit: {ifCPSIE} else: {}, ctx.CPSarg(I.bit, F.bit))
                                 nil
                 else: #9
                   # [(15, 1), (14, 0), (13, 1), (12, 1), (11, 0), (10, 1), (9, 0)]
