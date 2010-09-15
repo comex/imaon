@@ -99,13 +99,3 @@ proc bit*(b : TBinary) : bool {.inline.} =
 proc bit*(b : int) : bool {.inline.} =
     return b != 0
 
-proc sxt*(b : TBinary) : TBinary =
-    result.num = b.num
-    result.size = 32
-    if b[b.size-1].bit:
-        orr(result.num, not (1 shl (b.size - 1)))
-
-proc zxt*(b : TBinary) : TBinary {.inline.} =
-    result.num = b.num
-    result.size = 32
-

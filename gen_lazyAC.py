@@ -125,7 +125,14 @@ ops = [
     "YIELD",
 ]
 
+print 'type TOpName* = enum'
+print '    ' + ',\n    '.join('opn' + op.split(' ')[0] for op in ops) + '\n\n'
+
 print 'template beLazy*(TAsmCtx : typedesc, TVal : typedesc) ='
 for op in ops:
+    # I should use Python 3 so I can do op, *args...
+    x = op.split(' ')
+    args = x[1:]
+    op = x[0]
     print '    proc op%s*(ctx : TAsmCtx, flags : TInsnFlags, ents : openarray[TVal]) : TVal =' % op
-    print '        return ctx.GenericOp("%s", flags, ents)' % op
+    print '        return ctx.GenericOp(opn%s, "%s", flags, ents)' % (op, op)

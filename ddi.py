@@ -223,7 +223,7 @@ _16 = indent(indent(foo(16, allinsns[16], {})))
 for k in handlers:
     print '! Bad handler: ' + k
 open('disas.nim', 'w').write('''
-import armtypes, armfuncs, types
+import armtypes, armfuncs, types, funcs
 import allAC
 include "ltgt"
 template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =

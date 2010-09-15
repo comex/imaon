@@ -20,10 +20,12 @@ proc `$`*(a : TStringVal) : string =
         return a.str
 
 proc PCrel(input : TStringVal) : TStringVal =
+    if not input.isImm: return input
     result.isImm = false
     result.str ="PCrel:#" & $input.imm
 
 proc SPrel(input : TStringVal) : TStringVal =
+    if not input.isImm: return input
     result.isImm = false
     result.str = "SPrel:#" & $input.imm
 
@@ -110,9 +112,9 @@ proc ShiftA*(ctx : PStringAsmCtx, base : TStringVal, kind : TShiftKind, amt : TS
 proc DerefA*(ctx : PStringAsmCtx, base : TStringVal, offset : TStringVal, size : TDerefSize, kind : TDerefKind) : TStringVal =
     var sizeA = (if size == 4: "" else: "." & $size)
     var offsetA = offset
-    if base.str == "PC" and offsetA.isImm:
+    if base.str == "PC":
         offsetA = PCrel(offsetA)
-    elif base.str == "SP" and offsetA.isImm:
+    elif base.str == "SP":
         offsetA = SPrel(offsetA)
     var res : string
     case kind
@@ -125,21 +127,28 @@ proc DerefA*(ctx : PStringAsmCtx, base : TStringVal, offset : TStringVal, size :
     result.isImm = false
     result.str = res
 
-proc GenericOp*(ctx : PStringAsmCtx, name : string, flags : TInsnFlags, ents : openarray[TStringVal]) : TStringVal =
+proc GenericOp*(ctx : PStringAsmCtx, iname : TOpName, name : string, flags : TInsnFlags, ents : openarray[TStringVal]) : TStringVal =
     var a = name
     if ifS in flags:
         add(a, "S")
     if ifMagic in flags:
-        case name
-        of "STCL": add(a, "L")
-        of "PLDW": add(a, "W")
-        of "CPS": add(a, "IE")
+        case iname
+        of opnSTC: add(a, "L")
+        of opnPLD: add(a, "W")
+        of opnCPS: add(a, "IE")
+        else: nil
+            
     var cond : string = $toCond(flags)
     if cond == "AL": cond = ""
     add(a, cond)
     add(a, " ")
     for i in 0..high(ents):
-        add(a, $ents[i])
+        var ent = ents[i]
+        if i == 2 and iname == opnADD and $ents[1] == "PC":
+            ent = PCrel(ent)
+        elif i == 1 and (iname == opnB or iname == opnBL or iname == opnBLX):
+            ent = PCrel(ent)
+        add(a, $ent)
         if i != high(ents): add(a, ", ")
     result.isImm = false
     result.str = a

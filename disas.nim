@@ -1,5 +1,5 @@
 
-import armtypes, armfuncs, types
+import armtypes, armfuncs, types, funcs
 import allAC
 include "ltgt"
 template ctxspec(TAsmCtx : typedesc, TVal : typedesc, TRVal : typedesc) =

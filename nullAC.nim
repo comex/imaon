@@ -45,7 +45,7 @@ proc ShiftA*(ctx : PNullAsmCtx, base : TNullRVal, kind : TShiftKind, amt : TNull
 proc DerefA*(ctx : PNullAsmCtx, base : TNullVal, offset : TNullRVal, size : TDerefSize, kind : TDerefKind) : TNullVal {.inline.} =
     nil
 
-proc GenericOp*(ctx : PNullAsmCtx, name : string, flags : TInsnFlags, ents : openarray[TNullVal]) : TNullVal {.inline.} =
+proc GenericOp*(ctx : PNullAsmCtx, iname : TOpName, name : string, flags : TInsnFlags, ents : openarray[TNullVal]) : TNullVal {.inline.} =
     nil
 
 beLazy(PNullAsmCtx, TNullVal)
